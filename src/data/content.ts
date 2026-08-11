@@ -175,7 +175,7 @@ export const founders = [
     company: "TDengine",
     companyRole: "AI Solutions Engineer",
     linkedin: "https://www.linkedin.com/in/arun-arulraj-236a78259/",
-    bio: "Builds AI systems for industrial operations at TDengine, working with time-series databases, ML, and cloud-scale data platforms. Previously engineering at C3 AI and Meta.",
+    bio: "Builds AI systems for industrial operations at TDengine, working with time-series databases, ML, and cloud-scale data platforms. Right out of college he joined early-stage startup Soundromeda as Head of AI, raised a pre-seed with no VC experience, and serves as a scout for Necessary Ventures. Previously engineering at C3 AI and Meta.",
     focus: "Technical depth",
     initials: "AA",
   },
