@@ -85,16 +85,24 @@ alter table founder_applications enable row level security;
 alter table partner_applications enable row level security;
 alter table event_updates enable row level security;
 
--- Allow anonymous inserts only (forms are public).
--- No public read/update/delete — review rows in the Table Editor.
+-- Forms insert as the public anon role. Do not add SELECT policies
+-- or anyone could read applications. The app inserts without RETURNING.
+grant usage on schema public to anon, authenticated;
+grant insert on table public.founder_applications to anon, authenticated;
+grant insert on table public.partner_applications to anon, authenticated;
+grant insert on table public.event_updates to anon, authenticated;
+
 drop policy if exists "Allow anonymous insert" on founder_applications;
 create policy "Allow anonymous insert" on founder_applications
-  for insert with check (true);
+  for insert to anon, authenticated
+  with check (true);
 
 drop policy if exists "Allow anonymous insert" on partner_applications;
 create policy "Allow anonymous insert" on partner_applications
-  for insert with check (true);
+  for insert to anon, authenticated
+  with check (true);
 
 drop policy if exists "Allow anonymous insert" on event_updates;
 create policy "Allow anonymous insert" on event_updates
-  for insert with check (true);
+  for insert to anon, authenticated
+  with check (true);

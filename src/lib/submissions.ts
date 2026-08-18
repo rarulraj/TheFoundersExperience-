@@ -129,18 +129,16 @@ async function submitToSupabase(
   const supabase = getSupabase();
   const table = supabaseTableMap[payload.type];
 
-  const { data, error } = await supabase
+  const { error } = await supabase
     .from(table)
-    .insert([toSupabaseRow(payload)])
-    .select("id")
-    .single();
+    .insert(toSupabaseRow(payload));
 
   if (error) {
     console.error("Supabase submission error", error);
     return { ok: false, message: error.message };
   }
 
-  return { ok: true, id: data?.id, message: "Submission received." };
+  return { ok: true, message: "Submission received." };
 }
 
 /**
