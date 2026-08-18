@@ -14,7 +14,10 @@ type EventsProps = {
 
 export function Events({ showAllLink = true, compact = false }: EventsProps) {
   return (
-    <section id="events" className="section-padding scroll-mt-24 pt-8">
+    <section
+      id="events"
+      className="section-stack scroll-mt-24 border-t border-border/60"
+    >
       <div className="container-site">
         <FadeIn>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
@@ -22,14 +25,14 @@ export function Events({ showAllLink = true, compact = false }: EventsProps) {
               <p className="text-sm font-medium tracking-wide text-brand">
                 Events
               </p>
-              <h2 className="mt-3 max-w-2xl font-display text-3xl tracking-tight text-ink sm:text-4xl">
+              <h2 className="mt-3 max-w-2xl text-balance font-display text-[1.65rem] tracking-tight text-ink sm:text-4xl">
                 Meet online. Build relationships in person.
               </h2>
             </div>
             {showAllLink && (
               <Link
                 href="/events"
-                className="text-sm font-medium text-ink underline-offset-4 hover:underline"
+                className="text-sm font-medium text-brand underline-offset-4 hover:underline"
               >
                 View all events
               </Link>
@@ -39,9 +42,7 @@ export function Events({ showAllLink = true, compact = false }: EventsProps) {
 
         <div
           className={
-            compact
-              ? "mt-10"
-              : "mt-10 grid gap-6 lg:grid-cols-[1.35fr_1fr]"
+            compact ? "mt-10" : "mt-10 grid gap-6 lg:grid-cols-[1.35fr_1fr]"
           }
         >
           <FadeIn>
@@ -55,11 +56,11 @@ export function Events({ showAllLink = true, compact = false }: EventsProps) {
                   className="h-56 w-full object-cover sm:h-72"
                 />
               )}
-              <div className="p-7 sm:p-9">
+              <div className="p-5 sm:p-9">
                 <span className="inline-flex rounded-md bg-accent px-2.5 py-1 text-xs font-medium tracking-wide text-accent-foreground">
                   Featured Event
                 </span>
-                <h3 className="mt-5 max-w-xl font-display text-3xl tracking-tight text-ink">
+                <h3 className="mt-4 max-w-xl text-balance font-display text-2xl tracking-tight text-ink sm:mt-5 sm:text-3xl">
                   {featuredEvent.title}
                 </h3>
                 <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
@@ -85,13 +86,13 @@ export function Events({ showAllLink = true, compact = false }: EventsProps) {
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                   <Button
                     render={<Link href="/events#event-updates" />}
-                    className="h-11 bg-brand px-5 text-black hover:bg-brand/90"
+                    className="h-11 w-full bg-brand px-5 text-brand-foreground hover:bg-brand/90 sm:w-auto"
                   >
                     Get Event Updates
                   </Button>
                   <Link
                     href="/events#speak"
-                    className="inline-flex h-11 items-center text-sm font-medium text-ink underline-offset-4 hover:underline"
+                    className="inline-flex h-11 items-center justify-center px-1 text-sm font-medium text-ink underline-offset-4 hover:underline sm:justify-start"
                   >
                     Interested in Speaking?
                   </Link>
@@ -104,7 +105,7 @@ export function Events({ showAllLink = true, compact = false }: EventsProps) {
             <div className="grid gap-4">
               {upcomingEvents.map((event, index) => (
                 <FadeIn key={event.title} delay={index * 0.06}>
-                  <article className="rounded-2xl border border-border bg-surface p-6">
+                  <article className="rounded-2xl border border-border bg-surface p-6 transition-colors duration-300 hover:border-brand/40">
                     <div className="flex items-center justify-between gap-3">
                       <span className="text-xs font-medium tracking-wide text-brand">
                         {event.type}

@@ -99,21 +99,38 @@
   }
 
   html {
-    @apply scroll-smooth;
+    @apply scroll-smooth overflow-x-clip;
     color-scheme: dark;
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground font-sans antialiased overflow-x-clip;
     background-image:
       radial-gradient(ellipse 80% 50% at 10% -10%, rgba(0, 198, 252, 0.14), transparent 55%),
       radial-gradient(ellipse 60% 40% at 100% 0%, rgba(0, 198, 252, 0.07), transparent 50%);
-    background-attachment: fixed;
+    background-attachment: scroll;
+  }
+
+  @media (min-width: 768px) {
+    body {
+      background-attachment: fixed;
+    }
   }
 
   ::selection {
     background: color-mix(in oklab, var(--brand) 55%, black);
     color: #ffffff;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
@@ -125,11 +142,17 @@
   }
 
   .section-padding {
-    @apply px-5 py-20 sm:px-8 md:py-28 lg:px-12;
+    @apply py-12 sm:py-20 md:py-28;
+  }
+
+  /* Sections that stack below another section: keeps an even vertical
+     rhythm without the doubled gap two full-padding sections create. */
+  .section-stack {
+    @apply py-10 sm:py-16 md:py-20;
   }
 
   .container-site {
-    @apply mx-auto w-full max-w-6xl;
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8 lg:px-12;
   }
 
   .text-balance {

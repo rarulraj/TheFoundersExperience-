@@ -8,13 +8,13 @@ const icons = [MessageCircle, Users, Handshake, Sprout];
 
 export function CommunityBenefits() {
   return (
-    <section id="community" className="section-padding scroll-mt-24 pt-4">
+    <section id="community" className="section-stack scroll-mt-24">
       <div className="container-site">
         <FadeIn>
           <p className="text-sm font-medium tracking-wide text-brand">
             Why join
           </p>
-          <h2 className="mt-3 max-w-3xl font-display text-3xl tracking-tight text-ink sm:text-4xl">
+          <h2 className="mt-3 max-w-3xl text-balance font-display text-[1.65rem] tracking-tight text-ink sm:text-4xl">
             The conversations founders actually need.
           </h2>
         </FadeIn>
@@ -24,7 +24,7 @@ export function CommunityBenefits() {
             const Icon = icons[index] ?? MessageCircle;
             return (
               <FadeIn key={card.title} delay={index * 0.04}>
-                <article className="h-full rounded-2xl border border-border bg-surface p-6">
+                <article className="group h-full rounded-2xl border border-border bg-surface p-5 sm:p-6 transition-colors duration-300 hover:border-brand/40">
                   <div className="mb-4 inline-flex size-9 items-center justify-center rounded-lg bg-accent text-brand">
                     <Icon className="size-4" />
                   </div>

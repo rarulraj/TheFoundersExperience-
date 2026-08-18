@@ -17,13 +17,13 @@ const icons = [UsersRound, Eye, CalendarRange, FileText, Package, Infinity];
 
 export function Partners() {
   return (
-    <section id="partners" className="section-padding scroll-mt-24">
+    <section id="partners" className="section-stack scroll-mt-24">
       <div className="container-site">
         <FadeIn>
           <p className="text-sm font-medium tracking-wide text-brand">
             Partners
           </p>
-          <h2 className="mt-3 max-w-3xl font-display text-3xl tracking-tight text-ink sm:text-4xl md:text-5xl">
+          <h2 className="mt-3 max-w-3xl text-balance font-display text-[1.65rem] tracking-tight text-ink sm:text-4xl">
             Build relationships with the people building what’s next.
           </h2>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -38,7 +38,7 @@ export function Partners() {
             const Icon = icons[index] ?? UsersRound;
             return (
               <FadeIn key={benefit.title} delay={index * 0.04}>
-                <article className="h-full rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-brand/30">
+                <article className="h-full rounded-2xl border border-border bg-surface p-5 sm:p-6 transition-colors hover:border-brand/30">
                   <div className="mb-4 inline-flex size-10 items-center justify-center rounded-lg bg-accent text-brand">
                     <Icon className="size-5" />
                   </div>
@@ -59,11 +59,11 @@ export function Partners() {
             <p className="text-sm text-muted-foreground">
               Trusted by partners who support founders
             </p>
-            <div className="mt-5 grid max-w-xl grid-cols-2 gap-3">
+            <div className="mt-5 grid grid-cols-1 gap-3 sm:max-w-xl sm:grid-cols-2">
               {partnerLogos.map((logo, index) => (
                 <div
                   key={`${logo}-${index}`}
-                  className="flex h-16 items-center justify-center rounded-xl border border-border bg-surface px-3 text-center text-xs font-semibold tracking-wide text-ink/70"
+                  className="flex min-h-14 items-center justify-center rounded-xl border border-border bg-surface px-4 py-3 text-center text-sm font-semibold tracking-wide text-ink/80"
                 >
                   {logo}
                 </div>
@@ -77,8 +77,8 @@ export function Partners() {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <div className="mt-14 rounded-2xl border border-border bg-surface px-7 py-10 text-center sm:px-10">
-            <h3 className="font-display text-3xl tracking-tight text-ink sm:text-4xl">
+          <div className="mt-14 rounded-2xl border border-border bg-surface px-5 py-8 text-center sm:px-10 sm:py-10">
+            <h3 className="font-display text-2xl tracking-tight text-ink sm:text-4xl">
               Become a Founding Partner
             </h3>
             <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground sm:text-base">
@@ -86,7 +86,7 @@ export function Partners() {
             </p>
             <Button
               render={<Link href="/partners#partner-form" />}
-              className="mt-7 h-12 bg-brand px-6 text-black hover:bg-brand/90"
+              className="mt-7 h-12 w-full bg-brand px-6 text-brand-foreground hover:bg-brand/90 sm:w-auto"
             >
               Become a Founding Partner
             </Button>

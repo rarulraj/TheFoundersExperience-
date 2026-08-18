@@ -14,19 +14,19 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="section-padding">
+      <section className="section-padding pb-10">
         <div className="container-site max-w-3xl">
           <p className="text-sm font-medium tracking-wide text-brand">About</p>
-          <h1 className="mt-3 font-display text-4xl tracking-tight text-ink sm:text-5xl md:text-6xl">
+          <h1 className="mt-3 text-balance font-display text-3xl tracking-tight text-ink sm:text-5xl md:text-6xl">
             A space for the realities of building.
           </h1>
-          <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+          <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
             {siteConfig.positioning}
           </p>
         </div>
       </section>
 
-      <section className="section-padding pt-0">
+      <section className="section-stack pt-0">
         <div className="container-site grid gap-6 lg:grid-cols-3">
           {[
             {
@@ -44,7 +44,7 @@ export default function AboutPage() {
           ].map((item) => (
             <article
               key={item.title}
-              className="rounded-2xl border border-border bg-surface p-7"
+              className="rounded-2xl border border-border bg-surface p-5 sm:p-7 transition-colors duration-300 hover:border-brand/40"
             >
               <h2 className="font-display text-2xl tracking-tight text-ink">
                 {item.title}
@@ -57,9 +57,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-padding">
+      <section className="section-stack">
         <div className="container-site max-w-3xl">
-          <h2 className="font-display text-3xl tracking-tight text-ink sm:text-4xl">
+          <h2 className="text-balance font-display text-[1.65rem] tracking-tight text-ink sm:text-4xl">
             Not merely a networking group.
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground">
@@ -74,7 +74,7 @@ export default function AboutPage() {
           <div className="mt-8">
             <Button
               render={<Link href="/apply" />}
-              className="h-11 bg-brand text-black hover:bg-brand/90"
+              className="h-11 w-full bg-brand text-brand-foreground hover:bg-brand/90 sm:w-auto"
             >
               Apply to Join
             </Button>
@@ -84,9 +84,9 @@ export default function AboutPage() {
 
       <Founders />
 
-      <section id="privacy" className="section-padding scroll-mt-24">
+      <section id="privacy" className="section-stack scroll-mt-24">
         <div className="container-site max-w-3xl">
-          <h2 className="font-display text-3xl tracking-tight text-ink">
+          <h2 className="font-display text-[1.65rem] tracking-tight text-ink sm:text-3xl">
             Privacy
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">

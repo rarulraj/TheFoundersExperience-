@@ -119,8 +119,8 @@ export function FounderApplicationForm() {
   if (success) {
     return (
       <FadeIn>
-        <div className="rounded-2xl border border-brand/25 bg-brand/10 p-8 sm:p-10">
-          <p className="font-display text-3xl tracking-tight text-ink">
+        <div className="rounded-2xl border border-brand/25 bg-brand/10 p-6 sm:p-10">
+          <p className="font-display text-2xl tracking-tight text-ink sm:text-3xl">
             Thanks for applying.
           </p>
           <p className="mt-3 max-w-xl text-base leading-relaxed text-muted-foreground">
@@ -147,7 +147,7 @@ export function FounderApplicationForm() {
         noValidate
       >
         <div className="mb-8">
-          <h2 className="font-display text-3xl tracking-tight text-ink sm:text-4xl">
+          <h2 className="font-display text-[1.65rem] tracking-tight text-ink sm:text-4xl">
             Apply to The Founders Experience
           </h2>
           <p className="mt-3 text-base text-muted-foreground">
@@ -355,7 +355,7 @@ export function FounderApplicationForm() {
         <Button
           type="submit"
           disabled={submitting}
-          className="mt-7 h-12 w-full bg-brand text-black hover:bg-brand/90 sm:w-auto sm:px-8"
+          className="mt-7 h-12 w-full bg-brand text-brand-foreground hover:bg-brand/90 sm:w-auto sm:px-8"
         >
           {submitting ? (
             <>

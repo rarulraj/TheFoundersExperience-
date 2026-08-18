@@ -16,7 +16,7 @@ export default function ApplyPage() {
           <p className="text-sm font-medium tracking-wide text-brand">
             Membership
           </p>
-          <h1 className="mt-3 font-display text-4xl tracking-tight text-ink sm:text-5xl md:text-6xl">
+          <h1 className="mt-3 text-balance font-display text-3xl tracking-tight text-ink sm:text-5xl md:text-6xl">
             Apply to join the community.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -36,7 +36,7 @@ export default function ApplyPage() {
         </div>
       </section>
 
-      <section className="section-padding pt-0">
+      <section className="section-stack pt-0">
         <div className="container-site max-w-4xl">
           <FounderApplicationForm />
         </div>

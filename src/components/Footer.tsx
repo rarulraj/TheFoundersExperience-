@@ -14,12 +14,12 @@ const footerLinks = [
 
 export function Footer() {
   return (
-    <footer className="mt-8 border-t border-border bg-surface">
+    <footer className="border-t border-border bg-surface">
       <div className="container-site section-padding !py-12">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-md">
             <Link href="/" aria-label="The Founders Experience home">
-              <Logo className="h-12 w-auto rounded-lg sm:h-14" />
+              <Logo className="h-10 w-auto max-w-[220px] rounded-lg sm:h-14 sm:max-w-none" />
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
               {siteConfig.tagline}

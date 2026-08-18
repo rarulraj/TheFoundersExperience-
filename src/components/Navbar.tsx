@@ -29,7 +29,7 @@ export function Navbar() {
         "sticky top-0 z-50 border-b transition-all duration-300",
         scrolled
           ? "border-border/80 bg-background/90 backdrop-blur-md"
-          : "border-transparent bg-background/70 backdrop-blur-sm"
+          : "border-transparent bg-transparent"
       )}
     >
       <div className="container-site flex h-16 items-center justify-between gap-4 lg:h-[4.25rem]">
@@ -40,7 +40,7 @@ export function Navbar() {
         >
           <Logo
             priority
-            className="h-9 w-auto rounded-md transition-transform duration-300 group-hover:scale-[1.02] sm:h-10"
+            className="h-8 w-auto max-w-[min(58vw,220px)] rounded-md transition-transform duration-300 group-hover:scale-[1.02] sm:h-10 sm:max-w-none"
           />
         </Link>
 
@@ -71,7 +71,7 @@ export function Navbar() {
         <div className="hidden items-center lg:flex">
           <Button
             render={<Link href="/apply" />}
-            className="h-10 bg-brand px-4 text-sm text-black hover:bg-brand/90"
+            className="h-10 bg-brand px-4 text-sm text-brand-foreground hover:bg-brand/90"
           >
             Apply to Join
           </Button>
@@ -103,7 +103,7 @@ export function Navbar() {
             <div className="mt-3 border-t border-border pt-4">
               <Button
                 render={<Link href="/apply" onClick={closeMenu} />}
-                className="h-11 w-full bg-brand text-black hover:bg-brand/90"
+                className="h-11 w-full bg-brand text-brand-foreground hover:bg-brand/90"
               >
                 Apply to Join
               </Button>

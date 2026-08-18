@@ -14,10 +14,10 @@ export const metadata: Metadata = {
 export default function EventsPage() {
   return (
     <>
-      <section className="section-padding pb-4">
+      <section className="section-padding pb-10">
         <div className="container-site max-w-3xl">
           <p className="text-sm font-medium tracking-wide text-brand">Events</p>
-          <h1 className="mt-3 font-display text-4xl tracking-tight text-ink sm:text-5xl md:text-6xl">
+          <h1 className="mt-3 text-balance font-display text-3xl tracking-tight text-ink sm:text-5xl md:text-6xl">
             Gatherings for people building companies.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -32,7 +32,7 @@ export default function EventsPage() {
 
       <section
         id="event-updates"
-        className="section-padding scroll-mt-24 bg-secondary/30"
+        className="section-stack scroll-mt-24 border-t border-border/60 bg-surface/50"
       >
         <div className="container-site grid max-w-5xl gap-8 lg:grid-cols-2">
           <EventUpdatesForm />
@@ -50,7 +50,7 @@ export default function EventsPage() {
             </p>
             <Button
               render={<Link href="/apply" />}
-              className="mt-6 h-11 bg-brand text-black hover:bg-brand/90"
+              className="mt-6 h-11 w-full bg-brand text-brand-foreground hover:bg-brand/90 sm:w-auto"
             >
               Share your interest
             </Button>

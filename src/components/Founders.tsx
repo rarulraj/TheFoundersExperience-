@@ -7,13 +7,13 @@ import { founders } from "@/data/content";
 
 export function Founders() {
   return (
-    <section className="section-padding bg-secondary/30">
+    <section className="section-stack border-y border-border/60 bg-surface/50">
       <div className="container-site">
         <FadeIn>
           <p className="text-sm font-medium tracking-wide text-brand">
             The co-founders
           </p>
-          <h2 className="mt-3 max-w-2xl font-display text-3xl tracking-tight text-ink sm:text-4xl md:text-5xl">
+          <h2 className="mt-3 max-w-2xl text-balance font-display text-[1.65rem] tracking-tight text-ink sm:text-4xl">
             Built by people who live the founder journey.
           </h2>
           <p className="mt-4 max-w-2xl text-base text-muted-foreground">
@@ -26,7 +26,7 @@ export function Founders() {
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           {founders.map((founder, index) => (
             <FadeIn key={founder.name} delay={index * 0.08}>
-              <article className="h-full rounded-2xl border border-border bg-surface p-7 sm:p-8">
+              <article className="h-full rounded-2xl border border-border bg-surface p-5 sm:p-8">
                 <div className="flex items-start justify-between gap-4">
                   <div className="relative size-16 overflow-hidden rounded-full bg-secondary">
                     <Image

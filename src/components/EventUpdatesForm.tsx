@@ -90,7 +90,7 @@ export function EventUpdatesForm() {
       <Button
         type="submit"
         disabled={submitting}
-        className="mt-5 h-11 bg-brand text-black hover:bg-brand/90"
+        className="mt-5 h-11 bg-brand text-brand-foreground hover:bg-brand/90"
       >
         {submitting ? (
           <>
