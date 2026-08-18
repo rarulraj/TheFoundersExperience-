@@ -65,77 +65,61 @@ export type SubmissionResult = {
   message: string;
 };
 
-const supabaseTableMap: Record<SubmissionPayload["type"], string> = {
-  founder_application: "founder_applications",
-  partner_application: "partner_applications",
-  event_updates: "event_updates",
-};
-
-function toSupabaseRow(payload: SubmissionPayload) {
-  if (payload.type === "founder_application") {
-    return {
-      type: payload.type,
-      first_name: payload.firstName,
-      last_name: payload.lastName,
-      email: payload.email,
-      phone: payload.phone,
-      linkedin_url: payload.linkedinUrl,
-      company_name: payload.companyName,
-      company_website: payload.companyWebsite,
-      role_title: payload.roleTitle,
-      company_stage: payload.companyStage,
-      company_location: payload.companyLocation,
-      industry: payload.industry,
-      number_of_employees: payload.numberOfEmployees,
-      what_building: payload.whatBuilding,
-      hoping_to_get: payload.hopingToGet,
-      could_contribute: payload.couldContribute,
-      how_did_you_hear: payload.howDidYouHear,
-      agree_to_updates: payload.agreeToUpdates,
-      submitted_at: payload.submittedAt,
-    };
-  }
-
-  if (payload.type === "partner_application") {
-    return {
-      type: payload.type,
-      first_name: payload.firstName,
-      last_name: payload.lastName,
-      work_email: payload.workEmail,
-      phone: payload.phone,
-      company: payload.company,
-      website: payload.website,
-      job_title: payload.jobTitle,
-      company_type: payload.companyType,
-      partnership_interest: payload.partnershipInterest,
-      estimated_budget: payload.estimatedBudget,
-      partnership_goals: payload.partnershipGoals,
-      anything_else: payload.anythingElse,
-      submitted_at: payload.submittedAt,
-    };
-  }
-
-  return {
-    type: payload.type,
-    email: payload.email,
-    name: payload.name ?? null,
-    submitted_at: payload.submittedAt,
-  };
-}
-
 async function submitToSupabase(
   payload: SubmissionPayload
 ): Promise<SubmissionResult> {
   const supabase = getSupabase();
-  const table = supabaseTableMap[payload.type];
 
-  const { error } = await supabase
-    .from(table)
-    .insert(toSupabaseRow(payload));
+  const result =
+    payload.type === "founder_application"
+      ? await supabase.from("founder_applications").insert({
+          type: payload.type,
+          first_name: payload.firstName,
+          last_name: payload.lastName,
+          email: payload.email,
+          phone: payload.phone,
+          linkedin_url: payload.linkedinUrl,
+          company_name: payload.companyName,
+          company_website: payload.companyWebsite,
+          role_title: payload.roleTitle,
+          company_stage: payload.companyStage,
+          company_location: payload.companyLocation,
+          industry: payload.industry,
+          number_of_employees: payload.numberOfEmployees,
+          what_building: payload.whatBuilding,
+          hoping_to_get: payload.hopingToGet,
+          could_contribute: payload.couldContribute,
+          how_did_you_hear: payload.howDidYouHear,
+          agree_to_updates: payload.agreeToUpdates,
+          submitted_at: payload.submittedAt,
+        })
+      : payload.type === "partner_application"
+        ? await supabase.from("partner_applications").insert({
+            type: payload.type,
+            first_name: payload.firstName,
+            last_name: payload.lastName,
+            work_email: payload.workEmail,
+            phone: payload.phone,
+            company: payload.company,
+            website: payload.website,
+            job_title: payload.jobTitle,
+            company_type: payload.companyType,
+            partnership_interest: payload.partnershipInterest,
+            estimated_budget: payload.estimatedBudget,
+            partnership_goals: payload.partnershipGoals,
+            anything_else: payload.anythingElse,
+            submitted_at: payload.submittedAt,
+          })
+        : await supabase.from("event_updates").insert({
+            type: payload.type,
+            email: payload.email,
+            name: payload.name ?? null,
+            submitted_at: payload.submittedAt,
+          });
 
-  if (error) {
-    console.error("Supabase submission error", error);
-    return { ok: false, message: error.message };
+  if (result.error) {
+    console.error("Supabase submission error", result.error);
+    return { ok: false, message: result.error.message };
   }
 
   return { ok: true, message: "Submission received." };
