@@ -8,6 +8,7 @@ create table if not exists founder_applications (
   first_name text not null,
   last_name text not null,
   email text not null,
+  phone text,
   linkedin_url text,
   company_name text,
   company_website text,
@@ -32,6 +33,7 @@ create table if not exists partner_applications (
   first_name text not null,
   last_name text not null,
   work_email text not null,
+  phone text,
   company text,
   website text,
   job_title text,
@@ -58,6 +60,9 @@ create table if not exists event_updates (
 create index if not exists founder_applications_email_idx on founder_applications(email);
 create index if not exists partner_applications_email_idx on partner_applications(work_email);
 create index if not exists event_updates_email_idx on event_updates(email);
+
+alter table founder_applications add column if not exists phone text;
+alter table partner_applications add column if not exists phone text;
 
 -- Row Level Security
 alter table founder_applications enable row level security;

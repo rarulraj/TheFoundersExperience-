@@ -13,6 +13,7 @@ export type FounderApplicationPayload = {
   firstName: string;
   lastName: string;
   email: string;
+  phone: string;
   linkedinUrl: string;
   companyName: string;
   companyWebsite: string;
@@ -34,6 +35,7 @@ export type PartnerApplicationPayload = {
   firstName: string;
   lastName: string;
   workEmail: string;
+  phone: string;
   company: string;
   website: string;
   jobTitle: string;

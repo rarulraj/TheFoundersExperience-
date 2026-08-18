@@ -21,6 +21,7 @@ type FormState = {
   firstName: string;
   lastName: string;
   email: string;
+  phone: string;
   linkedinUrl: string;
   companyName: string;
   companyWebsite: string;
@@ -40,6 +41,7 @@ const initialState: FormState = {
   firstName: "",
   lastName: "",
   email: "",
+  phone: "",
   linkedinUrl: "",
   companyName: "",
   companyWebsite: "",
@@ -185,6 +187,19 @@ export function FounderApplicationForm() {
               onChange={(e) => update("email", e.target.value)}
               className="h-11"
               autoComplete="email"
+            />
+          </Field>
+          <Field label="Phone Number" htmlFor="phone" required>
+            <Input
+              id="phone"
+              type="tel"
+              required
+              value={form.phone}
+              onChange={(e) => update("phone", e.target.value)}
+              className="h-11"
+              autoComplete="tel"
+              inputMode="tel"
+              placeholder="(555) 555-5555"
             />
           </Field>
           <Field label="LinkedIn URL" htmlFor="linkedinUrl" required>

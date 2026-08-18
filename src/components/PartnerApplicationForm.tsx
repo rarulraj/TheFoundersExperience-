@@ -15,6 +15,7 @@ type FormState = {
   firstName: string;
   lastName: string;
   workEmail: string;
+  phone: string;
   company: string;
   website: string;
   jobTitle: string;
@@ -29,6 +30,7 @@ const initialState: FormState = {
   firstName: "",
   lastName: "",
   workEmail: "",
+  phone: "",
   company: "",
   website: "",
   jobTitle: "",
@@ -169,6 +171,19 @@ export function PartnerApplicationForm() {
               onChange={(e) => update("workEmail", e.target.value)}
               className="h-11"
               autoComplete="email"
+            />
+          </Field>
+          <Field label="Phone Number" htmlFor="partner-phone" required>
+            <Input
+              id="partner-phone"
+              type="tel"
+              required
+              value={form.phone}
+              onChange={(e) => update("phone", e.target.value)}
+              className="h-11"
+              autoComplete="tel"
+              inputMode="tel"
+              placeholder="(555) 555-5555"
             />
           </Field>
           <Field label="Company" htmlFor="partner-company" required>
