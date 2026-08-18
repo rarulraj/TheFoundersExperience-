@@ -21,7 +21,7 @@ export default function EventsPage() {
             Gatherings for people building companies.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            From intimate dinners to flagship days in San Francisco — our events
+            From intimate dinners to flagship days in San Francisco, our events
             are designed for honest conversation and lasting relationships.
           </p>
         </div>
@@ -38,23 +38,23 @@ export default function EventsPage() {
           <EventUpdatesForm />
           <div
             id="speak"
-            className="scroll-mt-28 rounded-2xl border border-border bg-ink p-6 text-white sm:p-8"
+            className="scroll-mt-28 rounded-2xl border border-border bg-surface p-6 sm:p-8"
           >
-            <h3 className="font-display text-2xl tracking-tight sm:text-3xl">
+            <h3 className="font-display text-2xl tracking-tight text-ink sm:text-3xl">
               Interested in speaking?
             </h3>
-            <p className="mt-3 text-sm leading-relaxed text-white/70 sm:text-base">
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
               We’re always looking for founders and operators who can share
-              practical lessons from building. Tell us what you’ve learned — and
+              practical lessons from building. Tell us what you’ve learned, and
               what you’d want to discuss with peers.
             </p>
             <Button
               render={<Link href="/apply" />}
-              className="mt-6 h-11 bg-brand text-brand-foreground hover:bg-brand/90"
+              className="mt-6 h-11 bg-brand text-black hover:bg-brand/90"
             >
               Share your interest
             </Button>
-            <p className="mt-4 text-xs text-white/50">
+            <p className="mt-4 text-xs text-muted-foreground">
               Prefer email? Mention speaking in your member application or
               partner inquiry.
             </p>

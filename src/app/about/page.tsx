@@ -8,7 +8,7 @@ import { siteConfig } from "@/data/content";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about The Founders Experience — a curated community where founders share real experiences and grow stronger companies together.",
+    "Learn about The Founders Experience, a curated community where founders share real experiences and grow stronger companies together.",
 };
 
 export default function AboutPage() {
@@ -31,7 +31,7 @@ export default function AboutPage() {
           {[
             {
               title: "Founder-led",
-              body: "Conversations are shaped by people who are in the work — founders, cofounders, and operators navigating growth in real time.",
+              body: "Conversations are shaped by people who are in the work: founders, cofounders, and operators navigating growth in real time.",
             },
             {
               title: "Knowledge shared",
@@ -57,35 +57,27 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-padding bg-ink text-white">
+      <section className="section-padding">
         <div className="container-site max-w-3xl">
-          <h2 className="font-display text-3xl tracking-tight sm:text-4xl">
+          <h2 className="font-display text-3xl tracking-tight text-ink sm:text-4xl">
             Not merely a networking group.
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-white/75">
-            The Founders Experience is a curated founder community and
-            media/event platform. Members get genuine value for free. Aligned
-            brands fund and support the ecosystem through carefully selected
-            partnerships.
+          <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+            The Founders Experience is a curated community for people building
+            companies. Members get genuine value for free — honest conversation,
+            peer support, and relationships that last beyond a single event.
           </p>
-          <p className="mt-4 text-base leading-relaxed text-white/75">
-            Through honest conversations, shared experience, and genuine
-            support, members can learn faster, make better decisions, and build
-            stronger companies.
+          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+            Through shared experience, members can learn faster, make better
+            decisions, and build stronger companies.
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="mt-8">
             <Button
               render={<Link href="/apply" />}
-              className="h-11 bg-brand text-brand-foreground hover:bg-brand/90"
+              className="h-11 bg-brand text-black hover:bg-brand/90"
             >
               Apply to Join
             </Button>
-            <Link
-              href="/partners#partner-form"
-              className="inline-flex h-11 items-center justify-center px-2 text-sm font-medium text-white/70 underline-offset-4 transition-colors hover:text-white hover:underline"
-            >
-              Become a Partner
-            </Link>
           </div>
         </div>
       </section>

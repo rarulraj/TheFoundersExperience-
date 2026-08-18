@@ -59,7 +59,7 @@ export function Partners() {
             <p className="text-sm text-muted-foreground">
               Trusted by partners who support founders
             </p>
-            <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+            <div className="mt-5 grid max-w-xl grid-cols-2 gap-3">
               {partnerLogos.map((logo, index) => (
                 <div
                   key={`${logo}-${index}`}
@@ -77,16 +77,16 @@ export function Partners() {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <div className="mt-14 rounded-2xl border border-border bg-[linear-gradient(135deg,#002030_0%,#0f3f3d_55%,#2e8a99_100%)] px-7 py-10 text-center text-white sm:px-10">
-            <h3 className="font-display text-3xl tracking-tight sm:text-4xl">
+          <div className="mt-14 rounded-2xl border border-border bg-surface px-7 py-10 text-center sm:px-10">
+            <h3 className="font-display text-3xl tracking-tight text-ink sm:text-4xl">
               Become a Founding Partner
             </h3>
-            <p className="mx-auto mt-3 max-w-xl text-sm text-white/75 sm:text-base">
+            <p className="mx-auto mt-3 max-w-xl text-sm text-muted-foreground sm:text-base">
               Interested in supporting founders? Let’s build something together.
             </p>
             <Button
               render={<Link href="/partners#partner-form" />}
-              className="mt-7 h-12 bg-white px-6 text-ink hover:bg-white/90"
+              className="mt-7 h-12 bg-brand px-6 text-black hover:bg-brand/90"
             >
               Become a Founding Partner
             </Button>

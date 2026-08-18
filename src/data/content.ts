@@ -5,7 +5,7 @@ export const siteConfig = {
   positioning:
     "A supportive community where founders and startup leaders connect, share the realities of building, learn from one another, and grow stronger companies together.",
   url: "https://thefoundersexperience.com",
-  linkedin: "https://www.linkedin.com/",
+  linkedin: "https://www.linkedin.com/company/the-founders-experience-startup-community/posts/?feedView=all",
 };
 
 export const navLinks = [
@@ -48,7 +48,6 @@ export const memberBenefits = [
   "Panels and fireside chats",
   "Coworking sessions",
   "Startup resources",
-  "Partner perks",
   "Invitations to private events",
 ];
 
@@ -60,10 +59,10 @@ export const socialProofPoints = [
 ];
 
 export const featuredEvent = {
-  title: "The Founders Experience — San Francisco",
+  title: "The Founders Experience San Francisco",
   location: "San Francisco",
   date: "August / September 2026",
-  audience: "Founders, operators, speakers, partners",
+  audience: "Founders and operators",
   format: "Panels, conversations, networking",
   description:
     "A full-day gathering for founders and startup leaders to share real lessons, meet peers in person, and build relationships that last beyond the room.",
@@ -178,6 +177,8 @@ export const founders = [
     bio: "Builds AI systems for industrial operations at TDengine, working with time-series databases, ML, and cloud-scale data platforms. Right out of college he joined early-stage startup Soundromeda as Head of AI, raised a pre-seed with no VC experience, and serves as a scout for Necessary Ventures. Previously engineering at C3 AI and Meta.",
     focus: "Technical depth",
     initials: "AA",
+    image: "/founders/arun-arulraj.png",
+    imagePosition: "center 20%",
   },
   {
     name: "Ryan House",
@@ -188,16 +189,14 @@ export const founders = [
     bio: "Over a decade in technical, product, and design recruitment for high-growth SaaS, fintech, and venture-backed startups from Seed through Series C.",
     focus: "Recruiting experience",
     initials: "RH",
+    image: "/founders/ryan-house.png",
+    imagePosition: "center 12%",
   },
 ];
 
 export const partnerLogos = [
   "The Search Experience",
   "TSE Technical",
-  "Corgi",
-  "Partner Placeholder",
-  "Partner Placeholder",
-  "Partner Placeholder",
 ];
 
 export const partnershipTiers = [
@@ -263,7 +262,7 @@ export const personas = [
   },
   {
     title: "Operators",
-    description: "Making the company work day to day — and compounding the lessons.",
+    description: "Making the company work day to day, and compounding the lessons.",
   },
 ];
 

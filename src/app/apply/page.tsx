@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FounderApplicationForm } from "@/components/FounderApplicationForm";
-import { WhoShouldJoin } from "@/components/WhoShouldJoin";
 
 export const metadata: Metadata = {
   title: "Apply to Join",
   description:
-    "Apply to join The Founders Experience — a curated community for founders and startup leaders.",
+    "Apply to join The Founders Experience, a curated community for founders and startup leaders.",
 };
 
 export default function ApplyPage() {
@@ -22,7 +21,7 @@ export default function ApplyPage() {
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             Membership is free for accepted founders and startup leaders. Tell
-            us what you’re building — we review every application carefully.
+            us what you’re building. We review every application carefully.
           </p>
           <p className="mt-4 text-sm text-muted-foreground">
             Looking to sponsor instead?{" "}
@@ -37,9 +36,7 @@ export default function ApplyPage() {
         </div>
       </section>
 
-      <WhoShouldJoin />
-
-      <section className="section-padding pt-4">
+      <section className="section-padding pt-0">
         <div className="container-site max-w-4xl">
           <FounderApplicationForm />
         </div>

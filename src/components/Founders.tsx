@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import { FadeIn } from "@/components/FadeIn";
 import { founders } from "@/data/content";
@@ -27,8 +28,15 @@ export function Founders() {
             <FadeIn key={founder.name} delay={index * 0.08}>
               <article className="h-full rounded-2xl border border-border bg-surface p-7 sm:p-8">
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex size-14 items-center justify-center rounded-full bg-[linear-gradient(145deg,#d7e8e7_0%,#b9d2d0_45%,#2e8a99_100%)] font-display text-lg text-white">
-                    {founder.initials}
+                  <div className="relative size-16 overflow-hidden rounded-full bg-secondary">
+                    <Image
+                      src={founder.image}
+                      alt={founder.name}
+                      fill
+                      sizes="64px"
+                      className="object-cover"
+                      style={{ objectPosition: founder.imagePosition }}
+                    />
                   </div>
                   <a
                     href={founder.linkedin}

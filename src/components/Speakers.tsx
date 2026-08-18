@@ -33,9 +33,8 @@ export function Speakers() {
           {speakers.map((speaker, index) => (
             <FadeIn key={speaker.name} delay={index * 0.04} as="article">
               <div className="h-full overflow-hidden rounded-2xl border border-border bg-surface transition-transform duration-300 hover:-translate-y-0.5">
-                <div className="relative flex h-44 items-end bg-[linear-gradient(145deg,#d7e8e7_0%,#b9d2d0_45%,#2e8a99_100%)] p-5">
-                  <div className="absolute inset-0 grain opacity-40" />
-                  <div className="relative flex size-16 items-center justify-center rounded-full border border-white/40 bg-white/20 font-display text-xl text-white backdrop-blur-sm">
+                <div className="flex h-28 items-end bg-secondary p-5">
+                  <div className="flex size-14 items-center justify-center rounded-full bg-surface font-display text-lg text-ink">
                     {speaker.initials}
                   </div>
                 </div>

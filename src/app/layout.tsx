@@ -31,12 +31,21 @@ export const metadata: Metadata = {
     siteName: "The Founders Experience",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "The Founders Experience",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "The Founders Experience | A Community for Startup Founders",
     description:
       "A community where founders and startup leaders connect, share real experiences, learn from one another, and build stronger companies together.",
+    images: ["/og-image.png"],
   },
   keywords: [
     "founder community",
@@ -48,11 +57,16 @@ export const metadata: Metadata = {
   ],
 };
 
+export const viewport = {
+  themeColor: "#000000",
+};
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${geistMono.variable} h-full`}
+      className={`dark ${inter.variable} ${geistMono.variable} h-full`}
+      data-scroll-behavior="smooth"
     >
       <body className="min-h-full flex flex-col">
         <SiteShell>{children}</SiteShell>

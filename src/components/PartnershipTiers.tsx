@@ -20,7 +20,7 @@ export function PartnershipTiers() {
           </h2>
           <p className="mt-4 max-w-2xl text-base text-muted-foreground">
             Partnerships are tailored. These tiers show how brands typically
-            engage — from community support to long-term founding partnerships.
+            engage, from community support to long-term founding partnerships.
           </p>
         </FadeIn>
 
@@ -31,43 +31,24 @@ export function PartnershipTiers() {
                 className={cn(
                   "flex h-full flex-col rounded-2xl border p-7",
                   tier.featured
-                    ? "border-brand/40 bg-ink text-white"
+                    ? "border-brand bg-accent/50 text-ink"
                     : "border-border bg-surface text-ink"
                 )}
               >
-                <p
-                  className={cn(
-                    "text-xs font-medium tracking-wide",
-                    tier.featured ? "text-brand" : "text-brand"
-                  )}
-                >
+                <p className="text-xs font-medium tracking-wide text-brand">
                   Tier {index + 1}
                 </p>
                 <h3 className="mt-2 font-display text-2xl tracking-tight">
                   {tier.name}
                 </h3>
-                <p
-                  className={cn(
-                    "mt-3 text-sm leading-relaxed",
-                    tier.featured ? "text-white/70" : "text-muted-foreground"
-                  )}
-                >
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   {tier.description}
                 </p>
                 <ul className="mt-6 flex-1 space-y-3">
                   {tier.benefits.map((benefit) => (
                     <li key={benefit} className="flex items-start gap-2.5 text-sm">
-                      <Check
-                        className={cn(
-                          "mt-0.5 size-4 shrink-0",
-                          tier.featured ? "text-brand" : "text-brand"
-                        )}
-                      />
-                      <span
-                        className={
-                          tier.featured ? "text-white/90" : "text-ink/90"
-                        }
-                      >
+                      <Check className="mt-0.5 size-4 shrink-0 text-brand" />
+                      <span className="text-ink">
                         {benefit}
                       </span>
                     </li>
@@ -82,7 +63,7 @@ export function PartnershipTiers() {
           <div className="mt-10 flex justify-center">
             <Button
               render={<Link href="/partners#partner-form" />}
-              className="h-12 bg-brand px-6 text-brand-foreground hover:bg-brand/90"
+              className="h-12 bg-brand px-6 text-black hover:bg-brand/90"
             >
               Talk to Us About Partnership
             </Button>

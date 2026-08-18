@@ -101,7 +101,7 @@ export function PartnerApplicationForm() {
       <FadeIn>
         <div
           id="partner-form"
-          className="scroll-mt-28 rounded-2xl border border-brand/25 bg-[linear-gradient(145deg,#ffffff_0%,#e8f3f2_100%)] p-8 sm:p-10"
+          className="scroll-mt-28 rounded-2xl border border-brand/25 bg-brand/10 p-8 sm:p-10"
         >
           <p className="font-display text-3xl tracking-tight text-ink">
             Thanks for reaching out.
@@ -294,7 +294,7 @@ export function PartnerApplicationForm() {
         <Button
           type="submit"
           disabled={submitting}
-          className="mt-7 h-12 w-full bg-brand text-brand-foreground hover:bg-brand/90 sm:w-auto sm:px-8"
+          className="mt-7 h-12 w-full bg-brand text-black hover:bg-brand/90 sm:w-auto sm:px-8"
         >
           {submitting ? (
             <>

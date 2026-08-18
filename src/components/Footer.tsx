@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { siteConfig } from "@/data/content";
+import { Logo } from "@/components/Logo";
 
 const footerLinks = [
   { label: "Community", href: "/#community" },
@@ -13,15 +14,17 @@ const footerLinks = [
 
 export function Footer() {
   return (
-    <footer className="mt-8 border-t border-border bg-ink text-white">
-      <div className="container-site section-padding !py-14">
+    <footer className="mt-8 border-t border-border bg-surface">
+      <div className="container-site section-padding !py-12">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-md">
-            <p className="font-display text-2xl tracking-tight sm:text-3xl">
-              The Founders Experience
+            <Link href="/" aria-label="The Founders Experience home">
+              <Logo className="h-12 w-auto rounded-lg sm:h-14" />
+            </Link>
+            <p className="mt-4 text-sm text-muted-foreground">
+              {siteConfig.tagline}
             </p>
-            <p className="mt-3 text-sm text-white/70">{siteConfig.tagline}</p>
-            <p className="mt-5 text-sm leading-relaxed text-white/60">
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
               Membership is free for accepted founders and operators.
             </p>
           </div>
@@ -31,7 +34,7 @@ export function Footer() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-sm text-white/70 transition-colors hover:text-white"
+                className="text-sm text-muted-foreground transition-colors hover:text-ink"
                 {...(link.href.startsWith("http")
                   ? { target: "_blank", rel: "noopener noreferrer" }
                   : {})}
@@ -42,7 +45,7 @@ export function Footer() {
           </nav>
         </div>
 
-        <div className="mt-12 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-10 flex flex-col gap-2 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} The Founders Experience. All rights
             reserved.

@@ -17,7 +17,7 @@ export function SocialProof() {
                 A community built around real experience.
               </h2>
             </div>
-            <div className="rounded-2xl border border-border bg-surface p-8 shadow-[0_1px_0_rgba(22,22,22,0.04)]">
+            <div className="rounded-2xl border border-brand/20 bg-surface p-8 shadow-[0_0_40px_rgba(0,198,252,0.08)]">
               <p className="font-display text-5xl tracking-tight text-brand sm:text-6xl">
                 100+
               </p>
@@ -25,7 +25,7 @@ export function SocialProof() {
                 founders and startup leaders
               </p>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                A curated circle of people building from Seed through Series B+ —
+                A curated circle of people building from Seed through Series B+,
                 sharing what actually works between the public milestones.
               </p>
             </div>

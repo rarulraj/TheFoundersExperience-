@@ -22,7 +22,7 @@ export default function PartnersPage() {
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             Brands partner with The Founders Experience to fund community
-            programming and participate in real founder experiences — not to buy
+            programming and participate in real founder experiences, not to buy
             a mailing list.
           </p>
         </div>

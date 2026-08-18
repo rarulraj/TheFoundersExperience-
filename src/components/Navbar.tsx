@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 import { navLinks, siteConfig } from "@/data/content";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/Logo";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -32,13 +33,15 @@ export function Navbar() {
       )}
     >
       <div className="container-site flex h-16 items-center justify-between gap-4 lg:h-[4.25rem]">
-        <Link href="/" className="group flex min-w-0 items-center gap-2.5">
-          <span className="flex size-8 items-center justify-center rounded-md bg-brand text-xs font-semibold tracking-wide text-brand-foreground transition-transform duration-300 group-hover:scale-[1.03]">
-            FE
-          </span>
-          <span className="truncate font-display text-lg leading-none tracking-tight text-ink sm:text-xl">
-            The Founders Experience
-          </span>
+        <Link
+          href="/"
+          aria-label="The Founders Experience home"
+          className="group flex min-w-0 items-center"
+        >
+          <Logo
+            priority
+            className="h-9 w-auto rounded-md transition-transform duration-300 group-hover:scale-[1.02] sm:h-10"
+          />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
@@ -65,16 +68,10 @@ export function Navbar() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
-          <Link
-            href="/partners#partner-form"
-            className="text-sm text-muted-foreground transition-colors hover:text-ink"
-          >
-            Become a Partner
-          </Link>
+        <div className="hidden items-center lg:flex">
           <Button
             render={<Link href="/apply" />}
-            className="h-10 bg-brand px-4 text-sm text-brand-foreground hover:bg-brand/90"
+            className="h-10 bg-brand px-4 text-sm text-black hover:bg-brand/90"
           >
             Apply to Join
           </Button>
@@ -103,20 +100,13 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <div className="mt-3 flex flex-col gap-2 border-t border-border pt-4">
+            <div className="mt-3 border-t border-border pt-4">
               <Button
                 render={<Link href="/apply" onClick={closeMenu} />}
-                className="h-11 w-full bg-brand text-brand-foreground hover:bg-brand/90"
+                className="h-11 w-full bg-brand text-black hover:bg-brand/90"
               >
                 Apply to Join
               </Button>
-              <Link
-                href="/partners#partner-form"
-                onClick={closeMenu}
-                className="rounded-md px-3 py-2 text-center text-sm text-muted-foreground hover:text-ink"
-              >
-                Become a Partner
-              </Link>
             </div>
             <p className="px-3 pt-2 text-xs text-muted-foreground">
               {siteConfig.tagline}
