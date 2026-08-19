@@ -63,9 +63,9 @@ export default function AboutPage() {
             Not merely a networking group.
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-            The Founders Experience is a curated community for people building
-            companies. Members get genuine value for free — honest conversation,
-            peer support, and relationships that last beyond a single event.
+            The Founders Experience is a community, not a platform. We bring
+            founders together for honest conversation, peer support, and
+            relationships that last beyond a single event. Membership is free.
           </p>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
             Through shared experience, members can learn faster, make better

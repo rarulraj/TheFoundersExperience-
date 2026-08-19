@@ -50,7 +50,7 @@ export function Footer() {
             © {new Date().getFullYear()} The Founders Experience. All rights
             reserved.
           </p>
-          <p>A curated founder community and event platform.</p>
+          <p>A curated founder community.</p>
         </div>
       </div>
     </footer>

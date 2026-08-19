@@ -14,12 +14,13 @@ export function Founders() {
             The co-founders
           </p>
           <h2 className="mt-3 max-w-2xl text-balance font-display text-[1.65rem] tracking-tight text-ink sm:text-4xl">
-            Built by people who live the founder journey.
+            Built by people who have worked with the companies shaping this
+            space.
           </h2>
           <p className="mt-4 max-w-2xl text-base text-muted-foreground">
-            The Founders Experience is led by operators with deep technical
-            expertise and a decade of recruiting experience inside high-growth
-            startups.
+            The Founders Experience is made by people who have worked with
+            TDengine, C3.ai, OpenAI, Meta, Workday, Wave, Anthropic, and other
+            Fortune 500 enterprises.
           </p>
         </FadeIn>
 

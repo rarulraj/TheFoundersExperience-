@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "Events",
   description:
-    "Founder dinners, roundtables, coworking sessions, and The Founders Experience San Francisco gathering.",
+    "The Founders Panel in October is our first gathering, coming soon — plus dinners, roundtables, and coworking sessions.",
 };
 
 export default function EventsPage() {
@@ -21,8 +21,8 @@ export default function EventsPage() {
             Gatherings for people building companies.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            From intimate dinners to flagship days in San Francisco, our events
-            are designed for honest conversation and lasting relationships.
+            We start in October with the Founders Panel, our first gathering.
+            More dinners, roundtables, and in-person sessions will follow.
           </p>
         </div>
       </section>

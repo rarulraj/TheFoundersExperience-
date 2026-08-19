@@ -51,7 +51,6 @@ export const metadata: Metadata = {
     "founder community",
     "startup founders",
     "startup events",
-    "founder network",
     "startup operators",
     "brand partnerships",
   ],

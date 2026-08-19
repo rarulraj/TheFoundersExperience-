@@ -18,7 +18,7 @@ export default function PartnersPage() {
             Partnerships
           </p>
           <h1 className="mt-3 text-balance font-display text-3xl tracking-tight text-ink sm:text-5xl md:text-6xl">
-            Support the ecosystem. Meet the builders.
+            Support the community. Meet the builders.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             Brands partner with The Founders Experience to fund community

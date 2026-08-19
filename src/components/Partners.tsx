@@ -11,7 +11,12 @@ import {
 } from "lucide-react";
 import { FadeIn } from "@/components/FadeIn";
 import { Button } from "@/components/ui/button";
-import { partnerBenefits, partnerLogos } from "@/data/content";
+import {
+  partnerBenefits,
+  partnerLogos,
+  companiesWorkedWith,
+  companiesWorkedWithNote,
+} from "@/data/content";
 
 const icons = [UsersRound, Eye, CalendarRange, FileText, Package, Infinity];
 
@@ -56,9 +61,7 @@ export function Partners() {
 
         <FadeIn delay={0.08}>
           <div className="mt-14">
-            <p className="text-sm text-muted-foreground">
-              Trusted by partners who support founders
-            </p>
+            <p className="text-sm text-muted-foreground">Sponsors</p>
             <div className="mt-5 grid grid-cols-1 gap-3 sm:max-w-xl sm:grid-cols-2">
               {partnerLogos.map((logo, index) => (
                 <div
@@ -70,8 +73,29 @@ export function Partners() {
               ))}
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
-              TSE Technical is a founding partner of The Founders Experience,
-              supporting founder events and community programming.
+              TSE Technical and TSE are founding sponsors of The Founders
+              Experience.
+            </p>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.12}>
+          <div className="mt-12">
+            <p className="text-sm text-muted-foreground">
+              Made by people who have worked with
+            </p>
+            <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+              {companiesWorkedWith.map((company) => (
+                <div
+                  key={company}
+                  className="flex min-h-14 items-center justify-center rounded-xl border border-border bg-surface px-3 py-3 text-center text-sm font-semibold tracking-wide text-ink/80"
+                >
+                  {company}
+                </div>
+              ))}
+            </div>
+            <p className="mt-4 text-sm text-muted-foreground">
+              {companiesWorkedWithNote}
             </p>
           </div>
         </FadeIn>

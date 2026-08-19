@@ -46,9 +46,9 @@ export function SocialProof() {
         <FadeIn delay={0.1}>
           <div className="mt-14">
             <p className="text-sm text-muted-foreground">
-              Member companies include
+              Made by people who have worked with
             </p>
-            <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+            <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
               {memberLogos.map((logo) => (
                 <div
                   key={logo}
@@ -58,6 +58,9 @@ export function SocialProof() {
                 </div>
               ))}
             </div>
+            <p className="mt-4 text-sm text-muted-foreground">
+              and other Fortune 500 enterprises
+            </p>
           </div>
         </FadeIn>
       </div>

@@ -1,6 +1,6 @@
 # The Founders Experience
 
-A polished marketing site for **The Founders Experience** — a curated founder community and event platform.
+A polished marketing site for **The Founders Experience** — a curated founder community.
 
 ## Stack
 
@@ -51,6 +51,8 @@ Tables:
 - `founder_applications`
 - `partner_applications`
 - `event_updates`
+
+Review applicants in **Table Editor**. Use `status` (`new`, `reviewing`, `accepted`, `rejected`) and `notes` — do not put this in Google Sheets unless you later need to share a file.
 
 Row Level Security is enabled — anonymous users can only insert.
 

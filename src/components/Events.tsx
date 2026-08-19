@@ -57,9 +57,14 @@ export function Events({ showAllLink = true, compact = false }: EventsProps) {
                 />
               )}
               <div className="p-5 sm:p-9">
-                <span className="inline-flex rounded-md bg-accent px-2.5 py-1 text-xs font-medium tracking-wide text-accent-foreground">
-                  Featured Event
-                </span>
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="inline-flex rounded-md bg-accent px-2.5 py-1 text-xs font-medium tracking-wide text-accent-foreground">
+                    First gathering
+                  </span>
+                  <span className="inline-flex rounded-md border border-brand/30 bg-brand/10 px-2.5 py-1 text-xs font-medium tracking-wide text-brand">
+                    {featuredEvent.status}
+                  </span>
+                </div>
                 <h3 className="mt-4 max-w-xl text-balance font-display text-2xl tracking-tight text-ink sm:mt-5 sm:text-3xl">
                   {featuredEvent.title}
                 </h3>

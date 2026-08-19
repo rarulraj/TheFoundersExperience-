@@ -59,22 +59,17 @@ export const socialProofPoints = [
 ];
 
 export const featuredEvent = {
-  title: "The Founders Experience San Francisco",
+  title: "The Founders Panel",
   location: "San Francisco",
-  date: "August / September 2026",
+  date: "October 2026",
   audience: "Founders and operators",
-  format: "Panels, conversations, networking",
+  format: "Panel",
+  status: "Coming soon",
   description:
-    "A full-day gathering for founders and startup leaders to share real lessons, meet peers in person, and build relationships that last beyond the room.",
+    "Our first gathering. A founder panel to open The Founders Experience — real conversation, practical lessons, and the start of the community.",
 };
 
 export const upcomingEvents = [
-  {
-    title: "Founder Dinner: GTM After Product-Market Fit",
-    location: "San Francisco",
-    date: "September 2026",
-    type: "Dinner",
-  },
   {
     title: "Operator Roundtable: Hiring Your First Leaders",
     location: "Virtual",
@@ -194,10 +189,20 @@ export const founders = [
   },
 ];
 
-export const partnerLogos = [
-  "The Search Experience",
-  "TSE Technical",
+export const partnerLogos = ["TSE Technical", "TSE"];
+
+export const companiesWorkedWith = [
+  "TDengine",
+  "C3.ai",
+  "OpenAI",
+  "Meta",
+  "Workday",
+  "Wave",
+  "Anthropic",
 ];
+
+export const companiesWorkedWithNote =
+  "and other Fortune 500 enterprises";
 
 export const partnershipTiers = [
   {
@@ -299,10 +304,11 @@ export const budgetRanges = [
 ];
 
 export const memberLogos = [
-  "Northwind AI",
-  "Parcel Labs",
-  "Harbor Finance",
-  "Signalpath",
-  "Atlas Work",
-  "Relay Health",
+  "TDengine",
+  "C3.ai",
+  "OpenAI",
+  "Meta",
+  "Workday",
+  "Wave",
+  "Anthropic",
 ];
