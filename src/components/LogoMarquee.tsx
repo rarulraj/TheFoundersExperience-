@@ -12,13 +12,10 @@ type LogoMarqueeProps = {
 function Wordmark({ name }: { name: string }) {
   return (
     <span className="flex shrink-0 items-center gap-8 px-5 sm:gap-12 sm:px-8">
-      <span className="text-[0.8rem] font-semibold tracking-[0.22em] text-ink/50 uppercase sm:text-sm">
+      <span className="font-display text-base tracking-[0.16em] text-ink/45 uppercase transition-colors duration-300 hover:text-ink sm:text-lg">
         {name}
       </span>
-      <span
-        aria-hidden
-        className="size-1 shrink-0 rounded-full bg-brand/35"
-      />
+      <span aria-hidden className="size-1 shrink-0 rounded-full bg-brand/40" />
     </span>
   );
 }
@@ -48,8 +45,8 @@ export function LogoMarquee({
   return (
     <div
       className={cn(
-        "relative overflow-hidden py-3",
-        "[mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]",
+        "group relative overflow-hidden py-3",
+        "[mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]",
         className
       )}
     >
@@ -58,7 +55,7 @@ export function LogoMarquee({
         className={cn(
           "flex w-max",
           reverse ? "animate-marquee-reverse" : "animate-marquee",
-          "hover:[animation-play-state:paused]"
+          "group-hover:[animation-play-state:paused]"
         )}
         aria-hidden
       >

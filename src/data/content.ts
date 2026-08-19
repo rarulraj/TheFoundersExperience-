@@ -190,9 +190,10 @@ export const founders = [
 ];
 
 export const foundingSponsor = {
-  name: "The Search Experience",
+  name: "TSE",
   url: "https://www.tsetalent.com",
-  description: "A premier recruiting firm",
+  description:
+    "A recruiting firm that partners with venture-backed founders to hire GTM, technical, and design teams from Seed through Series C.",
 };
 
 export const companiesWorkedWith = [

@@ -121,7 +121,7 @@ export function FounderApplicationForm() {
   if (success) {
     return (
       <FadeIn>
-        <div className="rounded-2xl border border-brand/25 bg-brand/10 p-6 sm:p-10">
+        <div className="glow-brand rounded-2xl border border-brand/25 bg-brand/10 p-6 sm:p-10">
           <p className="font-display text-2xl tracking-tight text-ink sm:text-3xl">
             Thanks for applying.
           </p>
@@ -145,7 +145,7 @@ export function FounderApplicationForm() {
     <FadeIn>
       <form
         onSubmit={onSubmit}
-        className="rounded-2xl border border-border bg-surface p-6 sm:p-8 md:p-10"
+        className="surface-panel rounded-3xl p-6 sm:p-8 md:p-10"
         noValidate
       >
         <div className="mb-8">
@@ -370,7 +370,7 @@ export function FounderApplicationForm() {
         <Button
           type="submit"
           disabled={submitting}
-          className="mt-7 h-12 w-full bg-brand text-brand-foreground hover:bg-brand/90 sm:w-auto sm:px-8"
+          className="btn-glow mt-7 h-12 w-full bg-brand text-brand-foreground transition-transform hover:-translate-y-0.5 hover:bg-brand/90 sm:w-auto sm:px-8"
         >
           {submitting ? (
             <>

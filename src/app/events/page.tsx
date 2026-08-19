@@ -16,11 +16,11 @@ export default function EventsPage() {
     <>
       <section className="section-padding pb-10">
         <div className="container-site max-w-3xl">
-          <p className="text-sm font-medium tracking-wide text-brand">Events</p>
-          <h1 className="mt-3 text-balance font-display text-3xl tracking-tight text-ink sm:text-5xl md:text-6xl">
+          <p className="eyebrow">Events</p>
+          <h1 className="mt-5 text-balance font-display text-3xl leading-[1.08] tracking-tight text-ink sm:text-5xl md:text-6xl">
             Gatherings for people building companies.
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="mt-7 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             We start in October with the Founders Panel, our first gathering.
             More dinners, roundtables, and in-person sessions will follow.
           </p>
@@ -32,13 +32,13 @@ export default function EventsPage() {
 
       <section
         id="event-updates"
-        className="section-stack scroll-mt-24 border-t border-border/60 bg-surface/50"
+        className="section-stack section-divider scroll-mt-24 bg-surface/40"
       >
-        <div className="container-site grid max-w-5xl gap-8 lg:grid-cols-2">
+        <div className="container-site grid max-w-5xl gap-6 lg:grid-cols-2">
           <EventUpdatesForm />
           <div
             id="speak"
-            className="scroll-mt-28 rounded-2xl border border-border bg-surface p-6 sm:p-8"
+            className="surface-panel scroll-mt-28 rounded-2xl p-6 sm:p-8"
           >
             <h3 className="font-display text-2xl tracking-tight text-ink sm:text-3xl">
               Interested in speaking?
@@ -50,7 +50,7 @@ export default function EventsPage() {
             </p>
             <Button
               render={<Link href="/apply" />}
-              className="mt-6 h-11 w-full bg-brand text-brand-foreground hover:bg-brand/90 sm:w-auto"
+              className="btn-glow mt-6 h-11 w-full bg-brand text-brand-foreground transition-transform hover:-translate-y-0.5 hover:bg-brand/90 sm:w-auto"
             >
               Share your interest
             </Button>

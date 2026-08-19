@@ -14,13 +14,11 @@ export default function PartnersPage() {
     <>
       <section className="section-padding pb-10">
         <div className="container-site max-w-3xl">
-          <p className="text-sm font-medium tracking-wide text-brand">
-            Partnerships
-          </p>
-          <h1 className="mt-3 text-balance font-display text-3xl tracking-tight text-ink sm:text-5xl md:text-6xl">
+          <p className="eyebrow">Partnerships</p>
+          <h1 className="mt-5 text-balance font-display text-3xl leading-[1.08] tracking-tight text-ink sm:text-5xl md:text-6xl">
             Support the community. Meet the builders.
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="mt-7 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             Brands partner with The Founders Experience to fund community
             programming and participate in real founder experiences, not to buy
             a mailing list.

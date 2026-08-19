@@ -11,17 +11,15 @@ export function PartnershipTiers() {
   return (
     <section
       id="partnership-tiers"
-      className="section-stack scroll-mt-24 border-y border-border/60 bg-surface/50"
+      className="section-stack section-divider scroll-mt-24 bg-surface/40"
     >
       <div className="container-site">
         <FadeIn>
-          <p className="text-sm font-medium tracking-wide text-brand">
-            Partnership options
-          </p>
-          <h2 className="mt-3 max-w-2xl text-balance font-display text-[1.65rem] tracking-tight text-ink sm:text-4xl">
+          <p className="eyebrow">Partnership options</p>
+          <h2 className="mt-5 max-w-2xl text-balance font-display text-[1.75rem] tracking-tight text-ink sm:text-4xl">
             Ways to support the community.
           </h2>
-          <p className="mt-4 max-w-2xl text-base text-muted-foreground">
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
             Partnerships are tailored. These tiers show how brands typically
             engage, from community support to long-term founding partnerships.
           </p>
@@ -32,41 +30,51 @@ export function PartnershipTiers() {
             <FadeIn key={tier.name} delay={index * 0.06}>
               <article
                 className={cn(
-                  "flex h-full flex-col rounded-2xl border p-5 sm:p-7",
+                  "relative flex h-full flex-col overflow-hidden rounded-2xl p-6 sm:p-7",
                   tier.featured
-                    ? "border-brand bg-accent/50 text-ink"
-                    : "border-border bg-surface text-ink"
+                    ? "glow-brand border border-brand/40 bg-surface text-ink"
+                    : "surface-card text-ink"
                 )}
               >
-                <p className="text-xs font-medium tracking-wide text-brand">
-                  Tier {index + 1}
-                </p>
-                <h3 className="mt-2 font-display text-xl tracking-tight sm:text-2xl">
-                  {tier.name}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {tier.description}
-                </p>
-                <ul className="mt-6 flex-1 space-y-3">
-                  {tier.benefits.map((benefit) => (
-                    <li key={benefit} className="flex items-start gap-2.5 text-sm">
-                      <Check className="mt-0.5 size-4 shrink-0 text-brand" />
-                      <span className="text-ink">
-                        {benefit}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+                {tier.featured && (
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_0%,rgba(0,198,252,0.16),transparent_70%)]" />
+                )}
+                <div className="relative flex flex-1 flex-col">
+                  <p className="text-[0.7rem] font-semibold tracking-[0.18em] text-brand uppercase">
+                    Tier {index + 1}
+                  </p>
+                  <h3 className="mt-3 font-display text-xl tracking-tight sm:text-2xl">
+                    {tier.name}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {tier.description}
+                  </p>
+                  <div className="rule-fade my-6" />
+                  <ul className="flex-1 space-y-3.5">
+                    {tier.benefits.map((benefit) => (
+                      <li
+                        key={benefit}
+                        className="flex items-start gap-3 text-sm"
+                      >
+                        <Check
+                          className="mt-0.5 size-4 shrink-0 text-brand"
+                          strokeWidth={2.5}
+                        />
+                        <span className="text-ink/85">{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </article>
             </FadeIn>
           ))}
         </div>
 
         <FadeIn delay={0.1}>
-          <div className="mt-10 flex justify-center">
+          <div className="mt-12 flex justify-center">
             <Button
               render={<Link href="/partners#partner-form" />}
-              className="h-12 w-full bg-brand px-6 text-brand-foreground hover:bg-brand/90 sm:w-auto"
+              className="btn-glow h-12 w-full bg-brand px-6 text-brand-foreground transition-transform hover:-translate-y-0.5 hover:bg-brand/90 sm:w-auto"
             >
               Talk to Us About Partnership
             </Button>

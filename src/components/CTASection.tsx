@@ -10,25 +10,28 @@ export function CTASection() {
     <section className="section-stack">
       <div className="container-site">
         <FadeIn>
-          <div className="relative overflow-hidden rounded-2xl border border-brand/25 bg-surface p-6 sm:rounded-3xl sm:p-12 md:p-14">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_70%_at_85%_10%,rgba(0,198,252,0.16),transparent_70%)]" />
+          <div className="glow-brand relative overflow-hidden rounded-3xl border border-brand/25 bg-surface p-7 sm:p-12 md:p-16">
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_75%_at_85%_5%,rgba(0,198,252,0.2),transparent_70%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_60%_at_5%_100%,rgba(0,198,252,0.1),transparent_70%)]" />
+            <div className="grain pointer-events-none absolute inset-0 opacity-40" />
             <div className="relative">
-              <p className="text-sm font-medium tracking-wide text-brand">
-                Join the community
-              </p>
-              <h2 className="mt-3 max-w-2xl text-balance font-display text-[1.65rem] tracking-tight text-ink sm:text-4xl md:text-5xl">
+              <p className="eyebrow">Join the community</p>
+              <h2 className="mt-5 max-w-2xl text-balance font-display text-[1.75rem] leading-[1.1] tracking-tight text-ink sm:text-4xl md:text-5xl">
                 Build alongside people who understand the journey.
               </h2>
-              <p className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">
                 Membership is free for accepted founders and operators. Apply
                 and we’ll be in touch.
               </p>
               <Button
                 render={<Link href="/apply" />}
-                className="mt-8 h-12 w-full bg-brand px-6 text-base text-brand-foreground hover:bg-brand/90 sm:w-auto"
+                className="btn-glow mt-9 h-12 w-full bg-brand px-6 text-base text-brand-foreground transition-transform hover:-translate-y-0.5 hover:bg-brand/90 sm:w-auto"
               >
                 Apply to Join
-                <ArrowRight data-icon="inline-end" className="size-4" />
+                <ArrowRight
+                  data-icon="inline-end"
+                  className="size-4 transition-transform duration-300 group-hover/button:translate-x-0.5"
+                />
               </Button>
             </div>
           </div>

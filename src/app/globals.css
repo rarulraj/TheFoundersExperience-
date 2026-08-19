@@ -121,6 +121,9 @@
   html {
     @apply scroll-smooth overflow-x-clip;
     color-scheme: dark;
+    scroll-padding-top: 5.5rem;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
   body {
@@ -194,5 +197,103 @@
       transparent 100%
     );
     box-shadow: 0 0 18px color-mix(in oklab, var(--brand) 70%, transparent);
+  }
+
+  /* Small brand label above a heading, with a hairline lead-in. */
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-[0.7rem] font-semibold text-brand uppercase;
+    letter-spacing: 0.2em;
+  }
+
+  .eyebrow::before {
+    content: "";
+    height: 1px;
+    width: 1.75rem;
+    flex: none;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in oklab, var(--brand) 85%, transparent)
+    );
+  }
+
+  /* Shared card shell: faint top sheen so panels read as lit from above. */
+  .surface-panel {
+    position: relative;
+    border: 1px solid var(--border);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 45%),
+      var(--surface);
+  }
+
+  .surface-card {
+    position: relative;
+    border: 1px solid var(--border);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 45%),
+      var(--surface);
+    transition:
+      border-color 0.4s ease,
+      transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.4s ease;
+  }
+
+  .surface-card:hover {
+    border-color: color-mix(in oklab, var(--brand) 40%, transparent);
+    transform: translateY(-3px);
+    box-shadow: 0 24px 60px -34px color-mix(in oklab, var(--brand) 60%, transparent);
+  }
+
+  /* Section boundary that fades out at both edges. */
+  .section-divider {
+    position: relative;
+  }
+
+  .section-divider::before {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in oklab, var(--border) 90%, var(--brand)) 50%,
+      transparent
+    );
+  }
+
+  .rule-fade {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--border) 15%,
+      var(--border) 85%,
+      transparent
+    );
+  }
+
+  .glow-brand {
+    box-shadow: 0 30px 80px -45px color-mix(in oklab, var(--brand) 70%, transparent);
+  }
+
+  .btn-glow {
+    box-shadow: 0 12px 34px -14px color-mix(in oklab, var(--brand) 80%, transparent);
+  }
+
+  .btn-glow:hover {
+    box-shadow: 0 16px 44px -14px color-mix(in oklab, var(--brand) 90%, transparent);
+  }
+
+  .icon-tile {
+    background:
+      linear-gradient(
+        140deg,
+        color-mix(in oklab, var(--brand) 22%, transparent),
+        transparent 70%
+      ),
+      var(--accent);
+    border: 1px solid color-mix(in oklab, var(--brand) 22%, transparent);
   }
 }

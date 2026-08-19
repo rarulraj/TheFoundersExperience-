@@ -36,7 +36,7 @@ export function EventUpdatesForm() {
 
   if (success) {
     return (
-      <div className="rounded-2xl border border-brand/25 bg-accent/50 p-6">
+      <div className="glow-brand rounded-2xl border border-brand/25 bg-accent/40 p-7">
         <p className="font-display text-2xl tracking-tight text-ink">
           You’re on the list.
         </p>
@@ -50,7 +50,7 @@ export function EventUpdatesForm() {
   return (
     <form
       onSubmit={onSubmit}
-      className="rounded-2xl border border-border bg-surface p-6 sm:p-8"
+      className="surface-panel rounded-2xl p-6 sm:p-8"
     >
       <h3 className="font-display text-2xl tracking-tight text-ink">
         Get event updates
@@ -90,7 +90,7 @@ export function EventUpdatesForm() {
       <Button
         type="submit"
         disabled={submitting}
-        className="mt-5 h-11 bg-brand text-brand-foreground hover:bg-brand/90"
+        className="btn-glow mt-5 h-11 bg-brand text-brand-foreground transition-transform hover:-translate-y-0.5 hover:bg-brand/90"
       >
         {submitting ? (
           <>

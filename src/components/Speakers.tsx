@@ -9,23 +9,21 @@ export function Speakers() {
   return (
     <section
       id="speakers"
-      className="section-stack scroll-mt-24 border-y border-border/60 bg-surface/50"
+      className="section-stack section-divider scroll-mt-24 bg-surface/40"
     >
       <div className="container-site">
         <FadeIn>
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="text-sm font-medium tracking-wide text-brand">
-                Speakers
-              </p>
-              <h2 className="mt-3 max-w-2xl text-balance font-display text-[1.65rem] tracking-tight text-ink sm:text-4xl">
+              <p className="eyebrow">Speakers</p>
+              <h2 className="mt-5 max-w-2xl text-balance font-display text-[1.75rem] tracking-tight text-ink sm:text-4xl">
                 Learn from people who are actually building.
               </h2>
             </div>
             <Button
               render={<Link href="/events#speak" />}
               variant="outline"
-              className="h-11 w-full border-brand/25 px-5 text-brand hover:bg-accent sm:w-fit"
+              className="h-11 w-full border-brand/25 px-5 text-brand transition-colors hover:border-brand/50 hover:bg-accent sm:w-fit"
             >
               Interested in Speaking?
             </Button>
@@ -34,21 +32,23 @@ export function Speakers() {
 
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {speakers.map((speaker, index) => (
-            <FadeIn key={speaker.name} delay={index * 0.04} as="article">
-              <div className="h-full overflow-hidden rounded-2xl border border-border bg-surface transition-colors duration-300 hover:border-brand/40">
-                <div className="flex h-28 items-end bg-secondary p-5">
-                  <div className="flex size-14 items-center justify-center rounded-full bg-surface font-display text-lg text-ink">
+            <FadeIn key={speaker.name} delay={index * 0.05} as="article">
+              <div className="surface-card group h-full overflow-hidden rounded-2xl">
+                <div className="relative flex h-28 items-end overflow-hidden bg-secondary p-5">
+                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_120%_at_20%_0%,rgba(0,198,252,0.16),transparent_70%)]" />
+                  <div className="relative flex size-14 items-center justify-center rounded-full bg-background font-display text-lg text-ink ring-1 ring-border transition-all duration-500 group-hover:ring-brand/50">
                     {speaker.initials}
                   </div>
                 </div>
-                <div className="p-5">
+                <div className="p-5 sm:p-6">
                   <h3 className="font-display text-xl tracking-tight text-ink">
                     {speaker.name}
                   </h3>
                   <p className="mt-1 text-sm text-muted-foreground">
                     {speaker.role}, {speaker.company}
                   </p>
-                  <p className="mt-4 text-sm leading-relaxed text-ink/80">
+                  <div className="rule-fade my-5" />
+                  <p className="text-sm leading-relaxed text-ink/75">
                     Topic: {speaker.topic}
                   </p>
                 </div>

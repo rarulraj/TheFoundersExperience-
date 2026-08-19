@@ -13,13 +13,11 @@ export default function ApplyPage() {
     <>
       <section className="section-padding pb-8">
         <div className="container-site max-w-3xl">
-          <p className="text-sm font-medium tracking-wide text-brand">
-            Membership
-          </p>
-          <h1 className="mt-3 text-balance font-display text-3xl tracking-tight text-ink sm:text-5xl md:text-6xl">
+          <p className="eyebrow">Membership</p>
+          <h1 className="mt-5 text-balance font-display text-3xl leading-[1.08] tracking-tight text-ink sm:text-5xl md:text-6xl">
             Apply to join the community.
           </h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="mt-7 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             Membership is free for accepted founders and startup leaders. Tell
             us what you’re building. We review every application carefully.
           </p>

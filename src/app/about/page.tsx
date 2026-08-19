@@ -16,11 +16,11 @@ export default function AboutPage() {
     <>
       <section className="section-padding pb-10">
         <div className="container-site max-w-3xl">
-          <p className="text-sm font-medium tracking-wide text-brand">About</p>
-          <h1 className="mt-3 text-balance font-display text-3xl tracking-tight text-ink sm:text-5xl md:text-6xl">
+          <p className="eyebrow">About</p>
+          <h1 className="mt-5 text-balance font-display text-3xl leading-[1.08] tracking-tight text-ink sm:text-5xl md:text-6xl">
             A space for the realities of building.
           </h1>
-          <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="mt-7 text-base leading-relaxed text-muted-foreground sm:text-lg">
             {siteConfig.positioning}
           </p>
         </div>
@@ -44,8 +44,9 @@ export default function AboutPage() {
           ].map((item) => (
             <article
               key={item.title}
-              className="rounded-2xl border border-border bg-surface p-5 sm:p-7 transition-colors duration-300 hover:border-brand/40"
+              className="surface-card group rounded-2xl p-6 sm:p-7"
             >
+              <div className="mb-5 h-px w-10 bg-brand/60 transition-all duration-500 group-hover:w-16" />
               <h2 className="font-display text-2xl tracking-tight text-ink">
                 {item.title}
               </h2>
@@ -59,7 +60,8 @@ export default function AboutPage() {
 
       <section className="section-stack">
         <div className="container-site max-w-3xl">
-          <h2 className="text-balance font-display text-[1.65rem] tracking-tight text-ink sm:text-4xl">
+          <div className="brand-flare mb-7" />
+          <h2 className="text-balance font-display text-[1.75rem] tracking-tight text-ink sm:text-4xl">
             Not merely a networking group.
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground">
@@ -74,7 +76,7 @@ export default function AboutPage() {
           <div className="mt-8">
             <Button
               render={<Link href="/apply" />}
-              className="h-11 w-full bg-brand text-brand-foreground hover:bg-brand/90 sm:w-auto"
+              className="btn-glow h-11 w-full bg-brand text-brand-foreground transition-transform hover:-translate-y-0.5 hover:bg-brand/90 sm:w-auto"
             >
               Apply to Join
             </Button>
@@ -86,16 +88,18 @@ export default function AboutPage() {
 
       <section id="privacy" className="section-stack scroll-mt-24">
         <div className="container-site max-w-3xl">
-          <h2 className="font-display text-[1.65rem] tracking-tight text-ink sm:text-3xl">
-            Privacy
-          </h2>
-          <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
-            We treat member and partner information with care. Application
-            details are used to review fit, operate the community, and share
-            relevant updates you opt into. We do not sell personal data. For
-            privacy questions, reach out through the partner or member forms and
-            note “Privacy” in your message.
-          </p>
+          <div className="surface-panel rounded-2xl p-6 sm:p-8">
+            <h2 className="font-display text-[1.65rem] tracking-tight text-ink sm:text-3xl">
+              Privacy
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
+              We treat member and partner information with care. Application
+              details are used to review fit, operate the community, and share
+              relevant updates you opt into. We do not sell personal data. For
+              privacy questions, reach out through the partner or member forms
+              and note “Privacy” in your message.
+            </p>
+          </div>
         </div>
       </section>
 
