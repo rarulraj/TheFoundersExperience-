@@ -14,7 +14,7 @@ import { LogoMarquee } from "@/components/LogoMarquee";
 import { Button } from "@/components/ui/button";
 import {
   partnerBenefits,
-  partnerLogos,
+  foundingSponsor,
   companiesWorkedWith,
   companiesWorkedWithNote,
 } from "@/data/content";
@@ -63,24 +63,22 @@ export function Partners() {
         <FadeIn delay={0.08}>
           <div className="mt-14">
             <p className="text-sm text-muted-foreground">Sponsors</p>
-            <div className="mt-5 flex flex-wrap items-center gap-x-10 gap-y-3 border-y border-border/70 py-6">
-              {partnerLogos.map((logo, index) => (
-                <span key={logo} className="flex items-center gap-10">
-                  {index > 0 && (
-                    <span
-                      aria-hidden
-                      className="hidden h-4 w-px bg-border sm:block"
-                    />
-                  )}
-                  <span className="text-sm font-semibold tracking-[0.18em] text-ink/80 uppercase">
-                    {logo}
-                  </span>
-                </span>
-              ))}
+            <div className="mt-5 flex flex-col gap-2 border-y border-border/70 py-6 sm:flex-row sm:items-baseline sm:gap-6">
+              <a
+                href={foundingSponsor.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-semibold tracking-[0.18em] text-ink/80 uppercase transition-colors hover:text-brand"
+              >
+                {foundingSponsor.name}
+              </a>
+              <span className="text-sm text-muted-foreground">
+                {foundingSponsor.description}
+              </span>
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
-              TSE Technical and TSE are founding sponsors of The Founders
-              Experience.
+              {foundingSponsor.name}, {foundingSponsor.description.toLowerCase()},
+              is the founding sponsor of The Founders Experience.
             </p>
           </div>
         </FadeIn>

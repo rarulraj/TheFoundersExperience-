@@ -189,7 +189,11 @@ export const founders = [
   },
 ];
 
-export const partnerLogos = ["TSE Technical", "TSE"];
+export const foundingSponsor = {
+  name: "The Search Experience",
+  url: "https://www.tsetalent.com",
+  description: "A premier recruiting firm",
+};
 
 export const companiesWorkedWith = [
   "TDengine",

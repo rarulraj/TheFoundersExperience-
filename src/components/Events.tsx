@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { CalendarDays, MapPin, Mic2 } from "lucide-react";
 import { FadeIn } from "@/components/FadeIn";
@@ -47,15 +46,6 @@ export function Events({ showAllLink = true, compact = false }: EventsProps) {
         >
           <FadeIn>
             <article className="overflow-hidden rounded-2xl border border-border bg-surface">
-              {!compact && (
-                <Image
-                  src="/images/community-gathering.jpg"
-                  alt="A Founders Experience gathering in San Francisco."
-                  width={1024}
-                  height={819}
-                  className="h-56 w-full object-cover sm:h-72"
-                />
-              )}
               <div className="p-5 sm:p-9">
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="inline-flex rounded-md bg-accent px-2.5 py-1 text-xs font-medium tracking-wide text-accent-foreground">
