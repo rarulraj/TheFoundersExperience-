@@ -19,8 +19,8 @@ export function Founders() {
           </h2>
           <p className="mt-4 max-w-2xl text-base text-muted-foreground">
             The Founders Experience is made by people who have worked with
-            TDengine, C3.ai, OpenAI, Meta, Workday, Wave, Anthropic, and other
-            Fortune 500 enterprises.
+            TDengine, C3.ai, OpenAI, Meta, Google, Workday, Wave, Anthropic, and
+            other Fortune 500 enterprises.
           </p>
         </FadeIn>
 
