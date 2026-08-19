@@ -1,11 +1,12 @@
 "use client";
 
 import { FadeIn } from "@/components/FadeIn";
+import { LogoMarquee } from "@/components/LogoMarquee";
 import { memberLogos, socialProofPoints } from "@/data/content";
 
 export function SocialProof() {
   return (
-    <section id="community" className="section-padding scroll-mt-24">
+    <section id="community" className="section-padding scroll-mt-24 overflow-hidden">
       <div className="container-site">
         <FadeIn>
           <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
@@ -44,26 +45,19 @@ export function SocialProof() {
         </div>
 
         <FadeIn delay={0.1}>
-          <div className="mt-14">
-            <p className="text-sm text-muted-foreground">
-              Made by people who have worked with
-            </p>
-            <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-              {memberLogos.map((logo) => (
-                <div
-                  key={logo}
-                  className="flex h-16 items-center justify-center rounded-xl border border-dashed border-border bg-surface/60 px-3 text-center text-xs font-medium tracking-wide text-muted-foreground"
-                >
-                  {logo}
-                </div>
-              ))}
-            </div>
-            <p className="mt-4 text-sm text-muted-foreground">
-              and other Fortune 500 enterprises
-            </p>
-          </div>
+          <p className="mt-14 text-sm text-muted-foreground">
+            Made by people who have worked with
+          </p>
         </FadeIn>
       </div>
+
+      <div className="mt-6 space-y-1 border-y border-border/50 bg-surface/40 py-4">
+        <LogoMarquee items={memberLogos} />
+        <LogoMarquee items={[...memberLogos].reverse()} reverse />
+      </div>
+      <p className="container-site mt-5 text-sm text-muted-foreground">
+        and other Fortune 500 enterprises
+      </p>
     </section>
   );
 }

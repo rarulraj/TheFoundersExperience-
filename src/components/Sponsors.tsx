@@ -1,11 +1,16 @@
 "use client";
 
 import { FadeIn } from "@/components/FadeIn";
-import { companiesWorkedWith, companiesWorkedWithNote, partnerLogos } from "@/data/content";
+import { LogoMarquee } from "@/components/LogoMarquee";
+import {
+  companiesWorkedWith,
+  companiesWorkedWithNote,
+  partnerLogos,
+} from "@/data/content";
 
 export function Sponsors() {
   return (
-    <section className="section-stack border-t border-border/60">
+    <section className="section-stack overflow-hidden border-t border-border/60">
       <div className="container-site">
         <FadeIn>
           <p className="text-sm font-medium tracking-wide text-brand">
@@ -17,14 +22,19 @@ export function Sponsors() {
         </FadeIn>
 
         <FadeIn delay={0.06}>
-          <div className="mt-8 grid grid-cols-1 gap-3 sm:max-w-xl sm:grid-cols-2">
-            {partnerLogos.map((logo) => (
-              <div
-                key={logo}
-                className="flex min-h-14 items-center justify-center rounded-xl border border-border bg-surface px-4 py-3 text-center text-sm font-semibold tracking-wide text-ink/80"
-              >
-                {logo}
-              </div>
+          <div className="mt-8 flex flex-wrap items-center gap-x-10 gap-y-3 border-y border-border/70 py-6">
+            {partnerLogos.map((logo, index) => (
+              <span key={logo} className="flex items-center gap-10">
+                {index > 0 && (
+                  <span
+                    aria-hidden
+                    className="hidden h-4 w-px bg-border sm:block"
+                  />
+                )}
+                <span className="text-sm font-semibold tracking-[0.18em] text-ink/80 uppercase">
+                  {logo}
+                </span>
+              </span>
             ))}
           </div>
         </FadeIn>
@@ -33,21 +43,20 @@ export function Sponsors() {
           <p className="mt-12 text-sm text-muted-foreground">
             Made by people who have worked with
           </p>
-          <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-            {companiesWorkedWith.map((company) => (
-              <div
-                key={company}
-                className="flex min-h-14 items-center justify-center rounded-xl border border-border bg-surface px-3 py-3 text-center text-sm font-semibold tracking-wide text-ink/80"
-              >
-                {company}
-              </div>
-            ))}
-          </div>
-          <p className="mt-4 text-sm text-muted-foreground">
-            {companiesWorkedWithNote}
-          </p>
         </FadeIn>
       </div>
+
+      <div className="mt-6 space-y-1 border-y border-border/50 bg-surface/40 py-4">
+        <LogoMarquee items={companiesWorkedWith} />
+        <LogoMarquee
+          items={[...companiesWorkedWith].reverse()}
+          reverse
+        />
+      </div>
+
+      <p className="container-site mt-5 text-sm text-muted-foreground">
+        {companiesWorkedWithNote}
+      </p>
     </section>
   );
 }

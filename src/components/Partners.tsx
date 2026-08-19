@@ -10,6 +10,7 @@ import {
   UsersRound,
 } from "lucide-react";
 import { FadeIn } from "@/components/FadeIn";
+import { LogoMarquee } from "@/components/LogoMarquee";
 import { Button } from "@/components/ui/button";
 import {
   partnerBenefits,
@@ -22,7 +23,7 @@ const icons = [UsersRound, Eye, CalendarRange, FileText, Package, Infinity];
 
 export function Partners() {
   return (
-    <section id="partners" className="section-stack scroll-mt-24">
+    <section id="partners" className="section-stack scroll-mt-24 overflow-hidden">
       <div className="container-site">
         <FadeIn>
           <p className="text-sm font-medium tracking-wide text-brand">
@@ -62,14 +63,19 @@ export function Partners() {
         <FadeIn delay={0.08}>
           <div className="mt-14">
             <p className="text-sm text-muted-foreground">Sponsors</p>
-            <div className="mt-5 grid grid-cols-1 gap-3 sm:max-w-xl sm:grid-cols-2">
+            <div className="mt-5 flex flex-wrap items-center gap-x-10 gap-y-3 border-y border-border/70 py-6">
               {partnerLogos.map((logo, index) => (
-                <div
-                  key={`${logo}-${index}`}
-                  className="flex min-h-14 items-center justify-center rounded-xl border border-border bg-surface px-4 py-3 text-center text-sm font-semibold tracking-wide text-ink/80"
-                >
-                  {logo}
-                </div>
+                <span key={logo} className="flex items-center gap-10">
+                  {index > 0 && (
+                    <span
+                      aria-hidden
+                      className="hidden h-4 w-px bg-border sm:block"
+                    />
+                  )}
+                  <span className="text-sm font-semibold tracking-[0.18em] text-ink/80 uppercase">
+                    {logo}
+                  </span>
+                </span>
               ))}
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
@@ -78,28 +84,22 @@ export function Partners() {
             </p>
           </div>
         </FadeIn>
+      </div>
 
-        <FadeIn delay={0.12}>
-          <div className="mt-12">
-            <p className="text-sm text-muted-foreground">
-              Made by people who have worked with
-            </p>
-            <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-              {companiesWorkedWith.map((company) => (
-                <div
-                  key={company}
-                  className="flex min-h-14 items-center justify-center rounded-xl border border-border bg-surface px-3 py-3 text-center text-sm font-semibold tracking-wide text-ink/80"
-                >
-                  {company}
-                </div>
-              ))}
-            </div>
-            <p className="mt-4 text-sm text-muted-foreground">
-              {companiesWorkedWithNote}
-            </p>
-          </div>
-        </FadeIn>
+      <div className="mt-12 overflow-hidden">
+        <p className="container-site text-sm text-muted-foreground">
+          Made by people who have worked with
+        </p>
+        <div className="mt-6 space-y-1 border-y border-border/50 bg-surface/40 py-4">
+          <LogoMarquee items={companiesWorkedWith} />
+          <LogoMarquee items={[...companiesWorkedWith].reverse()} reverse />
+        </div>
+        <p className="container-site mt-5 text-sm text-muted-foreground">
+          {companiesWorkedWithNote}
+        </p>
+      </div>
 
+      <div className="container-site">
         <FadeIn delay={0.1}>
           <div className="mt-14 rounded-2xl border border-border bg-surface px-5 py-8 text-center sm:px-10 sm:py-10">
             <h3 className="font-display text-2xl tracking-tight text-ink sm:text-4xl">
