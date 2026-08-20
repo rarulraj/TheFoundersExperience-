@@ -36,10 +36,8 @@ export function EventUpdatesForm() {
 
   if (success) {
     return (
-      <div className="glow-brand rounded-2xl border border-brand/25 bg-accent/40 p-7">
-        <p className="font-display text-2xl tracking-tight text-ink">
-          You’re on the list.
-        </p>
+      <div className="glow-brand rounded-2xl border border-brand/25 bg-accent/40 p-6 sm:p-8">
+        <p className="font-display text-h3 text-ink">You’re on the list.</p>
         <p className="mt-2 text-sm text-muted-foreground">
           We’ll share updates on upcoming Founders Experience events.
         </p>
@@ -52,9 +50,7 @@ export function EventUpdatesForm() {
       onSubmit={onSubmit}
       className="surface-panel rounded-2xl p-6 sm:p-8"
     >
-      <h3 className="font-display text-2xl tracking-tight text-ink">
-        Get event updates
-      </h3>
+      <h3 className="font-display text-h3 text-ink">Get event updates</h3>
       <p className="mt-2 text-sm text-muted-foreground">
         Be first to know about dinners, roundtables, and the San Francisco
         gathering.
@@ -90,7 +86,7 @@ export function EventUpdatesForm() {
       <Button
         type="submit"
         disabled={submitting}
-        className="btn-glow mt-5 h-11 bg-brand text-brand-foreground transition-transform hover:-translate-y-0.5 hover:bg-brand/90"
+        className="btn-glow mt-5 h-11 w-full bg-brand px-5 text-brand-foreground transition-transform hover:-translate-y-0.5 hover:bg-brand/90 sm:w-auto"
       >
         {submitting ? (
           <>

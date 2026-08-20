@@ -10,21 +10,25 @@ export function Speakers() {
   return (
     <section
       id="speakers"
-      className="section-stack section-divider scroll-mt-24 bg-surface/40"
+      className="py-section-sm section-divider bg-surface/40"
     >
       <div className="container-site">
         <FadeIn>
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="eyebrow">Speakers</p>
-              <h2 className="mt-5 max-w-2xl text-balance font-display text-[1.75rem] tracking-tight text-ink sm:text-4xl">
+              <h2 className="mt-5 max-w-2xl text-balance font-display text-h2 text-ink">
                 Learn from people who are actually building.
               </h2>
+              <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+                Many more speakers come from enterprises and small startups —
+                sharing what they’re learning in the work.
+              </p>
             </div>
             <Button
               render={<Link href="/events#speak" />}
               variant="outline"
-              className="h-11 w-full border-brand/25 px-5 text-brand transition-colors hover:border-brand/50 hover:bg-accent sm:w-fit"
+              className="h-auto min-h-11 w-full shrink-0 whitespace-normal border-brand/25 px-5 py-2.5 text-brand transition-colors hover:border-brand/50 hover:bg-accent sm:w-fit"
             >
               Interested in Speaking?
             </Button>
@@ -45,7 +49,7 @@ export function Speakers() {
                       href={speaker.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex size-9 items-center justify-center rounded-lg border border-border/80 bg-background/70 text-muted-foreground transition-colors hover:border-brand/40 hover:bg-accent hover:text-brand"
+                      className="inline-flex size-11 shrink-0 items-center justify-center rounded-lg border border-border/80 bg-background/70 text-muted-foreground transition-colors hover:border-brand/40 hover:bg-accent hover:text-brand"
                       aria-label={`${speaker.name} on LinkedIn`}
                     >
                       <ExternalLink className="size-4" />
@@ -53,7 +57,7 @@ export function Speakers() {
                   </div>
                 </div>
                 <div className="p-5 sm:p-6">
-                  <h3 className="font-display text-xl tracking-tight text-ink">
+                  <h3 className="font-display text-h4 text-ink">
                     <a
                       href={speaker.linkedin}
                       target="_blank"
@@ -64,7 +68,7 @@ export function Speakers() {
                     </a>
                   </h3>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    {speaker.role}, {speaker.company}
+                    {speaker.role}
                   </p>
                   <div className="rule-fade my-5" />
                   <p className="text-sm leading-relaxed text-ink/75">

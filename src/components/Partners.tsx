@@ -23,14 +23,14 @@ const icons = [UsersRound, Eye, CalendarRange, FileText, Package, Infinity];
 
 export function Partners() {
   return (
-    <section id="partners" className="section-stack scroll-mt-24 overflow-hidden">
+    <section id="partners" className="py-section-sm overflow-hidden">
       <div className="container-site">
         <FadeIn>
           <p className="eyebrow">Partners</p>
-          <h2 className="mt-5 max-w-3xl text-balance font-display text-[1.75rem] tracking-tight text-ink sm:text-4xl">
+          <h2 className="mt-5 max-w-3xl text-balance font-display text-h2 text-ink">
             Build relationships with the people building what’s next.
           </h2>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="mt-5 max-w-2xl text-lead text-muted-foreground">
             The Founders Experience gives select brands the opportunity to
             support a growing founder community while building authentic
             relationships with startup leaders.
@@ -46,7 +46,7 @@ export function Partners() {
                   <div className="icon-tile mb-5 inline-flex size-11 items-center justify-center rounded-xl text-brand transition-transform duration-500 group-hover:scale-105">
                     <Icon className="size-[1.15rem]" />
                   </div>
-                  <h3 className="font-display text-xl tracking-tight text-ink">
+                  <h3 className="font-display text-h4 text-ink">
                     {benefit.title}
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -67,12 +67,12 @@ export function Partners() {
               href={foundingSponsor.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="surface-card mt-5 flex flex-col gap-2 rounded-2xl px-6 py-6 sm:flex-row sm:items-baseline sm:justify-between sm:px-8"
+              className="surface-card mt-5 flex flex-col gap-2 rounded-2xl px-6 py-6 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8 sm:px-8"
             >
-              <span className="font-display text-lg tracking-[0.14em] text-ink uppercase">
+              <span className="font-display text-lg tracking-[0.14em] text-ink uppercase sm:shrink-0">
                 {foundingSponsor.name}
               </span>
-              <span className="text-sm text-muted-foreground">
+              <span className="text-sm text-muted-foreground sm:max-w-xl sm:text-right">
                 {foundingSponsor.description}
               </span>
             </a>
@@ -105,16 +105,16 @@ export function Partners() {
           <div className="glow-brand relative mt-16 overflow-hidden rounded-3xl border border-brand/25 bg-surface px-6 py-10 text-center sm:px-10 sm:py-14">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_80%_at_50%_0%,rgba(0,198,252,0.16),transparent_70%)]" />
             <div className="relative">
-              <h3 className="font-display text-2xl tracking-tight text-ink sm:text-4xl">
+              <h3 className="text-balance font-display text-h2 text-ink">
                 Become a Founding Partner
               </h3>
-              <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+              <p className="mx-auto mt-4 max-w-xl text-lead text-muted-foreground">
                 Interested in supporting founders? Let’s build something
                 together.
               </p>
               <Button
                 render={<Link href="/partners#partner-form" />}
-                className="btn-glow mt-8 h-12 w-full bg-brand px-6 text-brand-foreground transition-transform hover:-translate-y-0.5 hover:bg-brand/90 sm:w-auto"
+                className="btn-glow mt-8 h-auto min-h-12 w-full whitespace-normal bg-brand px-6 py-3 text-center text-brand-foreground transition-transform hover:-translate-y-0.5 hover:bg-brand/90 sm:w-auto"
               >
                 Become a Founding Partner
               </Button>

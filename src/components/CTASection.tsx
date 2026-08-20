@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 export function CTASection() {
   return (
-    <section className="section-stack">
+    <section className="py-section-sm">
       <div className="container-site">
         <FadeIn>
           <div className="glow-brand relative overflow-hidden rounded-3xl border border-brand/25 bg-surface p-7 sm:p-12 md:p-16">
@@ -16,7 +16,7 @@ export function CTASection() {
             <div className="grain pointer-events-none absolute inset-0 opacity-40" />
             <div className="relative">
               <p className="eyebrow">Join the community</p>
-              <h2 className="mt-5 max-w-2xl text-balance font-display text-[1.75rem] leading-[1.1] tracking-tight text-ink sm:text-4xl md:text-5xl">
+              <h2 className="mt-5 max-w-2xl text-balance font-display text-h2 text-ink">
                 Build alongside people who understand the journey.
               </h2>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">

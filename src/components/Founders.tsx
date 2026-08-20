@@ -7,15 +7,15 @@ import { founders } from "@/data/content";
 
 export function Founders() {
   return (
-    <section className="section-stack section-divider bg-surface/40">
+    <section className="py-section-sm section-divider bg-surface/40">
       <div className="container-site">
         <FadeIn>
           <p className="eyebrow">The co-founders</p>
-          <h2 className="mt-5 max-w-2xl text-balance font-display text-[1.75rem] tracking-tight text-ink sm:text-4xl">
+          <h2 className="mt-5 max-w-2xl text-balance font-display text-h2 text-ink">
             Built by people who have worked with the companies shaping this
             space.
           </h2>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
+          <p className="mt-5 max-w-2xl text-lead text-muted-foreground">
             The Founders Experience is made by people who have worked with
             TDengine, C3.ai, OpenAI, Meta, Google, Workday, Wave, Anthropic, and
             other Fortune 500 enterprises.
@@ -47,14 +47,14 @@ export function Founders() {
                     href={founder.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex size-9 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-brand/40 hover:bg-accent hover:text-brand"
+                    className="inline-flex size-11 shrink-0 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-brand/40 hover:bg-accent hover:text-brand"
                     aria-label={`${founder.name} on LinkedIn`}
                   >
                     <ExternalLink className="size-4" />
                   </a>
                 </div>
 
-                <h3 className="mt-6 font-display text-2xl tracking-tight text-ink">
+                <h3 className="mt-6 font-display text-h3 text-ink">
                   {founder.name}
                 </h3>
                 <p className="mt-1.5 text-sm font-medium text-brand">

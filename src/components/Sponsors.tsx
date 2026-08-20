@@ -10,11 +10,11 @@ import {
 
 export function Sponsors() {
   return (
-    <section className="section-stack section-divider overflow-hidden">
+    <section className="py-section-sm section-divider overflow-hidden">
       <div className="container-site">
         <FadeIn>
           <p className="eyebrow">Sponsors</p>
-          <h2 className="mt-5 max-w-3xl text-balance font-display text-[1.75rem] tracking-tight text-ink sm:text-4xl">
+          <h2 className="mt-5 max-w-3xl text-balance font-display text-h2 text-ink">
             Backed by{" "}
             <a
               href={foundingSponsor.url}
@@ -33,12 +33,12 @@ export function Sponsors() {
             href={foundingSponsor.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="surface-card mt-9 flex flex-col gap-2 rounded-2xl px-6 py-6 sm:flex-row sm:items-baseline sm:justify-between sm:px-8"
+            className="surface-card mt-9 flex flex-col gap-2 rounded-2xl px-6 py-6 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8 sm:px-8"
           >
-            <span className="font-display text-lg tracking-[0.14em] text-ink uppercase">
+            <span className="font-display text-lg tracking-[0.14em] text-ink uppercase sm:shrink-0">
               {foundingSponsor.name}
             </span>
-            <span className="text-sm text-muted-foreground">
+            <span className="text-sm text-muted-foreground sm:max-w-xl sm:text-right">
               {foundingSponsor.description}
             </span>
           </a>

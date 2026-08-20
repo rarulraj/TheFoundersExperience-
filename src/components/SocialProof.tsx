@@ -6,26 +6,21 @@ import { memberLogos, socialProofPoints } from "@/data/content";
 
 export function SocialProof() {
   return (
-    <section
-      id="community"
-      className="section-padding scroll-mt-24 overflow-hidden"
-    >
+    <section id="community" className="py-section overflow-hidden">
       <div className="container-site">
         <FadeIn>
           <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
             <div>
               <p className="eyebrow">Community</p>
-              <h2 className="mt-5 max-w-xl text-balance font-display text-[1.75rem] tracking-tight text-ink sm:text-4xl md:text-5xl">
+              <h2 className="mt-5 max-w-xl text-balance font-display text-h2 text-ink">
                 A community built around real experience.
               </h2>
             </div>
             <div className="glow-brand relative overflow-hidden rounded-3xl border border-brand/25 bg-surface p-8">
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_80%_at_80%_0%,rgba(0,198,252,0.18),transparent_70%)]" />
               <div className="relative">
-                <p className="font-display text-5xl tracking-tight text-brand sm:text-6xl">
-                  100+
-                </p>
-                <p className="mt-3 text-lg text-ink">
+                <p className="font-display text-h1 text-brand">100+</p>
+                <p className="mt-3 text-lead text-ink">
                   founders and startup leaders
                 </p>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">

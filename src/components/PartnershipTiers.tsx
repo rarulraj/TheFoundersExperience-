@@ -11,15 +11,15 @@ export function PartnershipTiers() {
   return (
     <section
       id="partnership-tiers"
-      className="section-stack section-divider scroll-mt-24 bg-surface/40"
+      className="py-section-sm section-divider bg-surface/40"
     >
       <div className="container-site">
         <FadeIn>
           <p className="eyebrow">Partnership options</p>
-          <h2 className="mt-5 max-w-2xl text-balance font-display text-[1.75rem] tracking-tight text-ink sm:text-4xl">
+          <h2 className="mt-5 max-w-2xl text-balance font-display text-h2 text-ink">
             Ways to support the community.
           </h2>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
+          <p className="mt-5 max-w-2xl text-lead text-muted-foreground">
             Partnerships are tailored. These tiers show how brands typically
             engage, from community support to long-term founding partnerships.
           </p>
@@ -43,9 +43,7 @@ export function PartnershipTiers() {
                   <p className="text-[0.7rem] font-semibold tracking-[0.18em] text-brand uppercase">
                     Tier {index + 1}
                   </p>
-                  <h3 className="mt-3 font-display text-xl tracking-tight sm:text-2xl">
-                    {tier.name}
-                  </h3>
+                  <h3 className="mt-3 font-display text-h4">{tier.name}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                     {tier.description}
                   </p>
@@ -74,7 +72,7 @@ export function PartnershipTiers() {
           <div className="mt-12 flex justify-center">
             <Button
               render={<Link href="/partners#partner-form" />}
-              className="btn-glow h-12 w-full bg-brand px-6 text-brand-foreground transition-transform hover:-translate-y-0.5 hover:bg-brand/90 sm:w-auto"
+              className="btn-glow h-auto min-h-12 w-full whitespace-normal bg-brand px-6 py-3 text-center text-brand-foreground transition-transform hover:-translate-y-0.5 hover:bg-brand/90 sm:w-auto"
             >
               Talk to Us About Partnership
             </Button>

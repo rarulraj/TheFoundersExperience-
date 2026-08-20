@@ -16,7 +16,7 @@ export function Footer() {
   return (
     <footer className="relative border-t border-border bg-surface">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_90%_at_15%_0%,rgba(0,198,252,0.08),transparent_70%)]" />
-      <div className="container-site relative py-14">
+      <div className="container-site relative py-section-sm">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-md">
             <Link
@@ -34,12 +34,12 @@ export function Footer() {
             </p>
           </div>
 
-          <nav className="grid grid-cols-2 gap-x-12 gap-y-3.5 sm:grid-cols-3 lg:grid-cols-2">
+          <nav className="grid grid-cols-2 gap-x-8 gap-y-1 sm:grid-cols-3 sm:gap-x-12 lg:grid-cols-2">
             {footerLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className="group inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-ink"
+                className="group inline-flex w-fit items-center gap-2 py-1.5 text-sm text-muted-foreground transition-colors hover:text-ink"
                 {...(link.href.startsWith("http")
                   ? { target: "_blank", rel: "noopener noreferrer" }
                   : {})}

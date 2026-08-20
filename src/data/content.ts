@@ -87,7 +87,6 @@ export const upcomingEvents = [
 export const speakers = [
   {
     name: "Jeremy Macleod",
-    company: "TSE",
     role: "Channel Manager",
     topic: "GTM Growth & Founding Specialist",
     linkedin: "https://www.linkedin.com/in/jeremymacleod/",
@@ -95,7 +94,6 @@ export const speakers = [
   },
   {
     name: "Jess Graham",
-    company: "TSE",
     role: "Community Manager",
     topic: "Start-up Marketing Specialist",
     linkedin: "https://www.linkedin.com/in/jessicagraham/",
@@ -103,7 +101,6 @@ export const speakers = [
   },
   {
     name: "Dan Chalklin",
-    company: "TSE",
     role: "Channel Manager",
     topic: "Design Specialist",
     linkedin: "https://www.linkedin.com/in/dchalklin/",
@@ -111,7 +108,6 @@ export const speakers = [
   },
   {
     name: "Lisa Baden",
-    company: "TSE",
     role: "Channel Manager",
     topic: "Fractional CFO",
     linkedin: "https://www.linkedin.com/in/lisa-baden/",
@@ -119,7 +115,6 @@ export const speakers = [
   },
   {
     name: "Matt Baden",
-    company: "TSE",
     role: "Channel Manager",
     topic: "Engineering Growth Specialist",
     linkedin: "https://www.linkedin.com/in/mattbadentse/",
@@ -179,7 +174,7 @@ export const founders = [
     company: "The Search Experience",
     companyRole: "Senior Consultant, Technical",
     linkedin: "https://www.linkedin.com/in/ryan-house1/",
-    bio: "Over a decade in technical, product, and design recruitment for high-growth SaaS, fintech, and venture-backed startups from Seed through Series C.",
+    bio: "Over a decade in technical, product, and design recruitment for high-growth SaaS, fintech, and venture-backed startups from Seed through Series C. He's spent that time on the hiring side of the table, learning what separates the teams that scale from the ones that stall. Now he brings that pattern recognition to founders building their first teams.",
     focus: "Recruiting experience",
     initials: "RH",
     image: "/founders/ryan-house.png",

@@ -158,6 +158,9 @@
   html {
     @apply scroll-smooth overflow-x-clip;
     color-scheme: dark;
+    /* Reserve the scrollbar track so locking body scroll for the mobile menu
+       does not shift the layout sideways. */
+    scrollbar-gutter: stable;
     /* Single source of truth for anchor offset, so in-page links clear the
        sticky header without each target needing its own scroll-margin. */
     scroll-padding-top: calc(var(--header-h) + 1.5rem);

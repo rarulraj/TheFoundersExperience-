@@ -12,8 +12,10 @@ import { submitFounderApplication } from "@/lib/submissions";
 import { FadeIn } from "@/components/FadeIn";
 import { cn } from "@/lib/utils";
 
+// text-base below md: anything under 16px makes iOS Safari zoom the viewport
+// when the control receives focus.
 const selectClassName = cn(
-  "h-11 w-full rounded-lg border border-input bg-transparent px-2.5 text-sm outline-none transition-colors",
+  "h-11 w-full min-w-0 rounded-lg border border-input bg-transparent px-2.5 text-base outline-none transition-colors md:text-sm",
   "focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
 );
 
@@ -122,10 +124,8 @@ export function FounderApplicationForm() {
     return (
       <FadeIn>
         <div className="glow-brand rounded-2xl border border-brand/25 bg-brand/10 p-6 sm:p-10">
-          <p className="font-display text-2xl tracking-tight text-ink sm:text-3xl">
-            Thanks for applying.
-          </p>
-          <p className="mt-3 max-w-xl text-base leading-relaxed text-muted-foreground">
+          <p className="font-display text-h3 text-ink">Thanks for applying.</p>
+          <p className="mt-3 max-w-xl text-lead text-muted-foreground">
             We review every application and will be in touch.
           </p>
           <Button
@@ -149,10 +149,10 @@ export function FounderApplicationForm() {
         noValidate
       >
         <div className="mb-8">
-          <h2 className="font-display text-[1.65rem] tracking-tight text-ink sm:text-4xl">
+          <h2 className="text-balance font-display text-h2 text-ink">
             Apply to The Founders Experience
           </h2>
-          <p className="mt-3 text-base text-muted-foreground">
+          <p className="mt-3 text-lead text-muted-foreground">
             Tell us a little about yourself and what you’re building.
           </p>
         </div>

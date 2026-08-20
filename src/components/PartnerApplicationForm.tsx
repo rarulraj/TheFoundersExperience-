@@ -41,8 +41,10 @@ const initialState: FormState = {
   anythingElse: "",
 };
 
+// text-base below md: anything under 16px makes iOS Safari zoom the viewport
+// when the control receives focus.
 const selectClassName = cn(
-  "h-11 w-full rounded-lg border border-input bg-transparent px-2.5 text-sm outline-none transition-colors",
+  "h-11 w-full min-w-0 rounded-lg border border-input bg-transparent px-2.5 text-base outline-none transition-colors md:text-sm",
   "focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
 );
 
@@ -103,12 +105,12 @@ export function PartnerApplicationForm() {
       <FadeIn>
         <div
           id="partner-form"
-          className="glow-brand scroll-mt-28 rounded-2xl border border-brand/25 bg-brand/10 p-6 sm:p-10"
+          className="glow-brand rounded-2xl border border-brand/25 bg-brand/10 p-6 sm:p-10"
         >
-          <p className="font-display text-2xl tracking-tight text-ink sm:text-3xl">
+          <p className="font-display text-h3 text-ink">
             Thanks for reaching out.
           </p>
-          <p className="mt-3 max-w-xl text-base leading-relaxed text-muted-foreground">
+          <p className="mt-3 max-w-xl text-lead text-muted-foreground">
             We’ll be in touch to explore whether there’s a strong fit.
           </p>
           <Button
@@ -129,14 +131,14 @@ export function PartnerApplicationForm() {
       <form
         id="partner-form"
         onSubmit={onSubmit}
-        className="surface-panel scroll-mt-28 rounded-3xl p-6 sm:p-8 md:p-10"
+        className="surface-panel rounded-3xl p-6 sm:p-8 md:p-10"
         noValidate
       >
         <div className="mb-8">
-          <h2 className="font-display text-[1.65rem] tracking-tight text-ink sm:text-4xl">
+          <h2 className="text-balance font-display text-h2 text-ink">
             Partner With The Founders Experience
           </h2>
-          <p className="mt-3 text-base text-muted-foreground">
+          <p className="mt-3 text-lead text-muted-foreground">
             Tell us how your company would like to support the founder community.
           </p>
         </div>
@@ -257,7 +259,7 @@ export function PartnerApplicationForm() {
               required
               value={form.estimatedBudget}
               onChange={(e) => update("estimatedBudget", e.target.value)}
-              className={cn(selectClassName, "sm:col-span-2")}
+              className={selectClassName}
             >
               <option value="" disabled>
                 Select range
