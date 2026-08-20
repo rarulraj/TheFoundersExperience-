@@ -120,6 +120,12 @@ export const speakers = [
     linkedin: "https://www.linkedin.com/in/mattbadentse/",
     initials: "MB",
   },
+  {
+    name: "And more",
+    role: "Coming soon",
+    topic: "Operators from enterprises and small startups.",
+    initials: "+",
+  },
 ];
 
 export const partnerBenefits = [

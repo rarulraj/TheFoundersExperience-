@@ -45,27 +45,33 @@ export function Speakers() {
                     <div className="flex size-14 items-center justify-center rounded-full bg-background font-display text-lg text-ink ring-1 ring-border transition-all duration-500 group-hover:ring-brand/50">
                       {speaker.initials}
                     </div>
-                    <a
-                      href={speaker.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex size-11 shrink-0 items-center justify-center rounded-lg border border-border/80 bg-background/70 text-muted-foreground transition-colors hover:border-brand/40 hover:bg-accent hover:text-brand"
-                      aria-label={`${speaker.name} on LinkedIn`}
-                    >
-                      <ExternalLink className="size-4" />
-                    </a>
+                    {speaker.linkedin ? (
+                      <a
+                        href={speaker.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex size-11 shrink-0 items-center justify-center rounded-lg border border-border/80 bg-background/70 text-muted-foreground transition-colors hover:border-brand/40 hover:bg-accent hover:text-brand"
+                        aria-label={`${speaker.name} on LinkedIn`}
+                      >
+                        <ExternalLink className="size-4" />
+                      </a>
+                    ) : null}
                   </div>
                 </div>
                 <div className="p-5 sm:p-6">
                   <h3 className="font-display text-h4 text-ink">
-                    <a
-                      href={speaker.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="transition-colors hover:text-brand"
-                    >
-                      {speaker.name}
-                    </a>
+                    {speaker.linkedin ? (
+                      <a
+                        href={speaker.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-colors hover:text-brand"
+                      >
+                        {speaker.name}
+                      </a>
+                    ) : (
+                      speaker.name
+                    )}
                   </h3>
                   <p className="mt-1 text-sm text-muted-foreground">
                     {speaker.role}
