@@ -8,11 +8,11 @@ const icons = [MessageCircle, Users, Handshake, Sprout];
 
 export function CommunityBenefits() {
   return (
-    <section id="community" className="section-stack scroll-mt-24">
+    <section id="community" className="py-section-sm">
       <div className="container-site">
         <FadeIn>
           <p className="eyebrow">Why join</p>
-          <h2 className="mt-5 max-w-3xl text-balance font-display text-[1.75rem] tracking-tight text-ink sm:text-4xl md:text-[2.75rem]">
+          <h2 className="mt-5 max-w-3xl text-balance font-display text-h2 text-ink">
             The conversations founders actually need.
           </h2>
         </FadeIn>
@@ -26,7 +26,7 @@ export function CommunityBenefits() {
                   <div className="icon-tile mb-5 inline-flex size-11 items-center justify-center rounded-xl text-brand transition-transform duration-500 group-hover:scale-105">
                     <Icon className="size-[1.15rem]" />
                   </div>
-                  <h3 className="font-display text-xl tracking-tight text-ink">
+                  <h3 className="font-display text-h4 text-ink">
                     {card.title}
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">

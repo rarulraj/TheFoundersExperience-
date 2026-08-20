@@ -19,23 +19,20 @@ const detailRows = [
 
 export function Events({ showAllLink = true, compact = false }: EventsProps) {
   return (
-    <section
-      id="events"
-      className="section-stack section-divider scroll-mt-24"
-    >
+    <section id="events" className="py-section-sm section-divider">
       <div className="container-site">
         <FadeIn>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="eyebrow">Events</p>
-              <h2 className="mt-5 max-w-2xl text-balance font-display text-[1.75rem] tracking-tight text-ink sm:text-4xl">
+              <h2 className="mt-5 max-w-2xl text-balance font-display text-h2 text-ink">
                 Meet online. Build relationships in person.
               </h2>
             </div>
             {showAllLink && (
               <Link
                 href="/events"
-                className="group inline-flex items-center gap-1.5 text-sm font-medium text-brand underline-offset-4 hover:underline"
+                className="group inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-brand underline-offset-4 hover:underline"
               >
                 View all events
                 <span
@@ -70,10 +67,10 @@ export function Events({ showAllLink = true, compact = false }: EventsProps) {
                     {featuredEvent.status}
                   </span>
                 </div>
-                <h3 className="mt-6 max-w-xl text-balance font-display text-2xl tracking-tight text-ink sm:text-[2rem]">
+                <h3 className="mt-6 max-w-xl text-balance font-display text-h3 text-ink">
                   {featuredEvent.title}
                 </h3>
-                <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+                <p className="mt-4 max-w-xl text-lead text-muted-foreground">
                   {featuredEvent.description}
                 </p>
 
@@ -81,10 +78,10 @@ export function Events({ showAllLink = true, compact = false }: EventsProps) {
                   {detailRows.map(({ icon: Icon, key }) => (
                     <li
                       key={key}
-                      className="flex items-center gap-2.5 bg-surface px-4 py-4 text-sm text-ink"
+                      className="flex min-w-0 items-center gap-2.5 bg-surface px-4 py-4 text-sm text-ink"
                     >
                       <Icon className="size-4 shrink-0 text-brand" />
-                      {featuredEvent[key]}
+                      <span className="min-w-0">{featuredEvent[key]}</span>
                     </li>
                   ))}
                 </ul>
@@ -116,7 +113,7 @@ export function Events({ showAllLink = true, compact = false }: EventsProps) {
               {upcomingEvents.map((event, index) => (
                 <FadeIn key={event.title} delay={index * 0.06}>
                   <article className="surface-card h-full rounded-2xl p-6">
-                    <div className="flex items-center justify-between gap-3">
+                    <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
                       <span className="text-[0.7rem] font-semibold tracking-[0.14em] text-brand uppercase">
                         {event.type}
                       </span>
@@ -124,7 +121,7 @@ export function Events({ showAllLink = true, compact = false }: EventsProps) {
                         {event.date}
                       </span>
                     </div>
-                    <h3 className="mt-4 font-display text-xl tracking-tight text-ink">
+                    <h3 className="mt-4 font-display text-h4 text-ink">
                       {event.title}
                     </h3>
                     <p className="mt-2.5 flex items-center gap-1.5 text-sm text-muted-foreground">

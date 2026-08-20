@@ -22,7 +22,7 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden">
-      <div className="relative min-h-[min(92vh,880px)]">
+      <div className="relative min-h-[var(--hero-min-h)]">
         <Image
           src="/images/community-gathering.jpg"
           alt="Founders and operators gathered for a Founders Experience evening of conversations and shared lessons."
@@ -36,7 +36,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_92%_8%,rgba(0,198,252,0.1),transparent_70%)]" />
         <div className="grain pointer-events-none absolute inset-0 opacity-60" />
 
-        <div className="container-site relative flex min-h-[min(92vh,880px)] flex-col justify-end pb-16 pt-28 sm:pb-24 md:pb-28">
+        <div className="container-site relative flex min-h-[var(--hero-min-h)] flex-col justify-end pb-16 pt-28 sm:pb-24 md:pb-28">
           <motion.div
             initial={{ opacity: 0, scaleX: reduceMotion ? 1 : 0 }}
             animate={{ opacity: 1, scaleX: 1 }}
@@ -49,14 +49,14 @@ export function Hero() {
 
           <motion.h1
             {...rise(0.05)}
-            className="max-w-4xl text-balance font-display text-4xl leading-[1.05] tracking-tight text-white [text-shadow:0_2px_30px_rgba(0,0,0,0.45)] sm:text-5xl md:text-6xl lg:text-[4.5rem]"
+            className="max-w-4xl text-balance font-display text-display text-white [text-shadow:0_2px_30px_rgba(0,0,0,0.45)]"
           >
             Building a company is hard. You shouldn’t have to do it alone.
           </motion.h1>
 
           <motion.p
             {...rise(0.12)}
-            className="mt-7 max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg"
+            className="mt-7 max-w-2xl text-lead text-white/85"
           >
             The Founders Experience brings founders and startup leaders together
             to share the realities of building, learn from each other, and grow
@@ -98,9 +98,9 @@ export function Hero() {
       </div>
 
       <div className="border-b border-border/70 bg-surface/70 backdrop-blur-sm">
-        <div className="container-site flex flex-wrap items-center gap-x-8 gap-y-2 px-5 py-5 sm:px-8 lg:px-12">
+        <div className="container-site flex flex-wrap items-center gap-x-6 gap-y-2.5 py-5 sm:gap-x-8">
           {socialProofPoints.map((point, index) => (
-            <span key={point} className="flex items-center gap-8">
+            <span key={point} className="flex items-center gap-6 sm:gap-8">
               {index > 0 && (
                 <span
                   aria-hidden

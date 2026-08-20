@@ -6,12 +6,12 @@ import { memberBenefits } from "@/data/content";
 
 export function MemberBenefits() {
   return (
-    <section className="section-stack section-divider">
+    <section className="py-section-sm section-divider">
       <div className="container-site">
         <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
           <FadeIn>
             <p className="eyebrow">What members get</p>
-            <h2 className="mt-5 text-balance font-display text-[1.75rem] tracking-tight text-ink sm:text-4xl">
+            <h2 className="mt-5 text-balance font-display text-h2 text-ink">
               More than another founder LinkedIn chat.
             </h2>
             <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">

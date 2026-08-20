@@ -14,19 +14,21 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="section-padding pb-10">
-        <div className="container-site max-w-3xl">
-          <p className="eyebrow">About</p>
-          <h1 className="mt-5 text-balance font-display text-3xl leading-[1.08] tracking-tight text-ink sm:text-5xl md:text-6xl">
-            A space for the realities of building.
-          </h1>
-          <p className="mt-7 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            {siteConfig.positioning}
-          </p>
+      <section className="py-section pb-10">
+        <div className="container-site">
+          <div className="max-w-3xl">
+            <p className="eyebrow">About</p>
+            <h1 className="mt-5 text-balance font-display text-h1 text-ink">
+              A space for the realities of building.
+            </h1>
+            <p className="mt-7 text-lead text-muted-foreground">
+              {siteConfig.positioning}
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="section-stack pt-0">
+      <section className="py-section-sm pt-0">
         <div className="container-site grid gap-6 lg:grid-cols-3">
           {[
             {
@@ -47,9 +49,7 @@ export default function AboutPage() {
               className="surface-card group rounded-2xl p-6 sm:p-7"
             >
               <div className="mb-5 h-px w-10 bg-brand/60 transition-all duration-500 group-hover:w-16" />
-              <h2 className="font-display text-2xl tracking-tight text-ink">
-                {item.title}
-              </h2>
+              <h2 className="font-display text-h3 text-ink">{item.title}</h2>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 {item.body}
               </p>
@@ -58,40 +58,40 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-stack">
-        <div className="container-site max-w-3xl">
-          <div className="brand-flare mb-7" />
-          <h2 className="text-balance font-display text-[1.75rem] tracking-tight text-ink sm:text-4xl">
-            Not merely a networking group.
-          </h2>
-          <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-            The Founders Experience is a community, not a platform. We bring
-            founders together for honest conversation, peer support, and
-            relationships that last beyond a single event. Membership is free.
-          </p>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            Through shared experience, members can learn faster, make better
-            decisions, and build stronger companies.
-          </p>
-          <div className="mt-8">
-            <Button
-              render={<Link href="/apply" />}
-              className="btn-glow h-11 w-full bg-brand text-brand-foreground transition-transform hover:-translate-y-0.5 hover:bg-brand/90 sm:w-auto"
-            >
-              Apply to Join
-            </Button>
+      <section className="py-section-sm">
+        <div className="container-site">
+          <div className="max-w-3xl">
+            <div className="brand-flare mb-7" />
+            <h2 className="text-balance font-display text-h2 text-ink">
+              Not merely a networking group.
+            </h2>
+            <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+              The Founders Experience is a community, not a platform. We bring
+              founders together for honest conversation, peer support, and
+              relationships that last beyond a single event. Membership is free.
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+              Through shared experience, members can learn faster, make better
+              decisions, and build stronger companies.
+            </p>
+            <div className="mt-8">
+              <Button
+                render={<Link href="/apply" />}
+                className="btn-glow h-11 w-full bg-brand text-brand-foreground transition-transform hover:-translate-y-0.5 hover:bg-brand/90 sm:w-auto"
+              >
+                Apply to Join
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
       <Founders />
 
-      <section id="privacy" className="section-stack scroll-mt-24">
-        <div className="container-site max-w-3xl">
-          <div className="surface-panel rounded-2xl p-6 sm:p-8">
-            <h2 className="font-display text-[1.65rem] tracking-tight text-ink sm:text-3xl">
-              Privacy
-            </h2>
+      <section id="privacy" className="py-section-sm">
+        <div className="container-site">
+          <div className="surface-panel max-w-3xl rounded-2xl p-6 sm:p-8">
+            <h2 className="font-display text-h3 text-ink">Privacy</h2>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               We treat member and partner information with care. Application
               details are used to review fit, operate the community, and share
