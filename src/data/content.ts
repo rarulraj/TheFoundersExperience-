@@ -197,6 +197,8 @@ export const speakers = [
     topic: "GTM Growth & Founding Specialist",
     linkedin: "https://www.linkedin.com/in/jeremymacleod/",
     initials: "JM",
+    image: "/speakers/jeremy-macleod.jpg",
+    imagePosition: "center 18%",
   },
   {
     name: "Jess Graham",
@@ -204,6 +206,8 @@ export const speakers = [
     topic: "Start-up Marketing Specialist",
     linkedin: "https://www.linkedin.com/in/jessicagraham/",
     initials: "JG",
+    image: "/speakers/jess-graham.jpg",
+    imagePosition: "center 20%",
   },
   {
     name: "Dan Chalklin",
@@ -211,6 +215,8 @@ export const speakers = [
     topic: "Design Specialist",
     linkedin: "https://www.linkedin.com/in/dchalklin/",
     initials: "DC",
+    image: "/speakers/dan-chalklin.jpg",
+    imagePosition: "center 18%",
   },
   {
     name: "Lisa Baden",
@@ -218,6 +224,8 @@ export const speakers = [
     topic: "Fractional CFO",
     linkedin: "https://www.linkedin.com/in/lisa-baden/",
     initials: "LB",
+    image: "/speakers/lisa-baden.jpg",
+    imagePosition: "center 20%",
   },
   {
     name: "Matt Baden",
@@ -225,6 +233,8 @@ export const speakers = [
     topic: "Engineering Growth Specialist",
     linkedin: "https://www.linkedin.com/in/mattbadentse/",
     initials: "MB",
+    image: "/speakers/matt-baden.jpg",
+    imagePosition: "center 18%",
   },
   {
     name: "And more",

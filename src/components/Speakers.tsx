@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { FadeIn } from "@/components/FadeIn";
@@ -37,8 +38,21 @@ export function Speakers() {
             <FadeIn key={speaker.name} delay={index * 0.05} as="article">
               <div className="surface-card group flex h-full flex-col rounded-3xl p-6 sm:p-7">
                 <div className="flex items-center justify-between gap-3">
-                  <div className="flex size-14 items-center justify-center rounded-2xl bg-[linear-gradient(140deg,var(--accent),#fff)] font-display text-lg text-brand ring-1 ring-border transition-all duration-500 group-hover:ring-brand/40">
-                    {speaker.initials}
+                  <div className="relative size-16 overflow-hidden rounded-2xl bg-secondary ring-1 ring-border transition-all duration-500 group-hover:ring-brand/40">
+                    {"image" in speaker && speaker.image ? (
+                      <Image
+                        src={speaker.image}
+                        alt={speaker.name}
+                        fill
+                        sizes="64px"
+                        className="object-cover"
+                        style={{ objectPosition: speaker.imagePosition }}
+                      />
+                    ) : (
+                      <div className="flex size-full items-center justify-center bg-[linear-gradient(140deg,var(--accent),#fff)] font-display text-lg text-brand">
+                        {speaker.initials}
+                      </div>
+                    )}
                   </div>
                   {speaker.linkedin ? (
                     <a
