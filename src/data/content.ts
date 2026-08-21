@@ -164,7 +164,7 @@ export const faqs = [
 export const featuredEvent = {
   title: "The Founders Panel",
   location: "San Francisco",
-  date: "October 2026",
+  date: "Mid-October, SF. Exact date announced to members.",
   audience: "Founders and operators",
   format: "Panel",
   status: "Coming soon",
