@@ -193,7 +193,7 @@ export const upcomingEvents = [
 export const speakers = [
   {
     name: "Jeremy Macleod",
-    role: "Channel Manager",
+    role: "Co-Founder, TSE",
     topic: "GTM Growth & Founding Specialist",
     linkedin: "https://www.linkedin.com/in/jeremymacleod/",
     initials: "JM",
@@ -202,7 +202,7 @@ export const speakers = [
   },
   {
     name: "Jess Graham",
-    role: "Community Manager",
+    role: "Head of Marketing & Brand",
     topic: "Start-up Marketing Specialist",
     linkedin: "https://www.linkedin.com/in/jessicagraham/",
     initials: "JG",
@@ -211,7 +211,7 @@ export const speakers = [
   },
   {
     name: "Dan Chalklin",
-    role: "Channel Manager",
+    role: "Design Director",
     topic: "Design Specialist",
     linkedin: "https://www.linkedin.com/in/dchalklin/",
     initials: "DC",
@@ -220,8 +220,8 @@ export const speakers = [
   },
   {
     name: "Lisa Baden",
-    role: "Channel Manager",
-    topic: "Fractional CFO",
+    role: "Fractional CFO",
+    topic: "Finance & Operations Specialist",
     linkedin: "https://www.linkedin.com/in/lisa-baden/",
     initials: "LB",
     image: "/speakers/lisa-baden.jpg",
@@ -229,7 +229,7 @@ export const speakers = [
   },
   {
     name: "Matt Baden",
-    role: "Channel Manager",
+    role: "Managing Director, Technical",
     topic: "Engineering Growth Specialist",
     linkedin: "https://www.linkedin.com/in/mattbadentse/",
     initials: "MB",
