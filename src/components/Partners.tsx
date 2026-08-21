@@ -25,31 +25,31 @@ export function Partners() {
   return (
     <section id="partners" className="py-section-sm overflow-hidden">
       <div className="container-site">
-        <FadeIn>
-          <p className="eyebrow">Partners</p>
-          <h2 className="mt-5 max-w-3xl text-balance font-display text-h2 text-ink">
+        <FadeIn className="text-center">
+          <p className="eyebrow-center">Partners</p>
+          <h2 className="mx-auto mt-6 max-w-3xl text-balance font-display text-h2 text-ink">
             Build relationships with the people building what’s next.
           </h2>
-          <p className="mt-5 max-w-2xl text-lead text-muted-foreground">
+          <p className="mx-auto mt-5 max-w-2xl text-lead text-muted-foreground">
             The Founders Experience gives select brands the opportunity to
             support a growing founder community while building authentic
             relationships with startup leaders.
           </p>
         </FadeIn>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {partnerBenefits.map((benefit, index) => {
             const Icon = icons[index] ?? UsersRound;
             return (
               <FadeIn key={benefit.title} delay={index * 0.05}>
-                <article className="surface-card group h-full rounded-2xl p-6">
-                  <div className="icon-tile mb-5 inline-flex size-11 items-center justify-center rounded-xl text-brand transition-transform duration-500 group-hover:scale-105">
-                    <Icon className="size-[1.15rem]" />
+                <article className="surface-card group h-full rounded-3xl p-7">
+                  <div className="icon-tile mb-6 inline-flex size-12 items-center justify-center rounded-2xl transition-transform duration-500 group-hover:scale-105">
+                    <Icon className="size-5" />
                   </div>
                   <h3 className="font-display text-h4 text-ink">
                     {benefit.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  <p className="mt-3 text-[0.95rem] leading-relaxed text-muted-foreground">
                     {benefit.description}
                   </p>
                 </article>
@@ -57,64 +57,64 @@ export function Partners() {
             );
           })}
         </div>
-
-        <FadeIn delay={0.08}>
-          <div className="mt-16">
-            <p className="text-[0.7rem] font-semibold tracking-[0.18em] text-muted-foreground uppercase">
-              Sponsors
-            </p>
-            <a
-              href={foundingSponsor.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="surface-card mt-5 flex flex-col gap-2 rounded-2xl px-6 py-6 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8 sm:px-8"
-            >
-              <span className="font-display text-lg tracking-[0.14em] text-ink uppercase sm:shrink-0">
-                {foundingSponsor.name}
-              </span>
-              <span className="text-sm text-muted-foreground sm:max-w-xl sm:text-right">
-                {foundingSponsor.description}
-              </span>
-            </a>
-            <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground">
-              {foundingSponsor.name} is the founding sponsor of The Founders
-              Experience.
-            </p>
-          </div>
-        </FadeIn>
       </div>
 
-      <div className="mt-16 overflow-hidden">
-        <p className="container-site text-[0.7rem] font-semibold tracking-[0.18em] text-muted-foreground uppercase">
+      <div className="mt-20 overflow-hidden">
+        <p className="container-site text-center text-[0.72rem] font-bold tracking-[0.18em] text-muted-foreground uppercase">
           Made by people who have worked with
         </p>
-        <div className="relative mt-7 border-y border-border/60 bg-surface/40 py-5">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_120%_at_50%_50%,rgba(0,198,252,0.07),transparent_70%)]" />
-          <div className="relative space-y-1">
+        <div className="relative mt-8 py-4">
+          <div className="relative space-y-2">
             <LogoMarquee items={companiesWorkedWith} />
             <LogoMarquee items={[...companiesWorkedWith].reverse()} reverse />
           </div>
         </div>
-        <p className="container-site mt-6 text-sm text-muted-foreground">
+        <p className="container-site mt-4 text-center text-sm text-muted-foreground">
           {companiesWorkedWithNote}
         </p>
       </div>
 
       <div className="container-site">
         <FadeIn delay={0.1}>
-          <div className="glow-brand relative mt-16 overflow-hidden rounded-3xl border border-brand/25 bg-surface px-6 py-10 text-center sm:px-10 sm:py-14">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_80%_at_50%_0%,rgba(0,198,252,0.16),transparent_70%)]" />
+          <a
+            href={foundingSponsor.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="surface-card mx-auto mt-16 flex max-w-4xl flex-col gap-3 rounded-3xl px-7 py-7 sm:flex-row sm:items-center sm:justify-between sm:gap-10 sm:px-10"
+          >
+            <span className="flex items-center gap-4 sm:shrink-0">
+              <span className="icon-tile flex size-11 items-center justify-center rounded-2xl font-display text-sm font-bold">
+                {foundingSponsor.name.slice(0, 1)}
+              </span>
+              <span>
+                <span className="block text-[0.68rem] font-bold tracking-[0.18em] text-brand uppercase">
+                  Founding sponsor
+                </span>
+                <span className="mt-0.5 block font-display text-lg tracking-[0.12em] text-ink uppercase">
+                  {foundingSponsor.name}
+                </span>
+              </span>
+            </span>
+            <span className="text-sm leading-relaxed text-muted-foreground sm:max-w-md sm:text-right">
+              {foundingSponsor.description}
+            </span>
+          </a>
+        </FadeIn>
+
+        <FadeIn delay={0.12}>
+          <div className="dark-panel relative mt-16 overflow-hidden rounded-[2rem] px-7 py-14 text-center sm:px-10 sm:py-18">
+            <div className="grain pointer-events-none absolute inset-0 opacity-30" />
             <div className="relative">
-              <h3 className="text-balance font-display text-h2 text-ink">
+              <h3 className="text-balance font-display text-h2 text-white">
                 Become a Founding Partner
               </h3>
-              <p className="mx-auto mt-4 max-w-xl text-lead text-muted-foreground">
+              <p className="mx-auto mt-4 max-w-xl text-lead text-white/70">
                 Interested in supporting founders? Let’s build something
                 together.
               </p>
               <Button
                 render={<Link href="/partners#partner-form" />}
-                className="btn-glow mt-8 h-auto min-h-12 w-full whitespace-normal bg-brand px-6 py-3 text-center text-brand-foreground transition-transform hover:-translate-y-0.5 hover:bg-brand/90 sm:w-auto"
+                className="mt-9 h-12 w-full rounded-full bg-brand-bright px-7 text-base font-semibold text-navy shadow-[0_16px_40px_-14px_rgba(0,198,252,0.65)] transition-all hover:-translate-y-0.5 hover:bg-brand-bright/90 sm:w-auto"
               >
                 Become a Founding Partner
               </Button>

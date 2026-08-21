@@ -45,7 +45,8 @@ const initialState: FormState = {
 // when the control receives focus.
 const selectClassName = cn(
   "h-11 w-full min-w-0 rounded-lg border border-input bg-transparent px-2.5 text-base outline-none transition-colors md:text-sm",
-  "focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50"
+  "focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50",
+  "dark:bg-input/30"
 );
 
 function Field({
@@ -105,7 +106,7 @@ export function PartnerApplicationForm() {
       <FadeIn>
         <div
           id="partner-form"
-          className="glow-brand rounded-2xl border border-brand/25 bg-brand/10 p-6 sm:p-10"
+          className="glow-brand rounded-3xl border border-brand/25 bg-accent/60 p-6 sm:p-10"
         >
           <p className="font-display text-h3 text-ink">
             Thanks for reaching out.
@@ -311,7 +312,7 @@ export function PartnerApplicationForm() {
         <Button
           type="submit"
           disabled={submitting}
-          className="btn-glow mt-7 h-12 w-full bg-brand text-brand-foreground transition-transform hover:-translate-y-0.5 hover:bg-brand/90 sm:w-auto sm:px-8"
+          className="btn-glow mt-7 h-12 w-full rounded-full bg-primary px-8 text-base font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5 hover:bg-primary/90 sm:w-auto"
         >
           {submitting ? (
             <>

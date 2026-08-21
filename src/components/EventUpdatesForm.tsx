@@ -36,7 +36,7 @@ export function EventUpdatesForm() {
 
   if (success) {
     return (
-      <div className="glow-brand rounded-2xl border border-brand/25 bg-accent/40 p-6 sm:p-8">
+      <div className="glow-brand rounded-3xl border border-brand/25 bg-accent/60 p-6 sm:p-8">
         <p className="font-display text-h3 text-ink">You’re on the list.</p>
         <p className="mt-2 text-sm text-muted-foreground">
           We’ll share updates on upcoming Founders Experience events.
@@ -48,7 +48,7 @@ export function EventUpdatesForm() {
   return (
     <form
       onSubmit={onSubmit}
-      className="surface-panel rounded-2xl p-6 sm:p-8"
+      className="surface-panel rounded-3xl p-6 sm:p-8"
     >
       <h3 className="font-display text-h3 text-ink">Get event updates</h3>
       <p className="mt-2 text-sm text-muted-foreground">
@@ -86,7 +86,7 @@ export function EventUpdatesForm() {
       <Button
         type="submit"
         disabled={submitting}
-        className="btn-glow mt-5 h-11 w-full bg-brand px-5 text-brand-foreground transition-transform hover:-translate-y-0.5 hover:bg-brand/90 sm:w-auto"
+        className="btn-glow mt-5 h-11 w-full rounded-full bg-primary px-6 font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5 hover:bg-primary/90 sm:w-auto"
       >
         {submitting ? (
           <>

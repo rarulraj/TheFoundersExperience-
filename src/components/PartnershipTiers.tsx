@@ -11,54 +11,87 @@ export function PartnershipTiers() {
   return (
     <section
       id="partnership-tiers"
-      className="py-section-sm section-divider bg-surface/40"
+      className="py-section-sm section-divider bg-surface/70"
     >
       <div className="container-site">
-        <FadeIn>
-          <p className="eyebrow">Partnership options</p>
-          <h2 className="mt-5 max-w-2xl text-balance font-display text-h2 text-ink">
+        <FadeIn className="text-center">
+          <p className="eyebrow-center">Partnership options</p>
+          <h2 className="mx-auto mt-6 max-w-2xl text-balance font-display text-h2 text-ink">
             Ways to support the community.
           </h2>
-          <p className="mt-5 max-w-2xl text-lead text-muted-foreground">
+          <p className="mx-auto mt-5 max-w-2xl text-lead text-muted-foreground">
             Partnerships are tailored. These tiers show how brands typically
             engage, from community support to long-term founding partnerships.
           </p>
         </FadeIn>
 
-        <div className="mt-12 grid gap-4 lg:grid-cols-3">
+        <div className="mt-14 grid items-stretch gap-5 lg:grid-cols-3">
           {partnershipTiers.map((tier, index) => (
-            <FadeIn key={tier.name} delay={index * 0.06}>
+            <FadeIn key={tier.name} delay={index * 0.06} className="h-full">
               <article
                 className={cn(
-                  "relative flex h-full flex-col overflow-hidden rounded-2xl p-6 sm:p-7",
+                  "relative flex h-full flex-col overflow-hidden rounded-3xl p-7 sm:p-8",
                   tier.featured
-                    ? "glow-brand border border-brand/40 bg-surface text-ink"
+                    ? "dark-panel text-white shadow-[0_32px_80px_-40px_rgba(6,13,28,0.7)]"
                     : "surface-card text-ink"
                 )}
               >
-                {tier.featured && (
-                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_50%_0%,rgba(0,198,252,0.16),transparent_70%)]" />
-                )}
                 <div className="relative flex flex-1 flex-col">
-                  <p className="text-[0.7rem] font-semibold tracking-[0.18em] text-brand uppercase">
-                    Tier {index + 1}
-                  </p>
+                  <div className="flex items-center justify-between gap-3">
+                    <p
+                      className={cn(
+                        "text-[0.68rem] font-bold tracking-[0.18em] uppercase",
+                        tier.featured ? "text-brand-bright" : "text-brand"
+                      )}
+                    >
+                      Tier {index + 1}
+                    </p>
+                    {tier.featured && (
+                      <span className="rounded-full bg-brand-bright px-3 py-1 text-[0.65rem] font-bold tracking-[0.12em] text-navy uppercase">
+                        Most impact
+                      </span>
+                    )}
+                  </div>
                   <h3 className="mt-3 font-display text-h4">{tier.name}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  <p
+                    className={cn(
+                      "mt-3 text-sm leading-relaxed",
+                      tier.featured ? "text-white/70" : "text-muted-foreground"
+                    )}
+                  >
                     {tier.description}
                   </p>
-                  <div className="rule-fade my-6" />
+                  <div
+                    className={cn(
+                      "my-6 h-px",
+                      tier.featured
+                        ? "bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                        : "rule-fade"
+                    )}
+                  />
                   <ul className="flex-1 space-y-3.5">
                     {tier.benefits.map((benefit) => (
                       <li
                         key={benefit}
                         className="flex items-start gap-3 text-sm"
                       >
-                        <Check
-                          className="mt-0.5 size-4 shrink-0 text-brand"
-                          strokeWidth={2.5}
-                        />
-                        <span className="text-ink/85">{benefit}</span>
+                        <span
+                          className={cn(
+                            "mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full",
+                            tier.featured
+                              ? "bg-brand-bright/15 text-brand-bright"
+                              : "bg-accent text-brand"
+                          )}
+                        >
+                          <Check className="size-3" strokeWidth={3} />
+                        </span>
+                        <span
+                          className={
+                            tier.featured ? "text-white/85" : "text-ink/85"
+                          }
+                        >
+                          {benefit}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -72,7 +105,7 @@ export function PartnershipTiers() {
           <div className="mt-12 flex justify-center">
             <Button
               render={<Link href="/partners#partner-form" />}
-              className="btn-glow h-auto min-h-12 w-full whitespace-normal bg-brand px-6 py-3 text-center text-brand-foreground transition-transform hover:-translate-y-0.5 hover:bg-brand/90 sm:w-auto"
+              className="btn-glow h-12 w-full rounded-full bg-primary px-7 text-base font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5 hover:bg-primary/90 sm:w-auto"
             >
               Talk to Us About Partnership
             </Button>

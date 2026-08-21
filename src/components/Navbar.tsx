@@ -8,6 +8,7 @@ import { navLinks, siteConfig } from "@/data/content";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/Logo";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 // Nav entries that point at a section of the home page rather than a route.
 const sectionIds = navLinks
@@ -108,7 +109,7 @@ export function Navbar() {
       className={cn(
         "sticky top-0 z-50 border-b transition-all duration-500",
         scrolled || open
-          ? "border-border/70 bg-background/70 backdrop-blur-xl"
+          ? "border-border/80 bg-background/85 shadow-[0_8px_30px_-18px_rgba(var(--shadow-ink),0.28)] backdrop-blur-xl"
           : "border-transparent bg-transparent"
       )}
     >
@@ -116,11 +117,11 @@ export function Navbar() {
         <Link
           href="/"
           aria-label="The Founders Experience home"
-          className="group flex min-w-0 items-center"
+          className="group flex min-w-0 items-center text-ink"
         >
           <Logo
             priority
-            className="h-8 w-auto max-w-[min(58vw,220px)] rounded-md transition-transform duration-300 group-hover:scale-[1.02] sm:h-10 sm:max-w-none"
+            className="h-8 w-auto max-w-[min(58vw,220px)] transition-transform duration-300 group-hover:scale-[1.02] sm:h-9 sm:max-w-none"
           />
         </Link>
 
@@ -133,15 +134,17 @@ export function Navbar() {
                 href={link.href}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "relative rounded-md px-3.5 py-2 text-sm transition-colors",
-                  active ? "text-ink" : "text-muted-foreground hover:text-ink"
+                  "relative rounded-full px-4 py-2 text-sm font-medium transition-colors",
+                  active
+                    ? "text-ink"
+                    : "text-muted-foreground hover:text-ink"
                 )}
               >
                 {link.label}
                 <span
                   aria-hidden
                   className={cn(
-                    "absolute inset-x-3.5 -bottom-px h-px origin-center bg-brand transition-transform duration-300",
+                    "absolute inset-x-4 -bottom-px h-0.5 origin-center rounded-full bg-brand-bright transition-transform duration-300",
                     active ? "scale-x-100" : "scale-x-0"
                   )}
                 />
@@ -150,31 +153,35 @@ export function Navbar() {
           })}
         </nav>
 
-        <div className="hidden items-center lg:flex">
+        <div className="hidden items-center gap-2 lg:flex">
+          <ThemeToggle />
           <Button
             render={<Link href="/apply" />}
-            className="btn-glow h-10 bg-brand px-4 text-sm text-brand-foreground transition-transform hover:-translate-y-0.5 hover:bg-brand/90"
+            className="btn-glow h-10 rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5 hover:bg-primary/90"
           >
             Apply to Join
           </Button>
         </div>
 
-        <button
-          type="button"
-          className="inline-flex size-11 shrink-0 items-center justify-center rounded-lg border border-border bg-surface text-ink transition-colors hover:border-brand/40 hover:text-brand lg:hidden"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          aria-controls="mobile-menu"
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X className="size-5" /> : <Menu className="size-5" />}
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          <ThemeToggle />
+          <button
+            type="button"
+            className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-border bg-card text-ink shadow-sm transition-colors hover:border-brand/40 hover:text-brand"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X className="size-5" /> : <Menu className="size-5" />}
+          </button>
+        </div>
       </div>
 
       {open && (
         <div
           id="mobile-menu"
-          className="animate-in fade-in slide-in-from-top-2 max-h-[calc(100dvh-var(--header-h))] overflow-y-auto overscroll-contain border-t border-border/70 bg-background/95 backdrop-blur-xl duration-200 lg:hidden"
+          className="animate-in fade-in slide-in-from-top-2 max-h-[calc(100dvh-var(--header-h))] overflow-y-auto overscroll-contain border-t border-border/80 bg-background/95 backdrop-blur-xl duration-200 lg:hidden"
         >
           <div className="container-site flex flex-col gap-1 py-4">
             {navLinks.map((link) => {
@@ -186,15 +193,18 @@ export function Navbar() {
                   onClick={closeMenu}
                   aria-current={active ? "page" : undefined}
                   className={cn(
-                    "flex items-center justify-between gap-3 rounded-lg px-3 py-3 text-sm transition-colors",
+                    "flex items-center justify-between gap-3 rounded-xl px-4 py-3 text-sm transition-colors",
                     active
-                      ? "bg-accent font-medium text-brand"
+                      ? "bg-accent font-semibold text-accent-foreground"
                       : "text-ink hover:bg-muted hover:text-brand"
                   )}
                 >
                   {link.label}
                   {active && (
-                    <span aria-hidden className="size-1.5 rounded-full bg-brand" />
+                    <span
+                      aria-hidden
+                      className="size-1.5 rounded-full bg-brand-bright"
+                    />
                   )}
                 </Link>
               );
@@ -202,7 +212,7 @@ export function Navbar() {
             <div className="rule-fade mt-3 mb-4" />
             <Button
               render={<Link href="/apply" onClick={closeMenu} />}
-              className="btn-glow h-11 w-full bg-brand text-brand-foreground hover:bg-brand/90"
+              className="btn-glow h-11 w-full rounded-full bg-primary font-semibold text-primary-foreground hover:bg-primary/90"
             >
               Apply to Join
             </Button>

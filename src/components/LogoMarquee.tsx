@@ -12,7 +12,7 @@ type LogoMarqueeProps = {
 function Wordmark({ name }: { name: string }) {
   return (
     <span className="flex shrink-0 items-center gap-8 px-5 sm:gap-12 sm:px-8">
-      <span className="font-display text-base tracking-[0.16em] text-ink/45 uppercase transition-colors duration-300 hover:text-ink sm:text-lg">
+      <span className="font-display text-base tracking-[0.16em] text-ink/60 uppercase transition-colors duration-300 hover:text-ink sm:text-lg">
         {name}
       </span>
       <span aria-hidden className="size-1 shrink-0 rounded-full bg-brand/40" />

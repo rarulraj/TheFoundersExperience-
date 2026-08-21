@@ -1,62 +1,86 @@
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { siteConfig } from "@/data/content";
 import { Logo } from "@/components/Logo";
 
-const footerLinks = [
-  { label: "Community", href: "/#community" },
-  { label: "Events", href: "/events" },
-  { label: "Partners", href: "/partners" },
-  { label: "About", href: "/about" },
-  { label: "Apply", href: "/apply" },
-  { label: "LinkedIn", href: siteConfig.linkedin },
-  { label: "Privacy", href: "/about#privacy" },
+const footerColumns = [
+  {
+    heading: "Community",
+    links: [
+      { label: "Why join", href: "/#community" },
+      { label: "Events", href: "/events" },
+      { label: "Apply to join", href: "/apply" },
+    ],
+  },
+  {
+    heading: "Company",
+    links: [
+      { label: "About", href: "/about" },
+      { label: "Partners", href: "/partners" },
+      { label: "Privacy", href: "/about#privacy" },
+    ],
+  },
+  {
+    heading: "Connect",
+    links: [{ label: "LinkedIn", href: siteConfig.linkedin }],
+  },
 ];
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-border bg-surface">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_90%_at_15%_0%,rgba(0,198,252,0.08),transparent_70%)]" />
-      <div className="container-site relative py-section-sm">
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
-          <div className="max-w-md">
+    <footer className="dark-panel relative overflow-hidden">
+      <div className="grain pointer-events-none absolute inset-0 opacity-30" />
+      <div className="container-site relative py-14 sm:py-20">
+        <div className="grid gap-12 lg:grid-cols-[1.2fr_2fr]">
+          <div className="max-w-sm">
             <Link
               href="/"
               aria-label="The Founders Experience home"
-              className="group inline-block"
+              className="group inline-block text-white"
             >
-              <Logo className="h-10 w-auto max-w-[220px] rounded-lg transition-transform duration-500 group-hover:scale-[1.02] sm:h-14 sm:max-w-none" />
+              <Logo className="h-9 w-auto transition-transform duration-500 group-hover:scale-[1.02] sm:h-10" />
             </Link>
-            <p className="mt-6 text-[0.7rem] font-semibold tracking-[0.18em] text-brand uppercase">
+            <p className="mt-6 text-[0.72rem] font-bold tracking-[0.18em] text-brand-bright uppercase">
               {siteConfig.tagline}
             </p>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              Membership is free for accepted founders and operators.
+            <p className="mt-4 text-sm leading-relaxed text-white/60">
+              A curated community where founders and startup leaders share the
+              realities of building. Membership is free for accepted members.
             </p>
           </div>
 
-          <nav className="grid grid-cols-2 gap-x-8 gap-y-1 sm:grid-cols-3 sm:gap-x-12 lg:grid-cols-2">
-            {footerLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="group inline-flex w-fit items-center gap-2 py-1.5 text-sm text-muted-foreground transition-colors hover:text-ink"
-                {...(link.href.startsWith("http")
-                  ? { target: "_blank", rel: "noopener noreferrer" }
-                  : {})}
-              >
-                <span
-                  aria-hidden
-                  className="h-px w-0 bg-brand transition-all duration-300 group-hover:w-4"
-                />
-                {link.label}
-              </Link>
+          <nav className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3">
+            {footerColumns.map((column) => (
+              <div key={column.heading}>
+                <p className="text-[0.68rem] font-bold tracking-[0.18em] text-white/40 uppercase">
+                  {column.heading}
+                </p>
+                <ul className="mt-4 space-y-1">
+                  {column.links.map((link) => (
+                    <li key={link.label}>
+                      <Link
+                        href={link.href}
+                        className="group inline-flex items-center gap-1.5 py-1.5 text-sm text-white/70 transition-colors hover:text-white"
+                        {...(link.href.startsWith("http")
+                          ? { target: "_blank", rel: "noopener noreferrer" }
+                          : {})}
+                      >
+                        {link.label}
+                        {link.href.startsWith("http") && (
+                          <ArrowUpRight className="size-3.5 text-white/40 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-brand-bright" />
+                        )}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </nav>
         </div>
 
-        <div className="rule-fade mt-12" />
+        <div className="mt-14 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
 
-        <div className="mt-6 flex flex-col gap-2 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-7 flex flex-col gap-2 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} The Founders Experience. All rights
             reserved.

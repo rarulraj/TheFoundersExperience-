@@ -1,17 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { ExternalLink } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { FadeIn } from "@/components/FadeIn";
 import { Button } from "@/components/ui/button";
 import { speakers } from "@/data/content";
 
 export function Speakers() {
   return (
-    <section
-      id="speakers"
-      className="py-section-sm section-divider bg-surface/40"
-    >
+    <section id="speakers" className="py-section-sm section-divider bg-surface/70">
       <div className="container-site">
         <FadeIn>
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
@@ -21,66 +18,61 @@ export function Speakers() {
                 Learn from people who are actually building.
               </h2>
               <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-                Many more speakers come from enterprises and small startups —
+                Many more speakers come from enterprises and small startups,
                 sharing what they’re learning in the work.
               </p>
             </div>
             <Button
               render={<Link href="/events#speak" />}
               variant="outline"
-              className="h-auto min-h-11 w-full shrink-0 whitespace-normal border-brand/25 px-5 py-2.5 text-brand transition-colors hover:border-brand/50 hover:bg-accent sm:w-fit"
+              className="h-11 w-full shrink-0 rounded-full border-border bg-card px-6 font-semibold text-ink shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:text-brand sm:w-fit"
             >
               Interested in Speaking?
             </Button>
           </div>
         </FadeIn>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {speakers.map((speaker, index) => (
             <FadeIn key={speaker.name} delay={index * 0.05} as="article">
-              <div className="surface-card group h-full overflow-hidden rounded-2xl">
-                <div className="relative flex h-28 items-end overflow-hidden bg-secondary p-5">
-                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_120%_at_20%_0%,rgba(0,198,252,0.16),transparent_70%)]" />
-                  <div className="relative flex w-full items-end justify-between gap-3">
-                    <div className="flex size-14 items-center justify-center rounded-full bg-background font-display text-lg text-ink ring-1 ring-border transition-all duration-500 group-hover:ring-brand/50">
-                      {speaker.initials}
-                    </div>
-                    {speaker.linkedin ? (
-                      <a
-                        href={speaker.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex size-11 shrink-0 items-center justify-center rounded-lg border border-border/80 bg-background/70 text-muted-foreground transition-colors hover:border-brand/40 hover:bg-accent hover:text-brand"
-                        aria-label={`${speaker.name} on LinkedIn`}
-                      >
-                        <ExternalLink className="size-4" />
-                      </a>
-                    ) : null}
+              <div className="surface-card group flex h-full flex-col rounded-3xl p-6 sm:p-7">
+                <div className="flex items-center justify-between gap-3">
+                  <div className="flex size-14 items-center justify-center rounded-2xl bg-[linear-gradient(140deg,var(--accent),#fff)] font-display text-lg text-brand ring-1 ring-border transition-all duration-500 group-hover:ring-brand/40">
+                    {speaker.initials}
                   </div>
+                  {speaker.linkedin ? (
+                    <a
+                      href={speaker.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex size-10 shrink-0 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-all hover:border-brand/40 hover:bg-accent hover:text-brand"
+                      aria-label={`${speaker.name} on LinkedIn`}
+                    >
+                      <ArrowUpRight className="size-4" />
+                    </a>
+                  ) : null}
                 </div>
-                <div className="p-5 sm:p-6">
-                  <h3 className="font-display text-h4 text-ink">
-                    {speaker.linkedin ? (
-                      <a
-                        href={speaker.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="transition-colors hover:text-brand"
-                      >
-                        {speaker.name}
-                      </a>
-                    ) : (
-                      speaker.name
-                    )}
-                  </h3>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {speaker.role}
-                  </p>
-                  <div className="rule-fade my-5" />
-                  <p className="text-sm leading-relaxed text-ink/75">
-                    {speaker.topic}
-                  </p>
-                </div>
+                <h3 className="mt-5 font-display text-h4 text-ink">
+                  {speaker.linkedin ? (
+                    <a
+                      href={speaker.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-brand"
+                    >
+                      {speaker.name}
+                    </a>
+                  ) : (
+                    speaker.name
+                  )}
+                </h3>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {speaker.role}
+                </p>
+                <div className="rule-fade my-5" />
+                <p className="text-sm leading-relaxed text-ink/75">
+                  {speaker.topic}
+                </p>
               </div>
             </FadeIn>
           ))}

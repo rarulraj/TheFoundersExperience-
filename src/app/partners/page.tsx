@@ -12,8 +12,9 @@ export const metadata: Metadata = {
 export default function PartnersPage() {
   return (
     <>
-      <section className="py-section pb-10">
-        <div className="container-site">
+      <section className="relative overflow-hidden py-section pb-10">
+        <div className="mesh-light absolute inset-0" />
+        <div className="container-site relative">
           <div className="max-w-3xl">
             <p className="eyebrow">Partnerships</p>
             <h1 className="mt-5 text-balance font-display text-h1 text-ink">

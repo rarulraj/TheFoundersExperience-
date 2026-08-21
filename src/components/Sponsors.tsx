@@ -10,58 +10,55 @@ import {
 
 export function Sponsors() {
   return (
-    <section className="py-section-sm section-divider overflow-hidden">
+    <section className="py-section-sm section-divider overflow-hidden bg-surface/70">
       <div className="container-site">
-        <FadeIn>
-          <p className="eyebrow">Sponsors</p>
-          <h2 className="mt-5 max-w-3xl text-balance font-display text-h2 text-ink">
-            Backed by{" "}
-            <a
-              href={foundingSponsor.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline decoration-brand/40 decoration-2 underline-offset-[6px] transition-colors hover:text-brand hover:decoration-brand"
-            >
-              {foundingSponsor.name}
-            </a>
-            .
+        <FadeIn className="text-center">
+          <p className="eyebrow-center">Backed by operators</p>
+          <h2 className="mx-auto mt-6 max-w-3xl text-balance font-display text-h2 text-ink">
+            Made by people who have worked with the best.
           </h2>
         </FadeIn>
+      </div>
 
-        <FadeIn delay={0.06}>
+      <FadeIn delay={0.08}>
+        <div className="relative mt-12 py-4">
+          <div className="relative space-y-2">
+            <LogoMarquee items={companiesWorkedWith} />
+            <LogoMarquee items={[...companiesWorkedWith].reverse()} reverse />
+          </div>
+        </div>
+        <p className="container-site mt-4 text-center text-sm text-muted-foreground">
+          {companiesWorkedWithNote}
+        </p>
+      </FadeIn>
+
+      <div className="container-site">
+        <FadeIn delay={0.12}>
           <a
             href={foundingSponsor.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="surface-card mt-9 flex flex-col gap-2 rounded-2xl px-6 py-6 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8 sm:px-8"
+            className="surface-card mx-auto mt-14 flex max-w-4xl flex-col gap-3 rounded-3xl px-7 py-7 sm:flex-row sm:items-center sm:justify-between sm:gap-10 sm:px-10"
           >
-            <span className="font-display text-lg tracking-[0.14em] text-ink uppercase sm:shrink-0">
-              {foundingSponsor.name}
+            <span className="flex items-center gap-4 sm:shrink-0">
+              <span className="icon-tile flex size-11 items-center justify-center rounded-2xl font-display text-sm font-bold">
+                {foundingSponsor.name.slice(0, 1)}
+              </span>
+              <span>
+                <span className="block text-[0.68rem] font-bold tracking-[0.18em] text-brand uppercase">
+                  Founding sponsor
+                </span>
+                <span className="mt-0.5 block font-display text-lg tracking-[0.12em] text-ink uppercase">
+                  {foundingSponsor.name}
+                </span>
+              </span>
             </span>
-            <span className="text-sm text-muted-foreground sm:max-w-xl sm:text-right">
+            <span className="text-sm leading-relaxed text-muted-foreground sm:max-w-md sm:text-right">
               {foundingSponsor.description}
             </span>
           </a>
         </FadeIn>
-
-        <FadeIn delay={0.1}>
-          <p className="mt-14 text-[0.7rem] font-semibold tracking-[0.18em] text-muted-foreground uppercase">
-            Made by people who have worked with
-          </p>
-        </FadeIn>
       </div>
-
-      <div className="relative mt-7 border-y border-border/60 bg-surface/40 py-5">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_120%_at_50%_50%,rgba(0,198,252,0.07),transparent_70%)]" />
-        <div className="relative space-y-1">
-          <LogoMarquee items={companiesWorkedWith} />
-          <LogoMarquee items={[...companiesWorkedWith].reverse()} reverse />
-        </div>
-      </div>
-
-      <p className="container-site mt-6 text-sm text-muted-foreground">
-        {companiesWorkedWithNote}
-      </p>
     </section>
   );
 }

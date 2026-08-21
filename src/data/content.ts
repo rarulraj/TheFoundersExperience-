@@ -58,6 +58,109 @@ export const socialProofPoints = [
   "In-person experiences",
 ];
 
+export const howItWorks = [
+  {
+    step: "01",
+    title: "Apply",
+    description:
+      "Tell us what you’re building and where you are in the journey. Every application is read by a founder, not a filter.",
+  },
+  {
+    step: "02",
+    title: "Get accepted",
+    description:
+      "We curate for people actively building companies. If it’s a fit, you’re in. Membership is free.",
+  },
+  {
+    step: "03",
+    title: "Plug in",
+    description:
+      "Join roundtables, dinners, and the private community. Get introduced to people who have solved the problem in front of you.",
+  },
+];
+
+export const showcaseFeatures = [
+  {
+    eyebrow: "Community",
+    title: "A private community, not another feed.",
+    description:
+      "A curated directory of founders and operators you can actually reach, filtered by stage, function, and the problem you’re trying to solve right now.",
+    points: [
+      "Curated member directory",
+      "Private discussion space",
+      "Stage and function filters",
+      "Direct access, no gatekeeping",
+    ],
+    visual: "directory" as const,
+  },
+  {
+    eyebrow: "Events",
+    title: "Gatherings worth showing up for.",
+    description:
+      "Dinners, panels, roundtables, and coworking sessions. Small rooms, honest agendas, and formats designed for real conversation instead of business-card swaps.",
+    points: [
+      "Founder dinners and panels",
+      "Operator roundtables",
+      "Coworking and office hours",
+      "San Francisco and virtual",
+    ],
+    visual: "event" as const,
+  },
+  {
+    eyebrow: "Introductions",
+    title: "Introductions that actually land.",
+    description:
+      "Tell us what you’re working on and we connect you with the member who has solved it before, with context on both sides, so the first call starts at the useful part.",
+    points: [
+      "Hand-matched by the founders",
+      "Context shared up front",
+      "Warm, double opt-in",
+      "Follow-through, not just an email",
+    ],
+    visual: "intro" as const,
+  },
+];
+
+export const manifestoStats = [
+  { value: "100+", label: "Founders and startup leaders" },
+  { value: "Free", label: "Membership for accepted members" },
+  { value: "Oct 2026", label: "First gathering, San Francisco" },
+  { value: "SF + Virtual", label: "In-person and online formats" },
+];
+
+export const faqs = [
+  {
+    question: "Who is The Founders Experience for?",
+    answer:
+      "Founders, cofounders, startup executives, technical and GTM leaders, and operators who are actively building companies, from idea stage through Series C and beyond.",
+  },
+  {
+    question: "How much does membership cost?",
+    answer:
+      "Membership is free for accepted founders and operators. The community is supported by partners, never by member fees.",
+  },
+  {
+    question: "What happens after I apply?",
+    answer:
+      "We review every application by hand. If it looks like a fit, we’ll reach out for a short intro conversation, then welcome you into the community.",
+  },
+  {
+    question: "Where do events happen?",
+    answer:
+      "In-person gatherings in San Francisco, plus virtual roundtables you can join from anywhere. Our first gathering, The Founders Panel, lands in October 2026.",
+  },
+  {
+    question: "Is this another networking group?",
+    answer:
+      "No. There are no endless feeds and no pitch floors. Programming is built around honest conversation: roundtables, dinners, and fireside chats with people in the work.",
+  },
+  {
+    question: "Can my company partner with the community?",
+    answer:
+      "Yes. Brands partner with us to fund programming and build real relationships with founders. Head to the Partners page to start the conversation.",
+  },
+];
+
 export const featuredEvent = {
   title: "The Founders Panel",
   location: "San Francisco",
@@ -66,7 +169,7 @@ export const featuredEvent = {
   format: "Panel",
   status: "Coming soon",
   description:
-    "Our first gathering. A founder panel to open The Founders Experience — real conversation, practical lessons, and the start of the community.",
+    "Our first gathering. A founder panel to open The Founders Experience: real conversation, practical lessons, and the start of the community.",
 };
 
 export const upcomingEvents = [
@@ -184,7 +287,7 @@ export const founders = [
     focus: "Recruiting experience",
     initials: "RH",
     image: "/founders/ryan-house.png",
-    imagePosition: "center 12%",
+    imagePosition: "78% 22%",
   },
 ];
 

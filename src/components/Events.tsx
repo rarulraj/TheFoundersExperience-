@@ -19,7 +19,7 @@ const detailRows = [
 
 export function Events({ showAllLink = true, compact = false }: EventsProps) {
   return (
-    <section id="events" className="py-section-sm section-divider">
+    <section id="events" className="py-section">
       <div className="container-site">
         <FadeIn>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
@@ -32,7 +32,7 @@ export function Events({ showAllLink = true, compact = false }: EventsProps) {
             {showAllLink && (
               <Link
                 href="/events"
-                className="group inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-brand underline-offset-4 hover:underline"
+                className="group inline-flex shrink-0 items-center gap-1.5 text-sm font-semibold text-brand underline-offset-4 hover:underline"
               >
                 View all events
                 <span
@@ -53,15 +53,15 @@ export function Events({ showAllLink = true, compact = false }: EventsProps) {
         >
           <FadeIn>
             <article className="surface-panel glow-brand relative overflow-hidden rounded-3xl">
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_60%_at_88%_0%,rgba(0,198,252,0.14),transparent_70%)]" />
-              <div className="relative p-6 sm:p-10">
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_60%_at_88%_0%,rgba(0,198,252,0.12),transparent_70%)]" />
+              <div className="relative p-7 sm:p-10">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="inline-flex rounded-full bg-accent px-3 py-1 text-[0.7rem] font-semibold tracking-[0.14em] text-accent-foreground uppercase">
+                  <span className="inline-flex rounded-full bg-secondary px-3.5 py-1.5 text-[0.68rem] font-bold tracking-[0.14em] text-secondary-foreground uppercase">
                     First gathering
                   </span>
-                  <span className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/10 px-3 py-1 text-[0.7rem] font-semibold tracking-[0.14em] text-brand uppercase">
+                  <span className="inline-flex items-center gap-2 rounded-full border border-brand/25 bg-accent px-3.5 py-1.5 text-[0.68rem] font-bold tracking-[0.14em] text-accent-foreground uppercase">
                     <span className="relative flex size-1.5">
-                      <span className="absolute inline-flex size-full animate-ping rounded-full bg-brand opacity-70" />
+                      <span className="absolute inline-flex size-full animate-ping rounded-full bg-brand opacity-60" />
                       <span className="relative inline-flex size-1.5 rounded-full bg-brand" />
                     </span>
                     {featuredEvent.status}
@@ -74,11 +74,11 @@ export function Events({ showAllLink = true, compact = false }: EventsProps) {
                   {featuredEvent.description}
                 </p>
 
-                <ul className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-border/70 bg-border/40 sm:grid-cols-3">
+                <ul className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-border bg-border/60 sm:grid-cols-3">
                   {detailRows.map(({ icon: Icon, key }) => (
                     <li
                       key={key}
-                      className="flex min-w-0 items-center gap-2.5 bg-surface px-4 py-4 text-sm text-ink"
+                      className="flex min-w-0 items-center gap-2.5 bg-card px-4 py-4 text-sm font-medium text-ink"
                     >
                       <Icon className="size-4 shrink-0 text-brand" />
                       <span className="min-w-0">{featuredEvent[key]}</span>
@@ -86,20 +86,20 @@ export function Events({ showAllLink = true, compact = false }: EventsProps) {
                   ))}
                 </ul>
 
-                <p className="mt-4 text-[0.7rem] font-medium tracking-[0.16em] text-muted-foreground uppercase">
+                <p className="mt-4 text-[0.68rem] font-bold tracking-[0.16em] text-muted-foreground uppercase">
                   {featuredEvent.format}
                 </p>
 
                 <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
                   <Button
                     render={<Link href="/events#event-updates" />}
-                    className="btn-glow h-11 w-full bg-brand px-5 text-brand-foreground transition-transform hover:-translate-y-0.5 hover:bg-brand/90 sm:w-auto"
+                    className="btn-glow h-11 w-full rounded-full bg-primary px-6 font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5 hover:bg-primary/90 sm:w-auto"
                   >
                     Get Event Updates
                   </Button>
                   <Link
                     href="/events#speak"
-                    className="inline-flex h-11 items-center justify-center px-1 text-sm font-medium text-ink underline-offset-4 transition-colors hover:text-brand hover:underline sm:justify-start"
+                    className="inline-flex h-11 items-center justify-center px-1 text-sm font-semibold text-ink underline-offset-4 transition-colors hover:text-brand hover:underline sm:justify-start"
                   >
                     Interested in Speaking?
                   </Link>
@@ -112,12 +112,12 @@ export function Events({ showAllLink = true, compact = false }: EventsProps) {
             <div className="grid gap-4">
               {upcomingEvents.map((event, index) => (
                 <FadeIn key={event.title} delay={index * 0.06}>
-                  <article className="surface-card h-full rounded-2xl p-6">
+                  <article className="surface-card h-full rounded-3xl p-6 sm:p-7">
                     <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
-                      <span className="text-[0.7rem] font-semibold tracking-[0.14em] text-brand uppercase">
+                      <span className="text-[0.68rem] font-bold tracking-[0.14em] text-brand uppercase">
                         {event.type}
                       </span>
-                      <span className="text-xs text-muted-foreground">
+                      <span className="text-xs font-medium text-muted-foreground">
                         {event.date}
                       </span>
                     </div>

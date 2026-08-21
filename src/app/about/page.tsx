@@ -14,8 +14,9 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="py-section pb-10">
-        <div className="container-site">
+      <section className="relative overflow-hidden py-section pb-10">
+        <div className="mesh-light absolute inset-0" />
+        <div className="container-site relative">
           <div className="max-w-3xl">
             <p className="eyebrow">About</p>
             <h1 className="mt-5 text-balance font-display text-h1 text-ink">
@@ -46,11 +47,11 @@ export default function AboutPage() {
           ].map((item) => (
             <article
               key={item.title}
-              className="surface-card group rounded-2xl p-6 sm:p-7"
+              className="surface-card group rounded-3xl p-7 sm:p-8"
             >
-              <div className="mb-5 h-px w-10 bg-brand/60 transition-all duration-500 group-hover:w-16" />
+              <div className="mb-6 h-1 w-10 rounded-full bg-gradient-to-r from-brand-bright to-brand-bright/30 transition-all duration-500 group-hover:w-16" />
               <h2 className="font-display text-h3 text-ink">{item.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-3 text-[0.95rem] leading-relaxed text-muted-foreground">
                 {item.body}
               </p>
             </article>
@@ -77,7 +78,7 @@ export default function AboutPage() {
             <div className="mt-8">
               <Button
                 render={<Link href="/apply" />}
-                className="btn-glow h-11 w-full bg-brand text-brand-foreground transition-transform hover:-translate-y-0.5 hover:bg-brand/90 sm:w-auto"
+                className="btn-glow h-12 w-full rounded-full bg-primary px-7 text-base font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5 hover:bg-primary/90 sm:w-auto"
               >
                 Apply to Join
               </Button>
@@ -90,7 +91,7 @@ export default function AboutPage() {
 
       <section id="privacy" className="py-section-sm">
         <div className="container-site">
-          <div className="surface-panel max-w-3xl rounded-2xl p-6 sm:p-8">
+          <div className="surface-panel max-w-3xl rounded-3xl p-6 sm:p-8">
             <h2 className="font-display text-h3 text-ink">Privacy</h2>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               We treat member and partner information with care. Application
