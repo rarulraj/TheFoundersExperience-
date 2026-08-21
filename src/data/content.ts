@@ -168,6 +168,9 @@ export const featuredEvent = {
   audience: "Founders and operators",
   format: "Panel",
   status: "Coming soon",
+  image: "/images/community-gathering.jpg",
+  imageAlt:
+    "Founders and operators gathered for a Founders Experience evening of conversations and shared lessons.",
   description:
     "Our first gathering. A founder panel to open The Founders Experience: real conversation, practical lessons, and the start of the community.",
 };
@@ -287,7 +290,7 @@ export const founders = [
     focus: "Recruiting experience",
     initials: "RH",
     image: "/founders/ryan-house.png",
-    imagePosition: "78% 22%",
+    imagePosition: "center top",
   },
 ];
 

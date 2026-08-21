@@ -88,7 +88,7 @@ Use tokens — not hardcoded hex — so both themes stay in sync.
 | `icon-tile` | Light cyan gradient tile, cyan border, `--brand` icon color. | Icon containers inside cards (pair with `rounded-xl`/`rounded-2xl` and a fixed `size-*`). |
 | `mesh-light` | Pastel cyan-forward radial mesh with a whisper of violet (navy glows in dark mode). | Behind page heroes and feature sections (`absolute inset-0` under content). |
 | `dark-panel` | `--navy` base with cyan radial auras. | Footer and CTA panels only. Pair with `text-white`, `grain`, and `rounded-[2rem]`. Stays navy in both themes. |
-| `media-frame` | Deep ambient shadow for the hero photo frame. | Hero community image shell. |
+| `media-frame` | Deep ambient shadow for a photo shell. | Optional; featured media if a high-res asset is framed. |
 | `shadow-lift` | Hairline lift shadow. | Secondary buttons on page surfaces. |
 | `grain` | SVG noise overlay (6% opacity). | Texture on `dark-panel` (absolute inset-0, `opacity-40`, `pointer-events-none`). |
 | `brand-flare` | 2px × 4rem cyan gradient bar. | Small accent above a left-aligned heading (About page). |
@@ -139,7 +139,9 @@ Also available: `text-balance` for headings, `animate-marquee` /
 Home (`src/app/page.tsx`) section order:
 
 1. `Hero` — mesh-light, centered eyebrow + display H1 with gradient span, ink
-   pill CTA, framed community photo with floating chips, proof strip.
+   pill CTA, proof strip. No hero photograph — the community photo lives on
+   the featured event card instead (source is ~1024px, too soft as a title
+   billboard).
 2. `CommunityBenefits` (`#community`)
 3. `FeatureShowcase` — 3 alternating rows (Community / Events /
    Introductions) with mock-UI visuals.
@@ -155,7 +157,8 @@ Home (`src/app/page.tsx`) section order:
 Other pages:
 
 - `/events` — mesh-light page hero (`eyebrow` + `text-h1`), `Events
-  showAllLink={false}`, `Speakers`, then `EventUpdatesForm` beside an
+  showAllLink={false}` (featured card includes the community gathering
+  photo as a short banner), `Speakers`, then `EventUpdatesForm` beside an
   "Interested in speaking?" `surface-panel` on `bg-surface/70`.
 - `/about` — mesh-light hero, three value `surface-card`s, brand-flare
   manifesto block with ink pill CTA, `Founders`, privacy `surface-panel`

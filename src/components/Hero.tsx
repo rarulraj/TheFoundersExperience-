@@ -1,11 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, CalendarDays, MapPin, Users } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { featuredEvent, socialProofPoints } from "@/data/content";
+import { socialProofPoints } from "@/data/content";
 
 export function Hero() {
   const reduceMotion = useReducedMotion();
@@ -29,7 +28,7 @@ export function Hero() {
         className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-background"
       />
 
-      <div className="container-site relative pt-20 pb-14 text-center sm:pt-28 sm:pb-20">
+      <div className="container-site relative pt-20 pb-16 text-center sm:pt-28 sm:pb-24">
         <motion.p {...rise(0)} className="eyebrow-center">
           Built by founders. For founders.
         </motion.p>
@@ -78,71 +77,6 @@ export function Hero() {
         <motion.p {...rise(0.3)} className="mt-6 text-sm text-muted-foreground">
           Membership is free for accepted founders and operators.
         </motion.p>
-
-        {/* Framed visual: the community, presented like a product shot. */}
-        <motion.div
-          initial={{ opacity: 0, y: reduceMotion ? 0 : 32, scale: reduceMotion ? 1 : 0.97 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{
-            duration: reduceMotion ? 0 : 0.8,
-            delay: reduceMotion ? 0 : 0.35,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          className="relative mx-auto mt-16 max-w-5xl"
-        >
-          <div
-            aria-hidden
-            className="absolute -inset-x-8 -top-10 bottom-1/3 rounded-[3rem] bg-[radial-gradient(ellipse_60%_60%_at_50%_0%,rgba(0,198,252,0.22),transparent_70%)] blur-2xl"
-          />
-          <div className="media-frame relative overflow-hidden rounded-3xl border border-border bg-card p-2 sm:rounded-[2rem] sm:p-2.5">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-2xl sm:rounded-[1.5rem]">
-              <Image
-                src="/images/community-gathering.jpg"
-                alt="Founders and operators gathered for a Founders Experience evening of conversations and shared lessons."
-                fill
-                priority
-                sizes="(min-width: 1024px) 1024px, 100vw"
-                className="object-cover object-[center_42%]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/45 via-transparent to-transparent" />
-
-              {/* Floating context chips, like product UI annotations. */}
-              <div className="absolute bottom-4 left-4 flex flex-col gap-2 sm:bottom-6 sm:left-6">
-                <motion.div
-                  {...rise(0.6)}
-                  className="flex items-center gap-2.5 rounded-2xl border border-white/25 bg-navy/55 px-4 py-2.5 text-left text-white shadow-lg backdrop-blur-md"
-                >
-                  <span className="icon-tile flex size-8 items-center justify-center rounded-xl border-white/20">
-                    <Users className="size-4 text-brand-bright" />
-                  </span>
-                  <span>
-                    <span className="block text-sm font-semibold">100+ founders</span>
-                    <span className="block text-xs text-white/70">
-                      and startup leaders
-                    </span>
-                  </span>
-                </motion.div>
-              </div>
-              <motion.div
-                {...rise(0.72)}
-                className="absolute right-4 bottom-4 hidden items-center gap-2.5 rounded-2xl border border-white/25 bg-navy/55 px-4 py-2.5 text-left text-white shadow-lg backdrop-blur-md sm:right-6 sm:bottom-6 md:flex"
-              >
-                <span className="icon-tile flex size-8 items-center justify-center rounded-xl border-white/20">
-                  <CalendarDays className="size-4 text-brand-bright" />
-                </span>
-                <span>
-                  <span className="block text-sm font-semibold">
-                    {featuredEvent.title}
-                  </span>
-                  <span className="flex items-center gap-1 text-xs text-white/70">
-                    <MapPin className="size-3" />
-                    {featuredEvent.location} · {featuredEvent.date}
-                  </span>
-                </span>
-              </motion.div>
-            </div>
-          </div>
-        </motion.div>
       </div>
 
       {/* Slim proof strip under the hero. */}
