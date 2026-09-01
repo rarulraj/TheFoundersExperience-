@@ -90,12 +90,12 @@ export function Footer() {
             href={foundingSponsor.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 text-white/45 not-italic transition-colors hover:text-white/80"
+            className="inline-flex items-center gap-3 not-italic"
           >
-            <span className="text-[0.62rem] font-bold tracking-[0.16em] uppercase">
+            <span className="text-[0.62rem] font-bold tracking-[0.16em] text-white/45 uppercase">
               Founding sponsor
             </span>
-            <TseLogo className="h-3.5 w-auto" />
+            <TseLogo variant="markOnNavy" className="h-6 w-auto" />
           </a>
         </div>
       </div>

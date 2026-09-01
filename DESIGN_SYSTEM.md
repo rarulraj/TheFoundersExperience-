@@ -144,10 +144,11 @@ Also available: `text-balance` for headings, `animate-marquee` /
   bars and “XPERIENCE” use `currentColor` (white on navy chrome). Favicon
   (`src/app/icon.svg`) is the three-bar tile on navy. Draft raster lives at
   `/public/brand/tfe-wordmark-draft.png` for a later swap.
-- **TSE logo**: `TseLogo` is an inline SVG in the same lockup language as
-  TFE. Use `mark` at caption scale on navy chrome (`currentColor`); use
-  `wordmark` on the `FoundingSponsor` card. Do not drop the raster
-  guideline files into the layout — they carry padding and a white box.
+- **TSE logo**: TSE is a separate company. Always use the official
+  guideline files via `TseLogo` — never redraw them in TFE’s lockup.
+  `wordmark` (navy on white) on the `FoundingSponsor` card; `markOnNavy`
+  on navy chrome. The site supplies white/navy clear space around the
+  artwork; it does not restyle the mark.
 - **Feature showcases**: `FeatureShowcase` renders alternating text/visual
   rows from `showcaseFeatures` in content.ts. Visuals are stylized mock-UI
   cards (directory, event, intro) built from divs — illustrative only, never
@@ -216,8 +217,7 @@ Key exports: `siteConfig`, `navLinks`, `whyCards`, `memberBenefits`,
    `dark-panel` + white / `text-white/70` copy + `text-brand-bright` accents
    + blue pill primary CTA.
 5. **TFE logo**: always use the SVG `Logo` component on navy chrome
-   (`text-white`). TSE uses `TseLogo` at caption scale on chrome and the
-   wordmark variant on the founding-sponsor card.
+   (`text-white`). TSE artwork stays official: frame it, don’t redraw it.
 6. **Motion**: respect `prefers-reduced-motion`. Use the existing `FadeIn`
    wrapper or the `useReducedMotion()` pattern from `Hero.tsx`; globals.css
    already zeroes CSS animation/transition durations under reduced motion.

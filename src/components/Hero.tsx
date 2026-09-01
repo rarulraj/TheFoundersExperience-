@@ -79,12 +79,12 @@ export function Hero() {
             href={foundingSponsor.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 text-white/45 transition-colors hover:text-white/80"
+            className="inline-flex items-center gap-3"
           >
-            <span className="text-[0.62rem] font-bold tracking-[0.18em] uppercase">
+            <span className="text-[0.62rem] font-bold tracking-[0.18em] text-white/45 uppercase">
               Backed by
             </span>
-            <TseLogo className="h-[15px] w-auto" />
+            <TseLogo variant="markOnNavy" className="h-7 w-auto sm:h-8" />
           </a>
         </motion.div>
       </div>
