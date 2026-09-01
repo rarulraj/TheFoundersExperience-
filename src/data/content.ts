@@ -6,6 +6,7 @@ export const siteConfig = {
     "A supportive community where founders and startup leaders connect, share the realities of building, learn from one another, and grow stronger companies together.",
   url: "https://thefoundersexperience.com",
   linkedin: "https://www.linkedin.com/company/the-founders-experience-startup-community/posts/?feedView=all",
+  calendly: "https://calendly.com/ryan-house-tse/the-founders-experinece",
 };
 
 export const navLinks = [
@@ -157,7 +158,7 @@ export const faqs = [
   {
     question: "Can my company partner with the community?",
     answer:
-      "Yes. Brands partner with us to fund programming and build real relationships with founders. Head to the Partners page to start the conversation.",
+      "Yes. Brands partner with us to fund programming and build real relationships with founders. Head to the Partners page to book a meeting or start the conversation.",
   },
 ];
 

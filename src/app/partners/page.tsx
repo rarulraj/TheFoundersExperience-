@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { Calendar } from "lucide-react";
 import { Partners } from "@/components/Partners";
 import { PartnershipTiers } from "@/components/PartnershipTiers";
 import { PartnerApplicationForm } from "@/components/PartnerApplicationForm";
+import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/data/content";
 
 export const metadata: Metadata = {
   title: "Partners",
@@ -25,6 +29,30 @@ export default function PartnersPage() {
               programming and participate in real founder experiences, not to
               buy a mailing list.
             </p>
+            <div className="mt-9 flex flex-col items-start gap-3 sm:flex-row">
+              <Button
+                render={
+                  <Link
+                    href={siteConfig.calendly}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  />
+                }
+                className="btn-glow h-12 w-full rounded-full bg-primary px-7 text-base font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5 hover:bg-primary/90 sm:w-auto"
+              >
+                Book a meeting with us
+                <Calendar
+                  data-icon="inline-end"
+                  className="size-4"
+                />
+              </Button>
+              <Link
+                href="#partner-form"
+                className="shadow-lift inline-flex h-12 w-full items-center justify-center gap-2 rounded-full border border-border bg-card px-7 text-base font-semibold text-ink transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:text-brand focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none sm:w-auto"
+              >
+                Send an inquiry
+              </Link>
+            </div>
           </div>
         </div>
       </section>

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Check } from "lucide-react";
 import { FadeIn } from "@/components/FadeIn";
 import { Button } from "@/components/ui/button";
-import { partnershipTiers } from "@/data/content";
+import { partnershipTiers, siteConfig } from "@/data/content";
 import { cn } from "@/lib/utils";
 
 export function PartnershipTiers() {
@@ -102,12 +102,25 @@ export function PartnershipTiers() {
         </div>
 
         <FadeIn delay={0.1}>
-          <div className="mt-12 flex justify-center">
+          <div className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button
-              render={<Link href="/partners#partner-form" />}
+              render={
+                <Link
+                  href={siteConfig.calendly}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
+              }
               className="btn-glow h-12 w-full rounded-full bg-primary px-7 text-base font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5 hover:bg-primary/90 sm:w-auto"
             >
-              Talk to Us About Partnership
+              Book a meeting with us
+            </Button>
+            <Button
+              render={<Link href="#partner-form" />}
+              variant="outline"
+              className="shadow-lift h-12 w-full rounded-full border-border bg-card px-7 text-base font-semibold text-ink transition-transform hover:-translate-y-0.5 hover:border-brand/40 hover:bg-card hover:text-brand sm:w-auto"
+            >
+              Send an inquiry
             </Button>
           </div>
         </FadeIn>

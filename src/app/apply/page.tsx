@@ -26,7 +26,7 @@ export default function ApplyPage() {
             <p className="mt-4 text-sm text-muted-foreground">
               Looking to sponsor instead?{" "}
               <Link
-                href="/partners#partner-form"
+                href="/partners"
                 className="font-medium text-brand underline-offset-4 hover:underline"
               >
                 Become a partner

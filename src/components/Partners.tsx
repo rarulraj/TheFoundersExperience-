@@ -17,6 +17,7 @@ import {
   foundingSponsor,
   companiesWorkedWith,
   companiesWorkedWithNote,
+  siteConfig,
 } from "@/data/content";
 
 const icons = [UsersRound, Eye, CalendarRange, FileText, Package, Infinity];
@@ -112,12 +113,26 @@ export function Partners() {
                 Interested in supporting founders? Let’s build something
                 together.
               </p>
-              <Button
-                render={<Link href="/partners#partner-form" />}
-                className="mt-9 h-12 w-full rounded-full bg-brand-bright px-7 text-base font-semibold text-navy shadow-[0_16px_40px_-14px_rgba(0,198,252,0.65)] transition-all hover:-translate-y-0.5 hover:bg-brand-bright/90 sm:w-auto"
-              >
-                Become a Founding Partner
-              </Button>
+              <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                <Button
+                  render={
+                    <Link
+                      href={siteConfig.calendly}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    />
+                  }
+                  className="h-12 w-full rounded-full bg-brand-bright px-7 text-base font-semibold text-navy shadow-[0_16px_40px_-14px_rgba(0,198,252,0.65)] transition-all hover:-translate-y-0.5 hover:bg-brand-bright/90 sm:w-auto"
+                >
+                  Book a meeting with us
+                </Button>
+                <Link
+                  href="#partner-form"
+                  className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 text-base font-semibold text-white/90 backdrop-blur-sm transition-colors hover:border-white/40 hover:bg-white/10 hover:text-white sm:w-auto"
+                >
+                  Send an inquiry
+                </Link>
+              </div>
             </div>
           </div>
         </FadeIn>

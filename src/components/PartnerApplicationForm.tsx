@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { budgetRanges, partnershipInterests } from "@/data/content";
+import { budgetRanges, partnershipInterests, siteConfig } from "@/data/content";
 import { submitPartnerApplication } from "@/lib/submissions";
 import { FadeIn } from "@/components/FadeIn";
 import { cn } from "@/lib/utils";
@@ -141,6 +141,16 @@ export function PartnerApplicationForm() {
           </h2>
           <p className="mt-3 text-lead text-muted-foreground">
             Tell us how your company would like to support the founder community.
+            Prefer a conversation?{" "}
+            <a
+              href={siteConfig.calendly}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-brand underline-offset-4 hover:underline"
+            >
+              Book a meeting with us
+            </a>
+            .
           </p>
         </div>
 
