@@ -26,7 +26,7 @@ export function CTASection() {
               <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <Button
                   render={<Link href="/apply" />}
-                  className="h-12 w-full rounded-full bg-brand-bright px-7 text-base font-semibold text-navy shadow-[0_16px_40px_-14px_rgba(0,198,252,0.65)] transition-all hover:-translate-y-0.5 hover:bg-brand-bright/90 sm:w-auto"
+                  className="h-12 w-full rounded-full bg-primary px-7 text-base font-semibold text-primary-foreground shadow-[0_16px_40px_-14px_rgba(var(--brand-rgb),0.65)] transition-all hover:-translate-y-0.5 hover:bg-primary/90 sm:w-auto"
                 >
                   Apply to Join
                   <ArrowRight

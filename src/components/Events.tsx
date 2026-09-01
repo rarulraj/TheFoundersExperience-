@@ -64,7 +64,7 @@ export function Events({ showAllLink = true, compact = false }: EventsProps) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/25 to-transparent" />
               </div>
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_60%_at_88%_0%,rgba(0,198,252,0.12),transparent_70%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_60%_at_88%_0%,rgba(var(--brand-rgb),0.12),transparent_70%)]" />
               <div className="relative px-7 pt-5 pb-7 sm:px-10 sm:pt-6 sm:pb-10">
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="inline-flex rounded-full bg-secondary px-3.5 py-1.5 text-[0.68rem] font-bold tracking-[0.14em] text-secondary-foreground uppercase">

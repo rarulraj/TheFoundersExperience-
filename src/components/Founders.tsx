@@ -30,7 +30,7 @@ export function Founders() {
                   <div className="relative">
                     <div
                       aria-hidden
-                      className="absolute -inset-1.5 rounded-full bg-[radial-gradient(circle,rgba(0,198,252,0.35),transparent_70%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                      className="absolute -inset-1.5 rounded-full bg-[radial-gradient(circle,rgba(var(--brand-rgb),0.35),transparent_70%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                     />
                     <div className="relative size-20 overflow-hidden rounded-full bg-secondary ring-1 ring-border transition-all duration-500 group-hover:ring-brand/50">
                       <Image

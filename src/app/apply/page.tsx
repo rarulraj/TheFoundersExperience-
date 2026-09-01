@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FounderApplicationForm } from "@/components/FounderApplicationForm";
+import { PageHero } from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Apply to Join",
@@ -11,33 +12,24 @@ export const metadata: Metadata = {
 export default function ApplyPage() {
   return (
     <>
-      <section className="relative overflow-hidden py-section pb-8">
-        <div className="mesh-light absolute inset-0" />
-        <div className="container-site relative">
-          <div className="max-w-3xl">
-            <p className="eyebrow">Membership</p>
-            <h1 className="mt-5 text-balance font-display text-h1 text-ink">
-              Apply to join the community.
-            </h1>
-            <p className="mt-7 max-w-2xl text-lead text-muted-foreground">
-              Membership is free for accepted founders and startup leaders. Tell
-              us what you’re building. We review every application carefully.
-            </p>
-            <p className="mt-4 text-sm text-muted-foreground">
-              Looking to sponsor instead?{" "}
-              <Link
-                href="/partners"
-                className="font-medium text-brand underline-offset-4 hover:underline"
-              >
-                Become a partner
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero eyebrow="Membership" title="Apply to join the community.">
+        <p className="mt-7 max-w-2xl text-lead text-white/70">
+          Membership is free for accepted founders and startup leaders. Tell us
+          what you’re building. We review every application carefully.
+        </p>
+        <p className="caption mt-4 text-white/55">
+          Looking to sponsor instead?{" "}
+          <Link
+            href="/partners"
+            className="font-medium text-brand-bright not-italic underline-offset-4 hover:underline"
+          >
+            Become a partner
+          </Link>
+          .
+        </p>
+      </PageHero>
 
-      <section className="py-section-sm pt-0">
+      <section className="py-section-sm">
         <div className="container-site">
           <div className="max-w-4xl">
             <FounderApplicationForm />

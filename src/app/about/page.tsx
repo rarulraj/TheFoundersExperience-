@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CTASection } from "@/components/CTASection";
 import { Founders } from "@/components/Founders";
+import { PageHero } from "@/components/PageHero";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/data/content";
 
@@ -14,22 +15,11 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="relative overflow-hidden py-section pb-10">
-        <div className="mesh-light absolute inset-0" />
-        <div className="container-site relative">
-          <div className="max-w-3xl">
-            <p className="eyebrow">About</p>
-            <h1 className="mt-5 text-balance font-display text-h1 text-ink">
-              A space for the realities of building.
-            </h1>
-            <p className="mt-7 text-lead text-muted-foreground">
-              {siteConfig.positioning}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero eyebrow="About" title="A space for the realities of building.">
+        <p className="mt-7 text-lead text-white/70">{siteConfig.positioning}</p>
+      </PageHero>
 
-      <section className="py-section-sm pt-0">
+      <section className="py-section-sm">
         <div className="container-site grid gap-6 lg:grid-cols-3">
           {[
             {

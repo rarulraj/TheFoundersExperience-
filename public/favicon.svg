@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="The Founders Experience">
-  <rect width="32" height="32" fill="#000"/>
+  <rect width="32" height="32" fill="#031F32"/>
   <rect x="5.8" y="6.6" width="20.4" height="4" rx="2" fill="#fff"/>
-  <rect x="5.8" y="14" width="20.4" height="4" rx="2" fill="#00C6FC"/>
+  <rect x="5.8" y="14" width="20.4" height="4" rx="2" fill="#28AEC3"/>
   <rect x="5.8" y="21.4" width="20.4" height="4" rx="2" fill="#fff"/>
 </svg>

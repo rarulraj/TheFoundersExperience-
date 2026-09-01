@@ -3,8 +3,8 @@ export const THEME_STORAGE_KEY = "tfe-theme";
 export type Theme = "light" | "dark";
 
 export const themeColors = {
-  light: "#f6f8fb",
-  dark: "#0a101c",
+  light: "#ffffff",
+  dark: "#031f32",
 } as const;
 
 function isTheme(value: string | null): value is Theme {

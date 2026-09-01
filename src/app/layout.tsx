@@ -1,12 +1,24 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Geist_Mono } from "next/font/google";
+import { Arimo, Geist_Mono, Montserrat, Open_Sans } from "next/font/google";
 import { SiteShell } from "@/components/SiteShell";
 import { siteConfig } from "@/data/content";
 import { themeColors, themeInitScript } from "@/lib/theme";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const arimo = Arimo({
+  variable: "--font-arimo",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
   subsets: ["latin"],
   display: "swap",
 });
@@ -57,13 +69,13 @@ export const metadata: Metadata = {
   ],
   icons: {
     icon: [
-      { url: "/favicon.svg?v=7", type: "image/svg+xml" },
-      { url: "/favicon.ico?v=7", sizes: "any" },
-      { url: "/favicon-16x16.png?v=7", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png?v=7", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.svg?v=8", type: "image/svg+xml" },
+      { url: "/favicon.ico?v=8", sizes: "any" },
+      { url: "/favicon-16x16.png?v=8", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png?v=8", sizes: "32x32", type: "image/png" },
     ],
-    shortcut: "/favicon.svg?v=7",
-    apple: [{ url: "/apple-touch-icon.png?v=7", sizes: "180x180" }],
+    shortcut: "/favicon.svg?v=8",
+    apple: [{ url: "/apple-touch-icon.png?v=8", sizes: "180x180" }],
   },
   manifest: "/site.webmanifest",
   applicationName: "The Founders Experience",
@@ -84,7 +96,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${geistMono.variable} h-full`}
+      className={`${montserrat.variable} ${arimo.variable} ${openSans.variable} ${geistMono.variable} h-full`}
       data-scroll-behavior="smooth"
       suppressHydrationWarning
     >

@@ -4,7 +4,8 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { socialProofPoints } from "@/data/content";
+import { TseLogo } from "@/components/TseLogo";
+import { foundingSponsor, socialProofPoints } from "@/data/content";
 
 export function Hero() {
   const reduceMotion = useReducedMotion();
@@ -20,14 +21,7 @@ export function Hero() {
   });
 
   return (
-    <section className="relative overflow-hidden">
-      {/* Pastel mesh wash, cyan-forward with a whisper of violet. */}
-      <div className="mesh-light absolute inset-0" />
-      <div
-        aria-hidden
-        className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-background"
-      />
-
+    <section className="hero-navy relative overflow-hidden">
       <div className="container-site relative pt-20 pb-16 text-center sm:pt-28 sm:pb-24">
         <motion.p {...rise(0)} className="eyebrow-center">
           Built by founders. For founders.
@@ -35,17 +29,17 @@ export function Hero() {
 
         <motion.h1
           {...rise(0.06)}
-          className="mx-auto mt-7 max-w-4xl text-balance font-display text-display text-ink"
+          className="mx-auto mt-7 max-w-4xl text-balance font-display text-display text-white"
         >
           Building a company is hard.{" "}
-          <span className="bg-[linear-gradient(100deg,var(--brand)_10%,var(--brand-bright)_55%,#818cf8_100%)] bg-clip-text text-transparent">
+          <span className="bg-[linear-gradient(100deg,#7ed4e2_10%,var(--brand-bright)_70%,#ffffff_100%)] bg-clip-text text-transparent">
             You shouldn’t have to do it alone.
           </span>
         </motion.h1>
 
         <motion.p
           {...rise(0.14)}
-          className="mx-auto mt-6 max-w-2xl text-lead text-muted-foreground"
+          className="mx-auto mt-6 max-w-2xl text-lead text-white/70"
         >
           The Founders Experience brings founders and startup leaders together
           to share the realities of building, learn from each other, and grow
@@ -68,29 +62,41 @@ export function Hero() {
           </Button>
           <Link
             href="/events"
-            className="shadow-lift inline-flex h-12 w-full items-center justify-center gap-2 rounded-full border border-border bg-card px-7 text-base font-semibold text-ink transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:text-brand focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none sm:w-auto"
+            className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 text-base font-semibold text-white/90 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/10 hover:text-white focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none sm:w-auto"
           >
             See upcoming events
           </Link>
         </motion.div>
 
-        <motion.p {...rise(0.3)} className="mt-6 text-sm text-muted-foreground">
+        <motion.p {...rise(0.3)} className="caption mt-6 text-white/50">
           Membership is free for accepted founders and operators.
         </motion.p>
+
+        <motion.a
+          {...rise(0.36)}
+          href={foundingSponsor.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-8 inline-flex items-center gap-3 text-white/55 transition-colors hover:text-white"
+        >
+          <span className="text-[0.68rem] font-bold tracking-[0.18em] uppercase">
+            Backed by
+          </span>
+          <TseLogo variant="markOnNavy" className="h-7 w-auto sm:h-8" />
+        </motion.a>
       </div>
 
-      {/* Slim proof strip under the hero. */}
-      <div className="relative border-y border-border/80 bg-surface/70">
+      <div className="relative border-y border-white/10 bg-white/5">
         <div className="container-site flex flex-wrap items-center justify-center gap-x-8 gap-y-2.5 py-5">
           {socialProofPoints.map((point, index) => (
             <span key={point} className="flex items-center gap-8">
               {index > 0 && (
                 <span
                   aria-hidden
-                  className="hidden size-1 rounded-full bg-brand-bright/60 sm:block"
+                  className="hidden size-1 rounded-full bg-brand-bright/70 sm:block"
                 />
               )}
-              <span className="text-[0.72rem] font-semibold tracking-[0.16em] text-muted-foreground uppercase transition-colors hover:text-ink">
+              <span className="text-[0.72rem] font-semibold tracking-[0.16em] text-white/55 uppercase transition-colors hover:text-white">
                 {point}
               </span>
             </span>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Events } from "@/components/Events";
 import { Speakers } from "@/components/Speakers";
 import { EventUpdatesForm } from "@/components/EventUpdatesForm";
+import { PageHero } from "@/components/PageHero";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
@@ -14,21 +15,15 @@ export const metadata: Metadata = {
 export default function EventsPage() {
   return (
     <>
-      <section className="relative overflow-hidden py-section pb-10">
-        <div className="mesh-light absolute inset-0" />
-        <div className="container-site relative">
-          <div className="max-w-3xl">
-            <p className="eyebrow">Events</p>
-            <h1 className="mt-5 text-balance font-display text-h1 text-ink">
-              Gatherings for people building companies.
-            </h1>
-            <p className="mt-7 max-w-2xl text-lead text-muted-foreground">
-              We start in October with the Founders Panel, our first gathering.
-              More dinners, roundtables, and in-person sessions will follow.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Events"
+        title="Gatherings for people building companies."
+      >
+        <p className="mt-7 max-w-2xl text-lead text-white/70">
+          We start in October with the Founders Panel, our first gathering.
+          More dinners, roundtables, and in-person sessions will follow.
+        </p>
+      </PageHero>
 
       <Events showAllLink={false} />
       <Speakers />
@@ -55,7 +50,7 @@ export default function EventsPage() {
               >
                 Share your interest
               </Button>
-              <p className="mt-4 text-xs text-muted-foreground">
+              <p className="caption mt-4 text-muted-foreground">
                 Prefer email? Mention speaking in your member application or
                 partner inquiry.
               </p>

@@ -175,7 +175,7 @@ export function FeatureShowcase() {
                 >
                   <div
                     aria-hidden
-                    className="absolute inset-0 -z-10 scale-90 rounded-[3rem] bg-[radial-gradient(ellipse_65%_65%_at_50%_45%,rgba(0,198,252,0.16),transparent_70%)] blur-xl"
+                    className="absolute inset-0 -z-10 scale-90 rounded-[3rem] bg-[radial-gradient(ellipse_65%_65%_at_50%_45%,rgba(var(--brand-rgb),0.16),transparent_70%)] blur-xl"
                   />
                   <Visual />
                 </div>

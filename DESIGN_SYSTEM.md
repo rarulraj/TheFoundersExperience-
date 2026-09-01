@@ -4,17 +4,32 @@ Context for AI agents and developers working on this site. Grounded in the
 current codebase (`src/app/globals.css`, `src/components/*`, `src/data/content.ts`).
 Next.js 16 (App Router) + Tailwind CSS v4 + shadcn-style tokens + framer-motion.
 
+TFE is visually aligned with **The Search Experience (TSE)** brand: deep navy
+chrome, light-blue CTAs, and TSE’s type stack. Structure, copy, and journey
+stay as built — this is a branding pass, not a redesign.
+
 ## 1. Design direction
 
-The site is a polished, Circle.so-inspired product with a **light default**
-and a first-class **navy dark mode**. Light surfaces are cool pearl
-(`--background: #f6f8fb`) with white cards and deep navy ink (`#0c1524`) for
-text and primary pills. Dark mode inverts the page to a navy field
-(`#0a101c`) with lifted cards (`#121a2b`) and inverted light pills. The brand
-cyan is used two ways: `--brand` for text/icons (deepened on light, brightened
-on dark so contrast holds), and `--brand-bright` (`#00c6fc`) for glows,
-gradients, and accents on `dark-panel` sections. Deep navy (`--navy`) is still
-reserved for footer and CTA panels — those stay dark in both themes.
+Light default with navy **page chrome** (nav, heroes, footer) so TFE reads as
+backed by TSE. Page interiors stay white with cool-gray surfaces and white
+cards. Dark mode uses the same navy field (`#031f32`) with lifted cards.
+
+Color roles come from TSE Marketing:
+
+| Role | Hex | Use on this site |
+|---|---|---|
+| Deep Navy | `#031F32` | Nav, heroes, footer, dark panels, body ink |
+| Light Blue | `#28AEC3` | CTAs, highlights, glows, the three-bar E |
+| White | `#FFFFFF` | Page background, copy on navy |
+| Cool Gray | `#A9A9A9` | Borders/hairlines (not body text — contrast) |
+
+`--brand` is a deepened teal (`#1b7d8c` on light) so links and icons meet WCAG
+on white. `--brand-bright` stays the official `#28AEC3` for buttons and navy
+accents. Pink / orange / yellow / green from the TSE deck are not used here.
+
+Type: **Montserrat** headings (`font-display`), **Arimo** body (`font-sans`),
+**Open Sans** italic notes (`.caption`). Headings stay sentence case so the
+site voice does not become all-caps.
 
 Theme is class-based (`html.dark`), toggled from the header (`ThemeToggle`),
 and persisted in `localStorage` (`tfe-theme`). A blocking script in the root
@@ -31,18 +46,18 @@ Use tokens — not hardcoded hex — so both themes stay in sync.
 
 | Token | Light | Dark | Use |
 |---|---|---|---|
-| `--background` | `#f6f8fb` | `#0a101c` | Page background. |
-| `--foreground` / `--ink` | `#0c1524` | `#e7eef7` | Body/heading text. |
-| `--surface` | `#eef3f8` | `#0e1626` | Alternating section background (`bg-surface/70`). |
-| `--card` | `#ffffff` | `#121a2b` | Card/panel fill. |
-| `--muted-foreground` | `#5a6c80` | `#8fa0b5` | Secondary/body copy. |
-| `--border` | `#dde5ee` | `#243044` | Hairline borders everywhere. |
-| `--brand` | `#007dad` | `#3ec6ea` | Cyan for text/icons/links on page surfaces. |
-| `--brand-bright` | `#00c6fc` | `#00c6fc` | Vivid cyan: glows, gradients, dark-panel accents. |
-| `--accent` | `#dff4fc` | `#0c3040` | Tint for chips, icon tiles, soft highlights. |
-| `--navy` | `#07101f` | `#060d1c` | Footer + CTA dark panels. |
-| `--primary` | `#0c1524` | `#e7eef7` | Primary action pills (ink on light, inverted on dark). |
-| `--ring` | `#00a8d8` | `#00c6fc` | Focus rings. |
+| `--background` | `#ffffff` | `#031f32` | Page background. |
+| `--foreground` / `--ink` | `#031f32` | `#f4f8fa` | Body/heading text. |
+| `--surface` | `#f3f6f8` | `#072536` | Alternating section background (`bg-surface/70`). |
+| `--card` | `#ffffff` | `#0a2c40` | Card/panel fill. |
+| `--muted-foreground` | `#5a6a75` | `#9aadb8` | Secondary/body copy. |
+| `--border` | `#d5dce1` | `#1a4258` | Hairline borders everywhere. |
+| `--brand` | `#1b7d8c` | `#4ec3d4` | Teal for text/icons/links on page surfaces. |
+| `--brand-bright` | `#28aec3` | `#28aec3` | Official TSE blue: CTAs, glows, navy accents. |
+| `--accent` | `#e4f5f8` | `#0c3a4c` | Tint for chips, icon tiles, soft highlights. |
+| `--navy` | `#031f32` | `#031f32` | Nav, heroes, footer, CTA dark panels. |
+| `--primary` | `#28aec3` | `#28aec3` | Primary action pills (navy label on blue). |
+| `--ring` | `#28aec3` | `#28aec3` | Focus rings. |
 
 ### Shape & layout
 
@@ -76,18 +91,20 @@ Use tokens — not hardcoded hex — so both themes stay in sync.
 | Class | What it does | When to use |
 |---|---|---|
 | `container-site` | Centers content, `max-width: 75rem`, fluid gutter padding. Owns max-width — put any narrower `max-w-*` on a child, not alongside it. | Every section's inner wrapper. |
-| `font-display` | Inter with `letter-spacing: -0.035em`, weight 650. | All headings (`h1`–`h4` styled text). |
-| `eyebrow` | Small uppercase brand-cyan label with a gradient hairline lead-in. | Left-aligned section intros (page heroes, FAQ). |
-| `eyebrow-center` | Pill variant: bordered chip with glowing cyan dot. | Centered, Circle-style section intros. On dark panels override with `border-white/15 bg-white/5 text-brand-bright shadow-none`. |
+| `font-display` | Montserrat, `letter-spacing: -0.03em`, weight 700. | All headings (`h1`–`h4` styled text). |
+| `caption` | Open Sans italic, 12px. | Notes, legal, helper copy. |
+| `eyebrow` | Small uppercase Montserrat label with a gradient hairline lead-in. On `.hero-navy` it turns TSE blue. | Left-aligned section intros (page heroes, FAQ). |
+| `eyebrow-center` | Pill variant: bordered chip with glowing blue dot. On `.hero-navy` it becomes a glass chip automatically. | Centered section intros. |
+| `hero-navy` | `--navy` base with TSE-blue radial auras. | Home hero and inner page heroes (`PageHero`). White copy. |
+| `mesh-light` | Soft TSE-blue radial wash, no violet. | Behind light feature sections such as Manifesto. |
+| `dark-panel` | Same navy treatment as `hero-navy`. | Footer and CTA panels. Pair with `text-white`, `grain`. |
+| `btn-glow` | Blue ambient lift for primary pills. | Every `bg-primary` pill button. |
 | `surface-panel` | White panel: hairline border + soft ambient shadow. Static. | Non-interactive containers (FAQ accordion, form panels, privacy box). |
 | `surface-card` | Same shell plus hover: cyan-tinted border, `translateY(-3px)`, deeper shadow. | Interactive/feature cards, always with `rounded-3xl`. |
 | `section-divider` | Hairline at section top that fades out at both edges. | Boundary between alternating white / `bg-surface/70` sections. |
 | `rule-fade` | Standalone 1px horizontal rule fading at both edges. | Inline separators inside a section. |
-| `glow-brand` | Soft cyan ambient shadow. | Lifting hero visuals / featured panels on light backgrounds. |
-| `btn-glow` | Lift shadow for dark primary pills; hover shifts the glow toward cyan. | Every `bg-primary` pill button. |
+| `glow-brand` | Soft cyan ambient shadow. | Lifting featured panels on light backgrounds. |
 | `icon-tile` | Light cyan gradient tile, cyan border, `--brand` icon color. | Icon containers inside cards (pair with `rounded-xl`/`rounded-2xl` and a fixed `size-*`). |
-| `mesh-light` | Pastel cyan-forward radial mesh with a whisper of violet (navy glows in dark mode). | Behind page heroes and feature sections (`absolute inset-0` under content). |
-| `dark-panel` | `--navy` base with cyan radial auras. | Footer and CTA panels only. Pair with `text-white`, `grain`, and `rounded-[2rem]`. Stays navy in both themes. |
 | `media-frame` | Deep ambient shadow for a photo shell. | Optional; featured media if a high-res asset is framed. |
 | `shadow-lift` | Hairline lift shadow. | Secondary buttons on page surfaces. |
 | `grain` | SVG noise overlay (6% opacity). | Texture on `dark-panel` (absolute inset-0, `opacity-40`, `pointer-events-none`). |
@@ -98,37 +115,38 @@ Also available: `text-balance` for headings, `animate-marquee` /
 
 ## 4. Component patterns
 
-- **Primary buttons** are theme-aware pills: `rounded-full bg-primary
+- **Primary buttons** are TSE blue pills: `rounded-full bg-primary
   text-primary-foreground btn-glow h-12 px-7 font-semibold`, hover
-  `-translate-y-0.5` + `bg-primary/90`. Ink on light, inverted on dark.
-  Built on `Button` from `@/components/ui/button` with `render={<Link … />}`.
-- **Cyan pill CTAs** (`bg-brand-bright text-navy` + cyan glow shadow) appear
-  **only on dark panels** (CTASection, footer, featured partnership tier).
-  Never on ordinary page surfaces.
+  `-translate-y-0.5` + `bg-primary/90`. Navy label on `#28AEC3` in both
+  themes. Built on `Button` from `@/components/ui/button` with
+  `render={<Link … />}`.
 - **Secondary buttons** on page surfaces: `rounded-full border border-border
-  bg-card text-ink`, hover `border-brand/40 text-brand`. On dark panels:
+  bg-card text-ink`, hover `border-brand/40 text-brand`. On navy chrome:
   `border-white/20 bg-white/5 text-white/90 backdrop-blur-sm`.
-- **Theme toggle** lives in the header (`ThemeToggle`). Icons switch via the
-  `.dark` class so the correct glyph shows before React hydrates.
+- **Theme toggle** lives in the navy header (`ThemeToggle`) as a glass chip.
+  Icons switch via the `.dark` class so the correct glyph shows before React
+  hydrates.
 - **Cards**: `surface-card rounded-3xl p-7 sm:p-8`, title in `font-display
   text-h4 text-ink`, body in `text-muted-foreground`, icons in `icon-tile`.
 - **Section intros**: centered sections use `eyebrow-center` + `mx-auto
   max-w-2xl text-center`; left-aligned sections use `eyebrow`. Headings are
   `font-display text-h2 text-ink text-balance`.
 - **Section rhythm**: alternate white and `bg-surface/70` sections, separated
-  by `section-divider` hairlines; standard sections use `py-section-sm`,
-  page heroes use `py-section` over `mesh-light`.
+  by `section-divider` hairlines; standard sections use `py-section-sm`.
+  Page heroes use `PageHero` (`hero-navy` + white type).
 - **Scroll reveals**: wrap blocks in `<FadeIn>` (`src/components/FadeIn.tsx`),
   stagger with `delay={index * 0.08}`. Hero uses framer-motion directly with
   `useReducedMotion()`.
 - **Wordmark strips**: `LogoMarquee` (`src/components/LogoMarquee.tsx`) renders
   company-name marquees using the marquee keyframes.
-- **Logo**: `src/components/Logo.tsx` is an inline SVG wordmark. The mark is
-  the same three-bar tile as the favicon (`src/app/icon.svg`) — dark tile,
-  white/cyan/white bars — so browser tab, nav, and footer all match. The type
-  uses `currentColor`, so the parent sets the color (`text-ink` on light,
-  `text-white` on dark); a faint `currentColor` stroke keeps the tile defined
-  on dark panels. Never use the old `/public/logo.png` (dark-background-only).
+- **TFE logo**: `src/components/Logo.tsx` is an inline SVG lockup in TSE’s
+  language — tracked “THE FOUNDERS” over the three-bar E + “XPERIENCE”. Outer
+  bars and “XPERIENCE” use `currentColor` (white on navy chrome). Favicon
+  (`src/app/icon.svg`) is the three-bar tile on navy. Draft raster lives at
+  `/public/brand/tfe-wordmark-draft.png` for a later swap.
+- **TSE logo**: official files from the brand guidelines live in
+  `/public/sponsors/`. Use `TseLogo` (`wordmark` on light cards,
+  `markOnNavy` on navy). Founding sponsor card is `FoundingSponsor`.
 - **Feature showcases**: `FeatureShowcase` renders alternating text/visual
   rows from `showcaseFeatures` in content.ts. Visuals are stylized mock-UI
   cards (directory, event, intro) built from divs — illustrative only, never
@@ -138,10 +156,10 @@ Also available: `text-balance` for headings, `animate-marquee` /
 
 Home (`src/app/page.tsx`) section order:
 
-1. `Hero` — mesh-light, centered eyebrow + display H1 with gradient span, ink
-   pill CTA, proof strip. No hero photograph — the community photo lives on
-   the featured event card instead (source is ~1024px, too soft as a title
-   billboard).
+1. `Hero` — `hero-navy`, centered eyebrow + display H1 with TSE-blue
+   gradient span, blue CTA, “Backed by” TSE mark, proof strip. No hero
+   photograph — the community photo lives on the featured event card instead
+   (source is ~1024px, too soft as a title billboard).
 2. `CommunityBenefits` (`#community`)
 3. `FeatureShowcase` — 3 alternating rows (Community / Events /
    Introductions) with mock-UI visuals.
@@ -152,22 +170,23 @@ Home (`src/app/page.tsx`) section order:
 8. `Events compact` — upcoming events teaser.
 9. `Manifesto` — big gradient statement + `manifestoStats` band on mesh-light.
 10. `FAQ` — left intro + accordion in a `surface-panel`.
-11. `CTASection` — `dark-panel` + `grain`, cyan pill CTA.
+11. `CTASection` — `dark-panel` + `grain`, blue pill CTA.
 
 Other pages:
 
-- `/events` — mesh-light page hero (`eyebrow` + `text-h1`), `Events
-  showAllLink={false}` (featured card includes the community gathering
-  photo as a short banner), `Speakers`, then `EventUpdatesForm` beside an
-  "Interested in speaking?" `surface-panel` on `bg-surface/70`.
-- `/about` — mesh-light hero, three value `surface-card`s, brand-flare
-  manifesto block with ink pill CTA, `Founders`, privacy `surface-panel`
-  (`#privacy`), `CTASection`.
-- `/partners` — mesh-light hero, `Partners` (benefits), `PartnershipTiers`,
+- `/events` — `PageHero` navy band, `Events showAllLink={false}` (featured
+  card includes the community gathering photo as a short banner), `Speakers`,
+  then `EventUpdatesForm` beside an "Interested in speaking?" `surface-panel`
+  on `bg-surface/70`.
+- `/about` — `PageHero`, three value `surface-card`s, brand-flare manifesto
+  block with blue pill CTA, `Founders`, privacy `surface-panel` (`#privacy`),
+  `CTASection`.
+- `/partners` — `PageHero` with meeting/inquiry CTAs, `Partners` (benefits +
+  TSE founding sponsor lockup), `PartnershipTiers`,
   `PartnerApplicationForm` (`#partner-form`).
-- `/apply` — mesh-light hero with partner cross-link, `FounderApplicationForm`.
+- `/apply` — `PageHero` with partner cross-link, `FounderApplicationForm`.
 
-All pages sit under the sticky header (`--header-h`) and the dark navy
+All pages sit under the sticky navy header (`--header-h`) and the navy
 `Footer` in `src/app/layout.tsx`.
 
 ## 6. Content model
@@ -183,25 +202,20 @@ Key exports: `siteConfig`, `navLinks`, `whyCards`, `memberBenefits`,
 
 ## 7. Rules for future changes
 
-1. **Page chrome is theme-aware.** Use `bg-background`, `bg-surface`,
-   `bg-card`, `text-ink`, and `text-muted-foreground` — never hardcoded
-   `#fff` / `#0d1526` on page surfaces. Dark mode is a first-class theme,
-   not a page-wide `dark-panel`.
-2. **Don't use `bg-brand` with white text on light surfaces.** Primary actions
-   are `bg-primary` pills; cyan pills (`bg-brand-bright text-navy`) are
-   for dark panels only.
-3. **Keep `#00c6fc` (`brand-bright`) off small text on light surfaces** — it
-   fails contrast. Use `text-brand` for cyan text, links, and icons on page
-   backgrounds. `brand-bright` is for glows, gradients, dots, and accents
-   on dark panels.
-4. **Dark panels** follow the CTASection recipe in both themes: `dark-panel`
-   + `grain` overlay + `text-white` / `text-white/70` copy +
-   `text-brand-bright` accents + cyan pill primary CTA. They stay navy even
-   when the rest of the page is dark.
-5. **Logo**: always use the SVG `Logo` component and set color via the
-   parent's text color (`text-ink` on page chrome, `text-white` on dark
-   panels). `/public/logo.png` is dark-background-only — do not use it on
-   light surfaces.
+1. **Page interiors are theme-aware.** Use `bg-background`, `bg-surface`,
+   `bg-card`, `text-ink`, and `text-muted-foreground` on page surfaces. Nav,
+   heroes, and footer stay navy (`hero-navy` / `bg-navy` / `dark-panel`) with
+   white copy in both themes.
+2. **Primary actions are TSE blue** (`bg-primary text-primary-foreground`,
+   navy on `#28AEC3`). Do not put white text on `#28AEC3` — contrast fails.
+3. **Keep `#28AEC3` (`brand-bright`) off small text on light surfaces** — it
+   fails contrast. Use `text-brand` for teal text, links, and icons on page
+   backgrounds. `brand-bright` is for CTAs, glows, dots, and accents on navy.
+4. **Navy chrome** follows the hero/footer recipe: `hero-navy` or
+   `dark-panel` + white / `text-white/70` copy + `text-brand-bright` accents
+   + blue pill primary CTA.
+5. **TFE logo**: always use the SVG `Logo` component on navy chrome
+   (`text-white`). Official TSE files go through `TseLogo`, never a redraw.
 6. **Motion**: respect `prefers-reduced-motion`. Use the existing `FadeIn`
    wrapper or the `useReducedMotion()` pattern from `Hero.tsx`; globals.css
    already zeroes CSS animation/transition durations under reduced motion.

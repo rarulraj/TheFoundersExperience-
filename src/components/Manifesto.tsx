@@ -12,7 +12,7 @@ export function Manifesto() {
           <p className="eyebrow-center">Why we exist</p>
           <h2 className="mx-auto mt-7 max-w-4xl text-balance font-display text-h1 text-ink">
             Great companies aren’t built alone.{" "}
-            <span className="bg-[linear-gradient(100deg,var(--brand)_10%,var(--brand-bright)_55%,#818cf8_100%)] bg-clip-text text-transparent">
+            <span className="bg-[linear-gradient(100deg,#7ed4e2_10%,var(--brand-bright)_70%,var(--brand)_100%)] bg-clip-text text-transparent">
               They’re built in community.
             </span>
           </h2>
@@ -30,7 +30,7 @@ export function Manifesto() {
                 key={stat.label}
                 className="flex flex-col items-center gap-2 border-l border-border/80 px-4 first:border-l-0 max-lg:[&:nth-child(3)]:border-l-0"
               >
-                <dt className="order-2 max-w-[12rem] text-xs leading-snug font-medium text-muted-foreground">
+                <dt className="caption order-2 max-w-[12rem] leading-snug text-muted-foreground">
                   {stat.label}
                 </dt>
                 <dd className="order-1 font-display text-h2 text-ink">

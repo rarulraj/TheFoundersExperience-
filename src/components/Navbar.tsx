@@ -107,17 +107,17 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 border-b transition-all duration-500",
+        "sticky top-0 z-50 border-b bg-navy text-white transition-all duration-500",
         scrolled || open
-          ? "border-border/80 bg-background/85 shadow-[0_8px_30px_-18px_rgba(var(--shadow-ink),0.28)] backdrop-blur-xl"
-          : "border-transparent bg-transparent"
+          ? "border-white/10 shadow-[0_8px_30px_-18px_rgba(var(--navy-rgb),0.55)] backdrop-blur-xl"
+          : "border-transparent"
       )}
     >
       <div className="container-site flex h-[var(--header-h)] items-center justify-between gap-4">
         <Link
           href="/"
           aria-label="The Founders Experience home"
-          className="group flex min-w-0 items-center text-ink"
+          className="group flex min-w-0 items-center text-white"
         >
           <Logo
             priority
@@ -136,8 +136,8 @@ export function Navbar() {
                 className={cn(
                   "relative rounded-full px-4 py-2 text-sm font-medium transition-colors",
                   active
-                    ? "text-ink"
-                    : "text-muted-foreground hover:text-ink"
+                    ? "text-white"
+                    : "text-white/65 hover:text-white"
                 )}
               >
                 {link.label}
@@ -167,7 +167,7 @@ export function Navbar() {
           <ThemeToggle />
           <button
             type="button"
-            className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-border bg-card text-ink shadow-sm transition-colors hover:border-brand/40 hover:text-brand"
+            className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white shadow-sm transition-colors hover:border-brand-bright/50 hover:text-brand-bright"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls="mobile-menu"
@@ -181,7 +181,7 @@ export function Navbar() {
       {open && (
         <div
           id="mobile-menu"
-          className="animate-in fade-in slide-in-from-top-2 max-h-[calc(100dvh-var(--header-h))] overflow-y-auto overscroll-contain border-t border-border/80 bg-background/95 backdrop-blur-xl duration-200 lg:hidden"
+          className="animate-in fade-in slide-in-from-top-2 max-h-[calc(100dvh-var(--header-h))] overflow-y-auto overscroll-contain border-t border-white/10 bg-navy/98 backdrop-blur-xl duration-200 lg:hidden"
         >
           <div className="container-site flex flex-col gap-1 py-4">
             {navLinks.map((link) => {
@@ -195,8 +195,8 @@ export function Navbar() {
                   className={cn(
                     "flex items-center justify-between gap-3 rounded-xl px-4 py-3 text-sm transition-colors",
                     active
-                      ? "bg-accent font-semibold text-accent-foreground"
-                      : "text-ink hover:bg-muted hover:text-brand"
+                      ? "bg-white/10 font-semibold text-white"
+                      : "text-white/80 hover:bg-white/5 hover:text-white"
                   )}
                 >
                   {link.label}
@@ -216,7 +216,7 @@ export function Navbar() {
             >
               Apply to Join
             </Button>
-            <p className="px-3 pt-4 pb-1 text-[0.7rem] font-medium tracking-[0.14em] text-muted-foreground uppercase">
+            <p className="caption px-3 pt-4 pb-1 text-white/50">
               {siteConfig.tagline}
             </p>
           </div>

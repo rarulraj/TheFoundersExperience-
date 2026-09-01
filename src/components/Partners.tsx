@@ -12,9 +12,9 @@ import {
 import { FadeIn } from "@/components/FadeIn";
 import { LogoMarquee } from "@/components/LogoMarquee";
 import { Button } from "@/components/ui/button";
+import { FoundingSponsor } from "@/components/FoundingSponsor";
 import {
   partnerBenefits,
-  foundingSponsor,
   companiesWorkedWith,
   companiesWorkedWithNote,
   siteConfig,
@@ -70,36 +70,14 @@ export function Partners() {
             <LogoMarquee items={[...companiesWorkedWith].reverse()} reverse />
           </div>
         </div>
-        <p className="container-site mt-4 text-center text-sm text-muted-foreground">
+        <p className="container-site caption mt-4 text-center text-muted-foreground">
           {companiesWorkedWithNote}
         </p>
       </div>
 
       <div className="container-site">
         <FadeIn delay={0.1}>
-          <a
-            href={foundingSponsor.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="surface-card mx-auto mt-16 flex max-w-4xl flex-col gap-3 rounded-3xl px-7 py-7 sm:flex-row sm:items-center sm:justify-between sm:gap-10 sm:px-10"
-          >
-            <span className="flex items-center gap-4 sm:shrink-0">
-              <span className="icon-tile flex size-11 items-center justify-center rounded-2xl font-display text-sm font-bold">
-                {foundingSponsor.name.slice(0, 1)}
-              </span>
-              <span>
-                <span className="block text-[0.68rem] font-bold tracking-[0.18em] text-brand uppercase">
-                  Founding sponsor
-                </span>
-                <span className="mt-0.5 block font-display text-lg tracking-[0.12em] text-ink uppercase">
-                  {foundingSponsor.name}
-                </span>
-              </span>
-            </span>
-            <span className="text-sm leading-relaxed text-muted-foreground sm:max-w-md sm:text-right">
-              {foundingSponsor.description}
-            </span>
-          </a>
+          <FoundingSponsor className="mt-16" />
         </FadeIn>
 
         <FadeIn delay={0.12}>
@@ -122,7 +100,7 @@ export function Partners() {
                       rel="noopener noreferrer"
                     />
                   }
-                  className="h-12 w-full rounded-full bg-brand-bright px-7 text-base font-semibold text-navy shadow-[0_16px_40px_-14px_rgba(0,198,252,0.65)] transition-all hover:-translate-y-0.5 hover:bg-brand-bright/90 sm:w-auto"
+                  className="h-12 w-full rounded-full bg-primary px-7 text-base font-semibold text-primary-foreground shadow-[0_16px_40px_-14px_rgba(var(--brand-rgb),0.65)] transition-all hover:-translate-y-0.5 hover:bg-primary/90 sm:w-auto"
                 >
                   Book a meeting with us
                 </Button>
