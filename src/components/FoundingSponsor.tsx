@@ -13,20 +13,21 @@ export function FoundingSponsor({ className }: FoundingSponsorProps) {
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "surface-card mx-auto flex max-w-4xl flex-col gap-4 rounded-3xl px-7 py-7 sm:flex-row sm:items-center sm:justify-between sm:gap-10 sm:px-10",
+        "surface-card mx-auto flex max-w-4xl flex-col gap-5 rounded-3xl px-7 py-7 sm:flex-row sm:items-center sm:justify-between sm:gap-10 sm:px-10",
         className
       )}
     >
-      <span className="flex min-w-0 items-center gap-4 sm:shrink-0">
-        <TseLogo variant="wordmark" className="h-10 w-auto max-w-[min(72vw,240px)] sm:h-12" />
-      </span>
-      <span className="min-w-0 sm:text-right">
+      <span className="min-w-0 text-ink">
         <span className="block text-[0.68rem] font-bold tracking-[0.18em] text-brand uppercase">
           Founding sponsor
         </span>
-        <span className="mt-2 block text-sm leading-relaxed text-muted-foreground">
-          {foundingSponsor.description}
-        </span>
+        <TseLogo
+          variant="wordmark"
+          className="mt-3 h-8 w-auto max-w-[min(72vw,220px)] sm:h-9"
+        />
+      </span>
+      <span className="max-w-md text-sm leading-relaxed text-muted-foreground sm:text-right">
+        {foundingSponsor.description}
       </span>
     </a>
   );

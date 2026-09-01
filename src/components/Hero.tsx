@@ -68,22 +68,25 @@ export function Hero() {
           </Link>
         </motion.div>
 
-        <motion.p {...rise(0.3)} className="caption mt-6 text-white/50">
-          Membership is free for accepted founders and operators.
-        </motion.p>
-
-        <motion.a
-          {...rise(0.36)}
-          href={foundingSponsor.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-8 inline-flex items-center gap-3 text-white/55 transition-colors hover:text-white"
+        <motion.div
+          {...rise(0.3)}
+          className="mt-8 flex flex-col items-center gap-3.5"
         >
-          <span className="text-[0.68rem] font-bold tracking-[0.18em] uppercase">
-            Backed by
-          </span>
-          <TseLogo variant="markOnNavy" className="h-7 w-auto sm:h-8" />
-        </motion.a>
+          <p className="caption text-white/50">
+            Membership is free for accepted founders and operators.
+          </p>
+          <a
+            href={foundingSponsor.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2.5 text-white/45 transition-colors hover:text-white/80"
+          >
+            <span className="text-[0.62rem] font-bold tracking-[0.18em] uppercase">
+              Backed by
+            </span>
+            <TseLogo className="h-[15px] w-auto" />
+          </a>
+        </motion.div>
       </div>
 
       <div className="relative border-y border-white/10 bg-white/5">

@@ -48,17 +48,6 @@ export function Footer() {
               A curated community where founders and startup leaders share the
               realities of building. Membership is free for accepted members.
             </p>
-            <a
-              href={foundingSponsor.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-3 text-white/55 transition-colors hover:text-white"
-            >
-              <span className="text-[0.65rem] font-bold tracking-[0.16em] uppercase">
-                Founding sponsor
-              </span>
-              <TseLogo variant="markOnNavy" className="h-7 w-auto" />
-            </a>
           </div>
 
           <nav className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3">
@@ -92,12 +81,22 @@ export function Footer() {
 
         <div className="mt-14 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
 
-        <div className="caption mt-7 flex flex-col gap-2 text-white/45 sm:flex-row sm:items-center sm:justify-between">
+        <div className="caption mt-7 flex flex-col gap-3 text-white/45 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} The Founders Experience. All rights
             reserved.
           </p>
-          <p>A curated founder community.</p>
+          <a
+            href={foundingSponsor.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2.5 text-white/45 not-italic transition-colors hover:text-white/80"
+          >
+            <span className="text-[0.62rem] font-bold tracking-[0.16em] uppercase">
+              Founding sponsor
+            </span>
+            <TseLogo className="h-3.5 w-auto" />
+          </a>
         </div>
       </div>
     </footer>
