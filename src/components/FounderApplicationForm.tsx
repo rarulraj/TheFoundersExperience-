@@ -105,6 +105,28 @@ export function FounderApplicationForm() {
       return;
     }
 
+    const requiredFields: (keyof FormState)[] = [
+      "firstName",
+      "lastName",
+      "email",
+      "phone",
+      "linkedinUrl",
+      "companyName",
+      "companyWebsite",
+      "roleTitle",
+      "companyStage",
+      "companyLocation",
+      "industry",
+      "numberOfEmployees",
+      "whatBuilding",
+      "hopingToGet",
+      "couldContribute",
+    ];
+    if (requiredFields.some((key) => !String(form[key]).trim())) {
+      setError("Please fill in every required field.");
+      return;
+    }
+
     setSubmitting(true);
     try {
       const result = await submitFounderApplication(form);
@@ -147,7 +169,6 @@ export function FounderApplicationForm() {
       <form
         onSubmit={onSubmit}
         className="surface-panel rounded-3xl p-6 sm:p-8 md:p-10"
-        noValidate
       >
         <div className="mb-8">
           <h2 className="text-balance font-display text-h2 text-ink">
@@ -348,6 +369,8 @@ export function FounderApplicationForm() {
         <div className="mt-6 flex items-start gap-3">
           <Checkbox
             id="agreeToUpdates"
+            required
+            aria-required
             checked={form.agreeToUpdates}
             onCheckedChange={(checked) =>
               update("agreeToUpdates", checked === true)

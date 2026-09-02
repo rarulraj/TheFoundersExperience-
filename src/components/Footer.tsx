@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { foundingSponsor, siteConfig } from "@/data/content";
 import { Logo } from "@/components/Logo";
-import { TseLogo } from "@/components/TseLogo";
+import { TseNavyCredit } from "@/components/TseLogo";
 
 const footerColumns = [
   {
@@ -53,7 +53,7 @@ export function Footer() {
           <nav className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3">
             {footerColumns.map((column) => (
               <div key={column.heading}>
-                <p className="text-[0.68rem] font-bold tracking-[0.18em] text-white/40 uppercase">
+                <p className="text-[0.68rem] font-bold tracking-[0.18em] text-white/55 uppercase">
                   {column.heading}
                 </p>
                 <ul className="mt-4 space-y-1">
@@ -81,7 +81,7 @@ export function Footer() {
 
         <div className="mt-14 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
 
-        <div className="caption mt-7 flex flex-col gap-3 text-white/45 sm:flex-row sm:items-center sm:justify-between">
+        <div className="caption mt-7 flex flex-col gap-3 text-white/55 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} The Founders Experience. All rights
             reserved.
@@ -90,12 +90,9 @@ export function Footer() {
             href={foundingSponsor.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 not-italic"
+            className="rounded-full not-italic transition-opacity hover:opacity-90 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"
           >
-            <span className="text-[0.62rem] font-bold tracking-[0.16em] text-white/45 uppercase">
-              Founding sponsor
-            </span>
-            <TseLogo variant="markOnNavy" className="h-6 w-auto" />
+            <TseNavyCredit label="Founding sponsor" />
           </a>
         </div>
       </div>

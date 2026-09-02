@@ -5,7 +5,7 @@ import { personas } from "@/data/content";
 
 export function WhoShouldJoin() {
   return (
-    <section className="py-section">
+    <section className="py-section section-divider">
       <div className="container-site">
         <FadeIn className="text-center">
           <p className="eyebrow-center">Who should join</p>

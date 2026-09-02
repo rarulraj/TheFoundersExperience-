@@ -84,6 +84,25 @@ export function PartnerApplicationForm() {
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setError(null);
+
+    const requiredFields: (keyof FormState)[] = [
+      "firstName",
+      "lastName",
+      "workEmail",
+      "phone",
+      "company",
+      "website",
+      "jobTitle",
+      "companyType",
+      "partnershipInterest",
+      "estimatedBudget",
+      "partnershipGoals",
+    ];
+    if (requiredFields.some((key) => !form[key].trim())) {
+      setError("Please fill in every required field.");
+      return;
+    }
+
     setSubmitting(true);
 
     try {
@@ -133,7 +152,6 @@ export function PartnerApplicationForm() {
         id="partner-form"
         onSubmit={onSubmit}
         className="surface-panel rounded-3xl p-6 sm:p-8 md:p-10"
-        noValidate
       >
         <div className="mb-8">
           <h2 className="text-balance font-display text-h2 text-ink">

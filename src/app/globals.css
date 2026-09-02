@@ -98,8 +98,10 @@
 }
 
 :root {
-  /* TSE core palette: navy, white, light blue, cool gray. */
-  --background: #ffffff;
+  /* TSE core palette: navy, white, light blue, cool gray.
+     Light interiors use a cool pearl field so white cards and the official
+     navy-on-white TSE wordmark lift instead of flattening into the page. */
+  --background: #f4f7f9;
   --foreground: #031f32;
   --card: #ffffff;
   --card-foreground: #031f32;
@@ -108,29 +110,29 @@
   /* Light-blue CTAs with navy label — TSE call-to-action spec. */
   --primary: #28aec3;
   --primary-foreground: #031f32;
-  --secondary: #eef2f4;
+  --secondary: #e8eef2;
   --secondary-foreground: #031f32;
-  --muted: #eef2f4;
+  --muted: #e8eef2;
   /* Navy-tinted gray: official #A9A9A9 fails body contrast on white. */
-  --muted-foreground: #5a6a75;
+  --muted-foreground: #4f616c;
   --accent: #e4f5f8;
   --accent-foreground: #17697a;
   --destructive: #d64545;
-  --border: #d5dce1;
-  --input: #c5ced4;
+  --border: #d3dce2;
+  --input: #c0cbd3;
   --ring: #28aec3;
   /* Deepened teal for text/icons on white (~5:1). Buttons use brand-bright. */
-  --brand: #1b7d8c;
+  --brand: #17697a;
   --brand-bright: #28aec3;
   --brand-foreground: #031f32;
   --brand-rgb: 40, 174, 195;
   --navy: #031f32;
   --navy-rgb: 3, 31, 50;
-  --surface: #f3f6f8;
+  --surface: #e8eef2;
   --ink: #031f32;
   --shadow-ink: 3, 31, 50;
   --chart-1: #28aec3;
-  --chart-2: #1b7d8c;
+  --chart-2: #17697a;
   --chart-3: #5a6a75;
   --chart-4: #d5dce1;
   --chart-5: #e4f5f8;
@@ -141,7 +143,7 @@
   --sidebar-primary-foreground: #031f32;
   --sidebar-accent: #e4f5f8;
   --sidebar-accent-foreground: #17697a;
-  --sidebar-border: #d5dce1;
+  --sidebar-border: #d3dce2;
   --sidebar-ring: #28aec3;
   --header-h: 4.25rem;
   --hero-min-h: min(92vh, 880px);
@@ -323,7 +325,7 @@
     );
   }
 
-  /* Centered variant for Circle-style section intros. */
+  /* Centered section intro chip. */
   .eyebrow-center {
     @apply inline-flex items-center gap-2.5 rounded-full border border-border bg-card px-4 py-1.5 text-[0.72rem] font-bold text-brand uppercase;
     font-family: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
@@ -356,8 +358,8 @@
     border: 1px solid var(--border);
     background: var(--card);
     box-shadow:
-      0 1px 2px rgba(var(--shadow-ink), 0.04),
-      0 8px 24px -18px rgba(var(--shadow-ink), 0.1);
+      0 1px 2px rgba(var(--shadow-ink), 0.05),
+      0 12px 28px -18px rgba(var(--shadow-ink), 0.16);
     transition:
       border-color 0.35s ease,
       transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
@@ -376,6 +378,20 @@
     box-shadow:
       0 2px 4px rgba(0, 0, 0, 0.35),
       0 24px 48px -20px rgba(var(--brand-rgb), 0.28);
+  }
+
+  .surface-card.surface-card-static:hover {
+    border-color: color-mix(in oklab, var(--brand) 35%, var(--border));
+    transform: none;
+    box-shadow:
+      0 1px 2px rgba(var(--shadow-ink), 0.05),
+      0 12px 28px -18px rgba(var(--shadow-ink), 0.16);
+  }
+
+  html.dark .surface-card.surface-card-static:hover {
+    box-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.35),
+      0 8px 24px -18px rgba(0, 0, 0, 0.35);
   }
 
   /* Section boundary that fades out at both edges. */

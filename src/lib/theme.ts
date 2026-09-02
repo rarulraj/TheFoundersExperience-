@@ -3,7 +3,7 @@ export const THEME_STORAGE_KEY = "tfe-theme";
 export type Theme = "light" | "dark";
 
 export const themeColors = {
-  light: "#ffffff",
+  light: "#f4f7f9",
   dark: "#031f32",
 } as const;
 

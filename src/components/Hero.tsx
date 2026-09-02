@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { TseLogo } from "@/components/TseLogo";
+import { TseNavyCredit } from "@/components/TseLogo";
 import { foundingSponsor, socialProofPoints } from "@/data/content";
 
 export function Hero() {
@@ -79,12 +79,9 @@ export function Hero() {
             href={foundingSponsor.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3"
+            className="rounded-full transition-opacity hover:opacity-90 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"
           >
-            <span className="text-[0.62rem] font-bold tracking-[0.18em] text-white/45 uppercase">
-              Backed by
-            </span>
-            <TseLogo variant="markOnNavy" className="h-7 w-auto sm:h-8" />
+            <TseNavyCredit label="Backed by" />
           </a>
         </motion.div>
       </div>

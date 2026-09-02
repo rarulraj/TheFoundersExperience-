@@ -12,7 +12,7 @@ export function Manifesto() {
           <p className="eyebrow-center">Why we exist</p>
           <h2 className="mx-auto mt-7 max-w-4xl text-balance font-display text-h1 text-ink">
             Great companies aren’t built alone.{" "}
-            <span className="bg-[linear-gradient(100deg,#7ed4e2_10%,var(--brand-bright)_70%,var(--brand)_100%)] bg-clip-text text-transparent">
+            <span className="text-brand">
               They’re built in community.
             </span>
           </h2>

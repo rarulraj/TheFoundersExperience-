@@ -6,7 +6,7 @@ import { memberBenefits } from "@/data/content";
 
 export function MemberBenefits() {
   return (
-    <section className="py-section">
+    <section className="py-section section-divider">
       <div className="container-site">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20">
           <FadeIn>

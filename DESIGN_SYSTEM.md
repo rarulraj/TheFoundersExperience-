@@ -11,8 +11,9 @@ stay as built — this is a branding pass, not a redesign.
 ## 1. Design direction
 
 Light default with navy **page chrome** (nav, heroes, footer) so TFE reads as
-backed by TSE. Page interiors stay white with cool-gray surfaces and white
-cards. Dark mode uses the same navy field (`#031f32`) with lifted cards.
+backed by TSE. Page interiors use a cool pearl field (`#f4f7f9`) with white
+cards so official navy-on-white TSE artwork lifts instead of flattening.
+Dark mode uses the same navy field (`#031f32`) with lifted cards.
 
 Color roles come from TSE Marketing:
 
@@ -20,12 +21,12 @@ Color roles come from TSE Marketing:
 |---|---|---|
 | Deep Navy | `#031F32` | Nav, heroes, footer, dark panels, body ink |
 | Light Blue | `#28AEC3` | CTAs, highlights, glows, the three-bar E |
-| White | `#FFFFFF` | Page background, copy on navy |
+| White | `#FFFFFF` | Cards, copy on navy, TSE wordmark plate |
 | Cool Gray | `#A9A9A9` | Borders/hairlines (not body text — contrast) |
 
-`--brand` is a deepened teal (`#1b7d8c` on light) so links and icons meet WCAG
-on white. `--brand-bright` stays the official `#28AEC3` for buttons and navy
-accents. Pink / orange / yellow / green from the TSE deck are not used here.
+`--brand` is a deepened teal (`#17697a` on light) so links and small labels
+meet WCAG on pearl. `--brand-bright` stays the official `#28AEC3` for buttons
+and navy accents. Pink / orange / yellow / green from the TSE deck are not used here.
 
 Type: **Montserrat** headings (`font-display`), **Arimo** body (`font-sans`),
 **Open Sans** italic notes (`.caption`). Headings stay sentence case so the
@@ -46,13 +47,13 @@ Use tokens — not hardcoded hex — so both themes stay in sync.
 
 | Token | Light | Dark | Use |
 |---|---|---|---|
-| `--background` | `#ffffff` | `#031f32` | Page background. |
+| `--background` | `#f4f7f9` | `#031f32` | Page background (cool pearl in light). |
 | `--foreground` / `--ink` | `#031f32` | `#f4f8fa` | Body/heading text. |
-| `--surface` | `#f3f6f8` | `#072536` | Alternating section background (`bg-surface/70`). |
+| `--surface` | `#e8eef2` | `#072536` | Alternating section background (`bg-surface/70`). |
 | `--card` | `#ffffff` | `#0a2c40` | Card/panel fill. |
-| `--muted-foreground` | `#5a6a75` | `#9aadb8` | Secondary/body copy. |
-| `--border` | `#d5dce1` | `#1a4258` | Hairline borders everywhere. |
-| `--brand` | `#1b7d8c` | `#4ec3d4` | Teal for text/icons/links on page surfaces. |
+| `--muted-foreground` | `#4f616c` | `#9aadb8` | Secondary/body copy. |
+| `--border` | `#d3dce2` | `#1a4258` | Hairline borders everywhere. |
+| `--brand` | `#17697a` | `#4ec3d4` | Teal for text/icons/links on page surfaces. |
 | `--brand-bright` | `#28aec3` | `#28aec3` | Official TSE blue: CTAs, glows, navy accents. |
 | `--accent` | `#e4f5f8` | `#0c3a4c` | Tint for chips, icon tiles, soft highlights. |
 | `--navy` | `#031f32` | `#031f32` | Nav, heroes, footer, CTA dark panels. |
@@ -101,6 +102,7 @@ Use tokens — not hardcoded hex — so both themes stay in sync.
 | `btn-glow` | Blue ambient lift for primary pills. | Every `bg-primary` pill button. |
 | `surface-panel` | White panel: hairline border + soft ambient shadow. Static. | Non-interactive containers (FAQ accordion, form panels, privacy box). |
 | `surface-card` | Same shell plus hover: cyan-tinted border, `translateY(-3px)`, deeper shadow. | Interactive/feature cards, always with `rounded-3xl`. |
+| `surface-card-static` | Disables the lift hover. Pair with `surface-card`. | Sponsor lockups that should not bounce. |
 | `section-divider` | Hairline at section top that fades out at both edges. | Boundary between alternating white / `bg-surface/70` sections. |
 | `rule-fade` | Standalone 1px horizontal rule fading at both edges. | Inline separators inside a section. |
 | `glow-brand` | Soft cyan ambient shadow. | Lifting featured panels on light backgrounds. |
@@ -131,9 +133,10 @@ Also available: `text-balance` for headings, `animate-marquee` /
 - **Section intros**: centered sections use `eyebrow-center` + `mx-auto
   max-w-2xl text-center`; left-aligned sections use `eyebrow`. Headings are
   `font-display text-h2 text-ink text-balance`.
-- **Section rhythm**: alternate white and `bg-surface/70` sections, separated
+- **Section rhythm**: pearl page field with `bg-surface/70` bands, separated
   by `section-divider` hairlines; standard sections use `py-section-sm`.
-  Page heroes use `PageHero` (`hero-navy` + white type).
+  Page heroes use `PageHero` (`hero-navy` + white type). Do not stack two
+  adjacent `bg-surface/70` sections.
 - **Scroll reveals**: wrap blocks in `<FadeIn>` (`src/components/FadeIn.tsx`),
   stagger with `delay={index * 0.08}`. Hero uses framer-motion directly with
   `useReducedMotion()`.
@@ -146,9 +149,10 @@ Also available: `text-balance` for headings, `animate-marquee` /
   `/public/brand/tfe-wordmark-draft.png` for a later swap.
 - **TSE logo**: TSE is a separate company. Always use the official
   guideline files via `TseLogo` — never redraw them in TFE’s lockup.
-  `wordmark` (navy on white) on the `FoundingSponsor` card; `markOnNavy`
-  on navy chrome. The site supplies white/navy clear space around the
-  artwork; it does not restyle the mark.
+  `wordmark` (navy on white) on the `FoundingSponsor` card via
+  `TseWordmarkPlate` (the card is the plate in light; a white well in dark).
+  `markOnNavy` on navy chrome via `TseNavyCredit` so the baked navy field
+  does not float on hero auras. Frame the artwork; do not restyle the mark.
 - **Feature showcases**: `FeatureShowcase` renders alternating text/visual
   rows from `showcaseFeatures` in content.ts. Visuals are stylized mock-UI
   cards (directory, event, intro) built from divs — illustrative only, never
