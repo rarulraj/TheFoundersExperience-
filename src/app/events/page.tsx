@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "Events",
   description:
-    "The Founders Panel in October is our first gathering, coming soon, plus dinners, roundtables, and coworking sessions.",
+    "The Founders Panel in 2027 is our first gathering, coming soon, plus dinners, roundtables, and coworking sessions.",
 };
 
 export default function EventsPage() {
@@ -20,7 +20,7 @@ export default function EventsPage() {
         title="Gatherings for people building companies."
       >
         <p className="mt-7 max-w-2xl text-lead text-white/70">
-          We start in October with the Founders Panel, our first gathering.
+          We start in 2027 with the Founders Panel, our first gathering.
           More dinners, roundtables, and in-person sessions will follow.
         </p>
       </PageHero>

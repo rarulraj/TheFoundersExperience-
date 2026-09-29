@@ -62,10 +62,10 @@ function EventVisual() {
       <div className="flex items-start gap-4">
         <div className="flex size-14 shrink-0 flex-col items-center justify-center rounded-2xl bg-primary text-primary-foreground">
           <span className="text-[0.6rem] font-bold tracking-[0.14em] uppercase">
-            Oct
+            SF
           </span>
           <span className="font-display text-lg leading-none font-bold">
-            2026
+            2027
           </span>
         </div>
         <div className="min-w-0">

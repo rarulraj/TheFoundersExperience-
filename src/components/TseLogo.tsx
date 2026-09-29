@@ -5,6 +5,7 @@ type TseLogoProps = {
   className?: string;
   /** Official guideline files. Navy mark is for navy chrome; wordmark is navy-on-white. */
   variant?: "mark" | "markOnNavy" | "wordmark";
+  alt?: string;
 };
 
 const assets = {
@@ -25,13 +26,17 @@ const assets = {
   },
 } as const;
 
-export function TseLogo({ className, variant = "wordmark" }: TseLogoProps) {
+export function TseLogo({
+  className,
+  variant = "wordmark",
+  alt = "The Search Experience",
+}: TseLogoProps) {
   const asset = assets[variant];
 
   return (
     <Image
       src={asset.src}
-      alt="The Search Experience"
+      alt={alt}
       width={asset.width}
       height={asset.height}
       quality={variant === "wordmark" ? 95 : 90}
@@ -56,9 +61,13 @@ export function TseWordmarkPlate({ className }: { className?: string }) {
 export function TseNavyCredit({
   label,
   className,
+  markAlt = "The Search Experience",
+  name,
 }: {
   label: string;
   className?: string;
+  markAlt?: string;
+  name?: string;
 }) {
   return (
     <span
@@ -70,7 +79,16 @@ export function TseNavyCredit({
       <span className="text-[0.62rem] font-bold tracking-[0.18em] text-white/55 uppercase">
         {label}
       </span>
-      <TseLogo variant="markOnNavy" className="h-5 w-auto sm:h-6" />
+      <TseLogo
+        variant="markOnNavy"
+        alt={name ? "" : markAlt}
+        className="h-5 w-auto sm:h-6"
+      />
+      {name ? (
+        <span className="text-[0.72rem] font-semibold tracking-[0.04em] text-white">
+          {name}
+        </span>
+      ) : null}
     </span>
   );
 }

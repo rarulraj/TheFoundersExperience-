@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { foundingSponsor, siteConfig } from "@/data/content";
+import { foundingSponsor, siteConfig, tseVentures } from "@/data/content";
 import { Logo } from "@/components/Logo";
 import { TseNavyCredit } from "@/components/TseLogo";
 
@@ -23,7 +23,10 @@ const footerColumns = [
   },
   {
     heading: "Connect",
-    links: [{ label: "LinkedIn", href: siteConfig.linkedin }],
+    links: [
+      { label: "LinkedIn", href: siteConfig.linkedin },
+      { label: "TSE Ventures", href: tseVentures.url },
+    ],
   },
 ];
 
@@ -46,7 +49,8 @@ export function Footer() {
             </p>
             <p className="mt-4 text-sm leading-relaxed text-white/60">
               A curated community where founders and startup leaders share the
-              realities of building. Membership is free for accepted members.
+              realities of building. Venture-backed by TSE Ventures. Membership
+              is free for accepted members.
             </p>
           </div>
 

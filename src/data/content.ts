@@ -125,7 +125,7 @@ export const showcaseFeatures = [
 export const manifestoStats = [
   { value: "100+", label: "Founders and startup leaders" },
   { value: "Free", label: "Membership for accepted members" },
-  { value: "Oct 2026", label: "First gathering, San Francisco" },
+  { value: "2027", label: "First gathering, San Francisco" },
   { value: "SF + Virtual", label: "In-person and online formats" },
 ];
 
@@ -148,7 +148,7 @@ export const faqs = [
   {
     question: "Where do events happen?",
     answer:
-      "In-person gatherings in San Francisco, plus virtual roundtables you can join from anywhere. Our first gathering, The Founders Panel, lands in October 2026.",
+      "In-person gatherings in San Francisco, plus virtual roundtables you can join from anywhere. Our first gathering, The Founders Panel, lands in 2027.",
   },
   {
     question: "Is this another networking group?",
@@ -160,12 +160,17 @@ export const faqs = [
     answer:
       "Yes. Brands partner with us to fund programming and build real relationships with founders. Head to the Partners page to book a meeting or start the conversation.",
   },
+  {
+    question: "Who backs The Founders Experience?",
+    answer:
+      "The community is venture-backed by TSE Ventures. TSE is also our founding sponsor, helping us keep membership free for accepted founders and operators.",
+  },
 ];
 
 export const featuredEvent = {
   title: "The Founders Panel",
   location: "San Francisco",
-  date: "Mid-October, SF. Exact date announced to members.",
+  date: "2027, San Francisco. Exact date announced to members.",
   audience: "Founders and operators",
   format: "Panel",
   status: "Coming soon",
@@ -180,13 +185,13 @@ export const upcomingEvents = [
   {
     title: "Operator Roundtable: Hiring Your First Leaders",
     location: "Virtual",
-    date: "October 2026",
+    date: "2027",
     type: "Roundtable",
   },
   {
     title: "Coworking Morning + Office Hours",
     location: "San Francisco",
-    date: "October 2026",
+    date: "2027",
     type: "Coworking",
   },
 ];
@@ -310,6 +315,13 @@ export const foundingSponsor = {
   url: "https://www.tsetalent.com",
   description:
     "A recruiting firm that partners with venture-backed founders to hire GTM, technical, and design teams from Seed through Series C.",
+};
+
+export const tseVentures = {
+  name: "TSE Ventures",
+  url: "https://www.linkedin.com/company/tse-ventures/about/",
+  description:
+    "The Founders Experience is venture-backed by TSE Ventures.",
 };
 
 export const companiesWorkedWith = [
