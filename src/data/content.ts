@@ -161,9 +161,9 @@ export const faqs = [
       "Yes. Brands partner with us to fund programming and build real relationships with founders. Head to the Partners page to book a meeting or start the conversation.",
   },
   {
-    question: "Who backs The Founders Experience?",
+    question: "Who powers The Founders Experience?",
     answer:
-      "The community is venture-backed by TSE Ventures. TSE is also our founding sponsor, helping us keep membership free for accepted founders and operators.",
+      "The community is powered by TSE, The Search Experience, helping us keep membership free for accepted founders and operators.",
   },
 ];
 
@@ -311,8 +311,9 @@ export const founders = [
 ];
 
 export const foundingSponsor = {
-  name: "TSE",
+  name: "The Search Experience",
   url: "https://www.tsetalent.com",
+  credit: "Powered by",
   description:
     "A recruiting firm that partners with venture-backed founders to hire GTM, technical, and design teams from Seed through Series C.",
 };
@@ -320,8 +321,6 @@ export const foundingSponsor = {
 export const tseVentures = {
   name: "TSE Ventures",
   url: "https://www.linkedin.com/company/tse-ventures/about/",
-  description:
-    "The Founders Experience is venture-backed by TSE Ventures.",
 };
 
 export const companiesWorkedWith = [

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { foundingSponsor, siteConfig, tseVentures } from "@/data/content";
+import { foundingSponsor, siteConfig } from "@/data/content";
 import { Logo } from "@/components/Logo";
 import { TseNavyCredit } from "@/components/TseLogo";
 
@@ -23,10 +23,7 @@ const footerColumns = [
   },
   {
     heading: "Connect",
-    links: [
-      { label: "LinkedIn", href: siteConfig.linkedin },
-      { label: "TSE Ventures", href: tseVentures.url },
-    ],
+    links: [{ label: "LinkedIn", href: siteConfig.linkedin }],
   },
 ];
 
@@ -49,8 +46,8 @@ export function Footer() {
             </p>
             <p className="mt-4 text-sm leading-relaxed text-white/60">
               A curated community where founders and startup leaders share the
-              realities of building. Venture-backed by TSE Ventures. Membership
-              is free for accepted members.
+              realities of building. Powered by TSE. Membership is free for
+              accepted members.
             </p>
           </div>
 
@@ -94,9 +91,13 @@ export function Footer() {
             href={foundingSponsor.url}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`${foundingSponsor.credit} TSE`}
             className="rounded-full not-italic transition-opacity hover:opacity-90 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"
           >
-            <TseNavyCredit label="Founding sponsor" />
+            <TseNavyCredit
+              label={foundingSponsor.credit}
+              name="TSE"
+            />
           </a>
         </div>
       </div>

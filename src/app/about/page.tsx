@@ -4,7 +4,7 @@ import { CTASection } from "@/components/CTASection";
 import { Founders } from "@/components/Founders";
 import { PageHero } from "@/components/PageHero";
 import { Button } from "@/components/ui/button";
-import { siteConfig, tseVentures } from "@/data/content";
+import { foundingSponsor, siteConfig } from "@/data/content";
 
 export const metadata: Metadata = {
   title: "About",
@@ -63,15 +63,15 @@ export default function AboutPage() {
             </p>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
               Through shared experience, members can learn faster, make better
-              decisions, and build stronger companies. The community is
-              venture-backed by{" "}
+              decisions, and build stronger companies. The community is powered
+              by{" "}
               <a
-                href={tseVentures.url}
+                href={foundingSponsor.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-medium text-brand underline-offset-4 hover:underline"
               >
-                {tseVentures.name}
+                TSE
               </a>
               .
             </p>

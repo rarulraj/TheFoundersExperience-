@@ -12,6 +12,7 @@ export function FoundingSponsor({ className }: FoundingSponsorProps) {
       href={foundingSponsor.url}
       target="_blank"
       rel="noopener noreferrer"
+      aria-label={`${foundingSponsor.credit} TSE`}
       className={cn(
         "surface-card surface-card-static mx-auto flex max-w-4xl flex-col gap-6 rounded-3xl px-7 py-8 sm:flex-row sm:items-center sm:justify-between sm:gap-12 sm:px-10 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none",
         className
@@ -19,7 +20,7 @@ export function FoundingSponsor({ className }: FoundingSponsorProps) {
     >
       <span className="min-w-0">
         <span className="block text-[0.68rem] font-bold tracking-[0.18em] text-brand uppercase">
-          Founding sponsor
+          {foundingSponsor.credit}
         </span>
         <span className="mt-4 block">
           <TseWordmarkPlate />

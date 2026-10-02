@@ -4,8 +4,8 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { TseNavyCredit } from "@/components/TseLogo";
-import { socialProofPoints, tseVentures } from "@/data/content";
+import { TseVenturesCredit } from "@/components/TseLogo";
+import { foundingSponsor, socialProofPoints, tseVentures } from "@/data/content";
 
 export function Hero() {
   const reduceMotion = useReducedMotion();
@@ -79,14 +79,10 @@ export function Hero() {
             href={tseVentures.url}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={tseVentures.description}
-            className="rounded-full transition-opacity hover:opacity-90 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"
+            aria-label={`${foundingSponsor.credit} TSE Ventures`}
+            className="rounded-xl transition-opacity hover:opacity-90 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"
           >
-            <TseNavyCredit
-              label="Venture-backed by"
-              markAlt={tseVentures.name}
-              name={tseVentures.name}
-            />
+            <TseVenturesCredit label={foundingSponsor.credit} />
           </a>
         </motion.div>
       </div>
