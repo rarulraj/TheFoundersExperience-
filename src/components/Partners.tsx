@@ -12,7 +12,6 @@ import {
 import { FadeIn } from "@/components/FadeIn";
 import { LogoMarquee } from "@/components/LogoMarquee";
 import { Button } from "@/components/ui/button";
-import { FoundingSponsor } from "@/components/FoundingSponsor";
 import {
   partnerBenefits,
   companiesWorkedWith,
@@ -76,10 +75,6 @@ export function Partners() {
       </div>
 
       <div className="container-site">
-        <FadeIn delay={0.1}>
-          <FoundingSponsor className="mt-16" />
-        </FadeIn>
-
         <FadeIn delay={0.12}>
           <div className="dark-panel relative mt-16 overflow-hidden rounded-[2rem] px-7 py-14 text-center sm:px-10 sm:py-18">
             <div className="grain pointer-events-none absolute inset-0 opacity-30" />

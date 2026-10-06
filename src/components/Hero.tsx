@@ -4,8 +4,8 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { TseVenturesCredit } from "@/components/TseLogo";
-import { foundingSponsor, socialProofPoints, tseVentures } from "@/data/content";
+import { TseNavyCredit } from "@/components/TseLogo";
+import { foundingSponsor, socialProofPoints } from "@/data/content";
 
 export function Hero() {
   const reduceMotion = useReducedMotion();
@@ -32,7 +32,7 @@ export function Hero() {
           className="mx-auto mt-7 max-w-4xl text-balance font-display text-display text-white"
         >
           Building a company is hard.{" "}
-          <span className="bg-[linear-gradient(100deg,#7ed4e2_10%,var(--brand-bright)_70%,#ffffff_100%)] bg-clip-text text-transparent">
+          <span className="bg-[linear-gradient(100deg,#7ee4fc_10%,var(--brand-bright)_70%,#ffffff_100%)] bg-clip-text text-transparent">
             You shouldn’t have to do it alone.
           </span>
         </motion.h1>
@@ -76,13 +76,16 @@ export function Hero() {
             Membership is free for accepted founders and operators.
           </p>
           <a
-            href={tseVentures.url}
+            href={foundingSponsor.url}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`${foundingSponsor.credit} TSE Ventures`}
-            className="rounded-xl transition-opacity hover:opacity-90 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"
+            aria-label={`${foundingSponsor.credit} ${foundingSponsor.name}`}
+            className="rounded-full transition-opacity hover:opacity-90 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"
           >
-            <TseVenturesCredit label={foundingSponsor.credit} />
+            <TseNavyCredit
+              label={foundingSponsor.credit}
+              name={foundingSponsor.name}
+            />
           </a>
         </motion.div>
       </div>

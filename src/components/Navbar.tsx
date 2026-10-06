@@ -8,7 +8,6 @@ import { navLinks, siteConfig } from "@/data/content";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/Logo";
-import { ThemeToggle } from "@/components/ThemeToggle";
 
 // Nav entries that point at a section of the home page rather than a route.
 const sectionIds = navLinks
@@ -120,7 +119,7 @@ export function Navbar() {
           className="group flex min-w-0 items-center text-white"
         >
           <Logo
-            priority
+            preload
             className="h-8 w-auto max-w-[min(58vw,220px)] transition-transform duration-300 group-hover:scale-[1.02] sm:h-9 sm:max-w-none"
           />
         </Link>
@@ -154,7 +153,6 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex">
-          <ThemeToggle />
           <Button
             render={<Link href="/apply" />}
             className="btn-glow h-10 rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5 hover:bg-primary/90"
@@ -164,7 +162,6 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
-          <ThemeToggle />
           <button
             type="button"
             className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white shadow-sm transition-colors hover:border-brand-bright/50 hover:text-brand-bright"

@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Arimo, Geist_Mono, Montserrat, Open_Sans } from "next/font/google";
 import { SiteShell } from "@/components/SiteShell";
 import { siteConfig } from "@/data/content";
-import { themeColors, themeInitScript } from "@/lib/theme";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -69,24 +68,21 @@ export const metadata: Metadata = {
   ],
   icons: {
     icon: [
-      { url: "/favicon.svg?v=8", type: "image/svg+xml" },
-      { url: "/favicon.ico?v=8", sizes: "any" },
-      { url: "/favicon-16x16.png?v=8", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png?v=8", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.svg?v=9", type: "image/svg+xml" },
+      { url: "/favicon.ico?v=9", sizes: "any" },
+      { url: "/favicon-16x16.png?v=9", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png?v=9", sizes: "32x32", type: "image/png" },
     ],
-    shortcut: "/favicon.svg?v=8",
-    apple: [{ url: "/apple-touch-icon.png?v=8", sizes: "180x180" }],
+    shortcut: "/favicon.svg?v=9",
+    apple: [{ url: "/apple-touch-icon.png?v=9", sizes: "180x180" }],
   },
   manifest: "/site.webmanifest",
   applicationName: "The Founders Experience",
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: themeColors.light },
-    { media: "(prefers-color-scheme: dark)", color: themeColors.dark },
-  ],
-  colorScheme: "light dark",
+  themeColor: "#011c48",
+  colorScheme: "dark",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -96,15 +92,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${montserrat.variable} ${arimo.variable} ${openSans.variable} ${geistMono.variable} h-full`}
+      className={`${montserrat.variable} ${arimo.variable} ${openSans.variable} ${geistMono.variable} dark h-full`}
       data-scroll-behavior="smooth"
-      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
-        <script
-          id="tfe-theme-init"
-          dangerouslySetInnerHTML={{ __html: themeInitScript }}
-        />
         <SiteShell>{children}</SiteShell>
       </body>
     </html>

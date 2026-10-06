@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { foundingSponsor, siteConfig } from "@/data/content";
+import { siteConfig } from "@/data/content";
 import { Logo } from "@/components/Logo";
-import { TseNavyCredit } from "@/components/TseLogo";
 
 const footerColumns = [
   {
@@ -46,8 +45,7 @@ export function Footer() {
             </p>
             <p className="mt-4 text-sm leading-relaxed text-white/60">
               A curated community where founders and startup leaders share the
-              realities of building. Powered by TSE. Membership is free for
-              accepted members.
+              realities of building. Membership is free for accepted members.
             </p>
           </div>
 
@@ -82,23 +80,11 @@ export function Footer() {
 
         <div className="mt-14 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
 
-        <div className="caption mt-7 flex flex-col gap-3 text-white/55 sm:flex-row sm:items-center sm:justify-between">
+        <div className="caption mt-7 text-white/55">
           <p>
             © {new Date().getFullYear()} The Founders Experience. All rights
             reserved.
           </p>
-          <a
-            href={foundingSponsor.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`${foundingSponsor.credit} TSE`}
-            className="rounded-full not-italic transition-opacity hover:opacity-90 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"
-          >
-            <TseNavyCredit
-              label={foundingSponsor.credit}
-              name="TSE"
-            />
-          </a>
         </div>
       </div>
     </footer>

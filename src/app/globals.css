@@ -98,96 +98,91 @@
 }
 
 :root {
-  /* TSE core palette: navy, white, light blue, cool gray.
-     Light interiors use a cool pearl field so white cards and the official
-     navy-on-white TSE wordmark lift instead of flattening into the page. */
-  --background: #f4f7f9;
-  --foreground: #031f32;
-  --card: #ffffff;
-  --card-foreground: #031f32;
-  --popover: #ffffff;
-  --popover-foreground: #031f32;
-  /* Light-blue CTAs with navy label — TSE call-to-action spec. */
-  --primary: #28aec3;
-  --primary-foreground: #031f32;
-  --secondary: #e8eef2;
-  --secondary-foreground: #031f32;
-  --muted: #e8eef2;
-  /* Navy-tinted gray: official #A9A9A9 fails body contrast on white. */
-  --muted-foreground: #4f616c;
-  --accent: #e4f5f8;
-  --accent-foreground: #17697a;
-  --destructive: #d64545;
-  --border: #d3dce2;
-  --input: #c0cbd3;
-  --ring: #28aec3;
-  /* Deepened teal for text/icons on white (~5:1). Buttons use brand-bright. */
-  --brand: #17697a;
-  --brand-bright: #28aec3;
-  --brand-foreground: #031f32;
-  --brand-rgb: 40, 174, 195;
-  --navy: #031f32;
-  --navy-rgb: 3, 31, 50;
-  --surface: #e8eef2;
-  --ink: #031f32;
-  --shadow-ink: 3, 31, 50;
-  --chart-1: #28aec3;
-  --chart-2: #17697a;
-  --chart-3: #5a6a75;
-  --chart-4: #d5dce1;
-  --chart-5: #e4f5f8;
+  /* Navy-only. Matches the official TFE lockup: #011C48 field, #10C8F8 cyan. */
+  --background: #011c48;
+  --foreground: #f4f8fa;
+  --card: #0a2a58;
+  --card-foreground: #f4f8fa;
+  --popover: #0c3264;
+  --popover-foreground: #f4f8fa;
+  --primary: #10c8f8;
+  --primary-foreground: #011c48;
+  --secondary: #0a2a58;
+  --secondary-foreground: #f4f8fa;
+  --muted: #081f42;
+  --muted-foreground: #9aadb8;
+  --accent: #0c3a68;
+  --accent-foreground: #7ee4fc;
+  --destructive: #f07178;
+  --border: #1a4268;
+  --input: #245078;
+  --ring: #10c8f8;
+  --brand: #5ad4fc;
+  --brand-bright: #10c8f8;
+  --brand-foreground: #011c48;
+  --brand-rgb: 16, 200, 248;
+  --navy: #011c48;
+  --navy-rgb: 1, 28, 72;
+  --surface: #071e44;
+  --ink: #f4f8fa;
+  --shadow-ink: 0, 0, 0;
+  --chart-1: #10c8f8;
+  --chart-2: #5ad4fc;
+  --chart-3: #9aadb8;
+  --chart-4: #1a4268;
+  --chart-5: #0c3a68;
   --radius: 1rem;
-  --sidebar: #ffffff;
-  --sidebar-foreground: #031f32;
-  --sidebar-primary: #28aec3;
-  --sidebar-primary-foreground: #031f32;
-  --sidebar-accent: #e4f5f8;
-  --sidebar-accent-foreground: #17697a;
-  --sidebar-border: #d3dce2;
-  --sidebar-ring: #28aec3;
+  --sidebar: #0a2a58;
+  --sidebar-foreground: #f4f8fa;
+  --sidebar-primary: #10c8f8;
+  --sidebar-primary-foreground: #011c48;
+  --sidebar-accent: #0c3a68;
+  --sidebar-accent-foreground: #7ee4fc;
+  --sidebar-border: #1a4268;
+  --sidebar-ring: #10c8f8;
   --header-h: 4.25rem;
   --hero-min-h: min(92vh, 880px);
 }
 
 .dark {
-  --background: #031f32;
+  --background: #011c48;
   --foreground: #f4f8fa;
-  --card: #0a2c40;
+  --card: #0a2a58;
   --card-foreground: #f4f8fa;
-  --popover: #0c3146;
+  --popover: #0c3264;
   --popover-foreground: #f4f8fa;
-  --primary: #28aec3;
-  --primary-foreground: #031f32;
-  --secondary: #0a2c40;
+  --primary: #10c8f8;
+  --primary-foreground: #011c48;
+  --secondary: #0a2a58;
   --secondary-foreground: #f4f8fa;
-  --muted: #082636;
+  --muted: #081f42;
   --muted-foreground: #9aadb8;
-  --accent: #0c3a4c;
-  --accent-foreground: #7ed4e2;
+  --accent: #0c3a68;
+  --accent-foreground: #7ee4fc;
   --destructive: #f07178;
-  --border: #1a4258;
-  --input: #245066;
-  --ring: #28aec3;
-  --brand: #4ec3d4;
-  --brand-bright: #28aec3;
-  --brand-foreground: #031f32;
-  --navy: #031f32;
-  --surface: #072536;
+  --border: #1a4268;
+  --input: #245078;
+  --ring: #10c8f8;
+  --brand: #5ad4fc;
+  --brand-bright: #10c8f8;
+  --brand-foreground: #011c48;
+  --navy: #011c48;
+  --surface: #071e44;
   --ink: #f4f8fa;
   --shadow-ink: 0, 0, 0;
-  --chart-1: #28aec3;
-  --chart-2: #4ec3d4;
+  --chart-1: #10c8f8;
+  --chart-2: #5ad4fc;
   --chart-3: #9aadb8;
-  --chart-4: #1a4258;
-  --chart-5: #0c3a4c;
-  --sidebar: #0a2c40;
+  --chart-4: #1a4268;
+  --chart-5: #0c3a68;
+  --sidebar: #0a2a58;
   --sidebar-foreground: #f4f8fa;
-  --sidebar-primary: #28aec3;
-  --sidebar-primary-foreground: #031f32;
-  --sidebar-accent: #0c3a4c;
-  --sidebar-accent-foreground: #7ed4e2;
-  --sidebar-border: #1a4258;
-  --sidebar-ring: #28aec3;
+  --sidebar-primary: #10c8f8;
+  --sidebar-primary-foreground: #011c48;
+  --sidebar-accent: #0c3a68;
+  --sidebar-accent-foreground: #7ee4fc;
+  --sidebar-border: #1a4268;
+  --sidebar-ring: #10c8f8;
 }
 
 /* Small-viewport units keep the hero from resizing as mobile browser
@@ -205,7 +200,7 @@
 
   html {
     @apply scroll-smooth overflow-x-clip;
-    color-scheme: light;
+    color-scheme: dark;
     /* Reserve the scrollbar track so locking body scroll for the mobile menu
        does not shift the layout sideways. */
     scrollbar-gutter: stable;
@@ -214,10 +209,6 @@
     scroll-padding-top: calc(var(--header-h) + 1.5rem);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-  }
-
-  html.dark {
-    color-scheme: dark;
   }
 
   body {
@@ -240,11 +231,6 @@
   }
 
   ::selection {
-    background: color-mix(in oklab, var(--brand-bright) 80%, white);
-    color: var(--navy);
-  }
-
-  html.dark ::selection {
     background: color-mix(in oklab, var(--brand-bright) 55%, black);
     color: white;
   }
@@ -510,7 +496,7 @@
       radial-gradient(ellipse 60% 50% at 50% 110%, rgba(var(--navy-rgb), 0.4), transparent 70%);
   }
 
-  /* Deep navy panel with TSE blue aura — nav, hero, footer, CTAs. */
+  /* Deep navy panel with TFE cyan aura — nav, hero, footer, CTAs. */
   .hero-navy,
   .dark-panel {
     background:

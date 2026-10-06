@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 type TseLogoProps = {
   className?: string;
   /** Official guideline files. Navy mark is for navy chrome; wordmark is navy-on-white. */
-  variant?: "mark" | "markOnNavy" | "wordmark" | "ventures";
+  variant?: "mark" | "markOnNavy" | "wordmark";
   alt?: string;
 };
 
@@ -24,11 +24,6 @@ const assets = {
     width: 545,
     height: 99,
   },
-  ventures: {
-    src: "/sponsors/tse-ventures.png",
-    width: 480,
-    height: 480,
-  },
 } as const;
 
 export function TseLogo({
@@ -45,12 +40,7 @@ export function TseLogo({
       width={asset.width}
       height={asset.height}
       quality={variant === "wordmark" ? 95 : 90}
-      className={cn(
-        variant === "ventures"
-          ? "size-8 object-cover"
-          : "h-8 w-auto object-contain object-left",
-        className
-      )}
+      className={cn("h-8 w-auto object-contain object-left", className)}
     />
   );
 }
@@ -103,24 +93,3 @@ export function TseNavyCredit({
   );
 }
 
-/** First Powered by credit: TSE Ventures lockup, no extra TSE lettermark. */
-export function TseVenturesCredit({
-  label,
-  className,
-}: {
-  label: string;
-  className?: string;
-}) {
-  return (
-    <span className={cn("inline-flex items-center gap-3", className)}>
-      <span className="text-[0.62rem] font-bold tracking-[0.18em] text-white/55 uppercase">
-        {label}
-      </span>
-      <TseLogo
-        variant="ventures"
-        alt="TSE Ventures"
-        className="size-12 rounded-xl ring-1 ring-white/15 sm:size-14"
-      />
-    </span>
-  );
-}

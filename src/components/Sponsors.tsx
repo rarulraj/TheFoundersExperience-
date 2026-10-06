@@ -1,7 +1,6 @@
 "use client";
 
 import { FadeIn } from "@/components/FadeIn";
-import { FoundingSponsor } from "@/components/FoundingSponsor";
 import { LogoMarquee } from "@/components/LogoMarquee";
 import { companiesWorkedWith, companiesWorkedWithNote } from "@/data/content";
 
@@ -28,12 +27,6 @@ export function Sponsors() {
           {companiesWorkedWithNote}
         </p>
       </FadeIn>
-
-      <div className="container-site">
-        <FadeIn delay={0.12}>
-          <FoundingSponsor className="mt-14" />
-        </FadeIn>
-      </div>
     </section>
   );
 }
