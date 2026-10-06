@@ -330,7 +330,8 @@ export const companiesWorkedWith = [
   "Meta",
   "Google",
   "Workday",
-  "Wave",
+  "Amazon",
+  "Microsoft",
   "Anthropic",
 ];
 
@@ -436,13 +437,4 @@ export const budgetRanges = [
   "Let’s Discuss",
 ];
 
-export const memberLogos = [
-  "TDengine",
-  "C3.ai",
-  "OpenAI",
-  "Meta",
-  "Google",
-  "Workday",
-  "Wave",
-  "Anthropic",
-];
+export const memberLogos = companiesWorkedWith;

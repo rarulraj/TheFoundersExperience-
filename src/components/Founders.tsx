@@ -3,7 +3,11 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { FadeIn } from "@/components/FadeIn";
-import { founders } from "@/data/content";
+import {
+  companiesWorkedWith,
+  companiesWorkedWithNote,
+  founders,
+} from "@/data/content";
 
 export function Founders() {
   return (
@@ -16,9 +20,8 @@ export function Founders() {
             space.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-lead text-muted-foreground">
-            The Founders Experience is made by people who have worked with
-            TDengine, C3.ai, OpenAI, Meta, Google, Workday, Wave, Anthropic, and
-            other Fortune 500 enterprises.
+            The Founders Experience is made by people who have worked with{" "}
+            {companiesWorkedWith.join(", ")}, {companiesWorkedWithNote}.
           </p>
         </FadeIn>
 
