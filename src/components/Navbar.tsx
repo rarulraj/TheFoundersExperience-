@@ -9,6 +9,12 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/Logo";
 
+const headerCta =
+  "btn-glow h-10 w-44 rounded-full px-5 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5";
+
+const menuCta =
+  "btn-glow h-11 w-full rounded-full px-5 text-sm font-semibold transition-all duration-300 hover:-translate-y-0.5";
+
 // Nav entries that point at a section of the home page rather than a route.
 const sectionIds = navLinks
   .filter((link) => link.href.startsWith("/#"))
@@ -153,17 +159,27 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex">
-          <Link
-            href={siteConfig.circle}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex h-10 items-center justify-center rounded-full border border-white/20 bg-white/5 px-5 text-sm font-semibold text-white/90 transition-colors hover:border-white/40 hover:bg-white/10 hover:text-white focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"
+          <Button
+            render={
+              <Link
+                href={siteConfig.circle}
+                target="_blank"
+                rel="noopener noreferrer"
+              />
+            }
+            className={cn(
+              headerCta,
+              "border-white/20 bg-white/5 text-white hover:border-white/40 hover:bg-white/10"
+            )}
           >
             Go to community
-          </Link>
+          </Button>
           <Button
             render={<Link href="/apply" />}
-            className="btn-glow h-10 rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5 hover:bg-primary/90"
+            className={cn(
+              headerCta,
+              "bg-primary text-primary-foreground hover:bg-primary/90"
+            )}
           >
             Apply to Join
           </Button>
@@ -215,18 +231,28 @@ export function Navbar() {
               );
             })}
             <div className="rule-fade mt-3 mb-4" />
-            <Link
-              href={siteConfig.circle}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={closeMenu}
-              className="inline-flex h-11 w-full items-center justify-center rounded-full border border-white/20 bg-white/5 text-sm font-semibold text-white/90 transition-colors hover:border-white/40 hover:bg-white/10 hover:text-white focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"
+            <Button
+              render={
+                <Link
+                  href={siteConfig.circle}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={closeMenu}
+                />
+              }
+              className={cn(
+                menuCta,
+                "border-white/20 bg-white/5 text-white hover:border-white/40 hover:bg-white/10"
+              )}
             >
               Go to community
-            </Link>
+            </Button>
             <Button
               render={<Link href="/apply" onClick={closeMenu} />}
-              className="btn-glow h-11 w-full rounded-full bg-primary font-semibold text-primary-foreground hover:bg-primary/90"
+              className={cn(
+                menuCta,
+                "bg-primary text-primary-foreground hover:bg-primary/90"
+              )}
             >
               Apply to Join
             </Button>
