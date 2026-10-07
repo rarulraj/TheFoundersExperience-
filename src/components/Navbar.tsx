@@ -153,6 +153,14 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex">
+          <Link
+            href={siteConfig.circle}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-10 items-center justify-center rounded-full border border-white/20 bg-white/5 px-5 text-sm font-semibold text-white/90 transition-colors hover:border-white/40 hover:bg-white/10 hover:text-white focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"
+          >
+            Go to community
+          </Link>
           <Button
             render={<Link href="/apply" />}
             className="btn-glow h-10 rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5 hover:bg-primary/90"
@@ -207,6 +215,15 @@ export function Navbar() {
               );
             })}
             <div className="rule-fade mt-3 mb-4" />
+            <Link
+              href={siteConfig.circle}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeMenu}
+              className="inline-flex h-11 w-full items-center justify-center rounded-full border border-white/20 bg-white/5 text-sm font-semibold text-white/90 transition-colors hover:border-white/40 hover:bg-white/10 hover:text-white focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"
+            >
+              Go to community
+            </Link>
             <Button
               render={<Link href="/apply" onClick={closeMenu} />}
               className="btn-glow h-11 w-full rounded-full bg-primary font-semibold text-primary-foreground hover:bg-primary/90"

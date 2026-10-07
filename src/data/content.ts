@@ -7,6 +7,7 @@ export const siteConfig = {
   url: "https://thefoundersexperience.com",
   linkedin: "https://www.linkedin.com/company/the-founders-experience-startup-community/posts/?feedView=all",
   calendly: "https://calendly.com/ryan-house-tse/the-founders-experinece",
+  circle: "https://discover.circle.so/",
 };
 
 export const navLinks = [
