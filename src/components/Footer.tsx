@@ -22,7 +22,10 @@ const footerColumns = [
   },
   {
     heading: "Connect",
-    links: [{ label: "LinkedIn", href: siteConfig.linkedin }],
+    links: [
+      { label: siteConfig.email, href: `mailto:${siteConfig.email}` },
+      { label: "LinkedIn", href: siteConfig.linkedin },
+    ],
   },
 ];
 
@@ -58,18 +61,27 @@ export function Footer() {
                 <ul className="mt-4 space-y-1">
                   {column.links.map((link) => (
                     <li key={link.label}>
-                      <Link
-                        href={link.href}
-                        className="group inline-flex items-center gap-1.5 py-1.5 text-sm text-white/70 transition-colors hover:text-white"
-                        {...(link.href.startsWith("http")
-                          ? { target: "_blank", rel: "noopener noreferrer" }
-                          : {})}
-                      >
-                        {link.label}
-                        {link.href.startsWith("http") && (
-                          <ArrowUpRight className="size-3.5 text-white/40 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-brand-bright" />
-                        )}
-                      </Link>
+                      {link.href.startsWith("mailto:") ? (
+                        <a
+                          href={link.href}
+                          className="group inline-flex items-center gap-1.5 py-1.5 text-sm text-white/70 transition-colors hover:text-white"
+                        >
+                          {link.label}
+                        </a>
+                      ) : (
+                        <Link
+                          href={link.href}
+                          className="group inline-flex items-center gap-1.5 py-1.5 text-sm text-white/70 transition-colors hover:text-white"
+                          {...(link.href.startsWith("http")
+                            ? { target: "_blank", rel: "noopener noreferrer" }
+                            : {})}
+                        >
+                          {link.label}
+                          {link.href.startsWith("http") && (
+                            <ArrowUpRight className="size-3.5 text-white/40 transition-all duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-brand-bright" />
+                          )}
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>

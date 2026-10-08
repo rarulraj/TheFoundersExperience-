@@ -5,6 +5,7 @@ import { Speakers } from "@/components/Speakers";
 import { EventUpdatesForm } from "@/components/EventUpdatesForm";
 import { PageHero } from "@/components/PageHero";
 import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/data/content";
 
 export const metadata: Metadata = {
   title: "Events",
@@ -51,8 +52,14 @@ export default function EventsPage() {
                 Share your interest
               </Button>
               <p className="caption mt-4 text-muted-foreground">
-                Prefer email? Mention speaking in your member application or
-                partner inquiry.
+                Prefer email? Write{" "}
+                <a
+                  href={`mailto:${siteConfig.email}`}
+                  className="font-medium text-brand underline-offset-4 hover:underline"
+                >
+                  {siteConfig.email}
+                </a>{" "}
+                and mention speaking.
               </p>
             </div>
           </div>

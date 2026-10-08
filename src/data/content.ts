@@ -5,6 +5,7 @@ export const siteConfig = {
   positioning:
     "A supportive community where founders and startup leaders connect, share the realities of building, learn from one another, and grow stronger companies together.",
   url: "https://thefoundersexperience.com",
+  email: "hello@tfecommunity.com",
   linkedin: "https://www.linkedin.com/company/the-founders-experience-startup-community/posts/?feedView=all",
   calendly: "https://calendly.com/ryan-house-tse/the-founders-experinece",
   circle: "https://discover.circle.so/",
@@ -159,12 +160,17 @@ export const faqs = [
   {
     question: "Can my company partner with the community?",
     answer:
-      "Yes. Brands partner with us to fund programming and build real relationships with founders. Head to the Partners page to book a meeting or start the conversation.",
+      "Yes. Brands partner with us to fund programming and build real relationships with founders. Head to the Partners page to book a meeting, or email hello@tfecommunity.com.",
   },
   {
     question: "Who powers The Founders Experience?",
     answer:
       "The community is powered by TSE, The Search Experience, helping us keep membership free for accepted founders and operators.",
+  },
+  {
+    question: "How do I get in touch?",
+    answer:
+      "Email hello@tfecommunity.com. We read every note — applications, partnerships, speaking, and privacy questions.",
   },
 ];
 

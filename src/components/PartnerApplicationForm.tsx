@@ -167,6 +167,13 @@ export function PartnerApplicationForm() {
               className="font-medium text-brand underline-offset-4 hover:underline"
             >
               Book a meeting with us
+            </a>{" "}
+            or email{" "}
+            <a
+              href={`mailto:${siteConfig.email}`}
+              className="font-medium text-brand underline-offset-4 hover:underline"
+            >
+              {siteConfig.email}
             </a>
             .
           </p>

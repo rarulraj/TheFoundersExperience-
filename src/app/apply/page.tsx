@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { FounderApplicationForm } from "@/components/FounderApplicationForm";
 import { PageHero } from "@/components/PageHero";
+import { siteConfig } from "@/data/content";
 
 export const metadata: Metadata = {
   title: "Apply to Join",
@@ -25,7 +26,13 @@ export default function ApplyPage() {
           >
             Become a partner
           </Link>
-          .
+          . Questions?{" "}
+          <a
+            href={`mailto:${siteConfig.email}`}
+            className="font-medium text-brand-bright not-italic underline-offset-4 hover:underline"
+          >
+            {siteConfig.email}
+          </a>
         </p>
       </PageHero>
 

@@ -97,8 +97,14 @@ export default function AboutPage() {
               We treat member and partner information with care. Application
               details are used to review fit, operate the community, and share
               relevant updates you opt into. We do not sell personal data. For
-              privacy questions, reach out through the partner or member forms
-              and note “Privacy” in your message.
+              privacy questions, email{" "}
+              <a
+                href={`mailto:${siteConfig.email}`}
+                className="font-medium text-brand underline-offset-4 hover:underline"
+              >
+                {siteConfig.email}
+              </a>{" "}
+              with “Privacy” in the subject.
             </p>
           </div>
         </div>

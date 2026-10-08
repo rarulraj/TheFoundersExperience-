@@ -201,7 +201,7 @@ All copy lives in `src/data/content.ts` — edit text there, not in components.
 Key exports: `siteConfig`, `navLinks`, `whyCards`, `memberBenefits`,
 `socialProofPoints`, `howItWorks` (3 steps: Apply / Get accepted / Plug in),
 `showcaseFeatures` (3 showcase rows with `visual: directory | event | intro`),
-`manifestoStats` (4 stats), `faqs` (6 Q&As), `featuredEvent`, `upcomingEvents`, `speakers`,
+`manifestoStats` (4 stats), `faqs`, `featuredEvent`, `upcomingEvents`, `speakers`,
 `partnerBenefits`, `founders`, `foundingSponsor`, `companiesWorkedWith`,
 `partnershipTiers`, `personas`, plus form option lists (`companyStages`,
 `partnershipInterests`, `budgetRanges`) and `memberLogos`.

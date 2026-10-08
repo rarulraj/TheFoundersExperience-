@@ -47,6 +47,15 @@ export default function PartnersPage() {
             Send an inquiry
           </Link>
         </div>
+        <p className="caption mt-4 text-white/55">
+          Or email{" "}
+          <a
+            href={`mailto:${siteConfig.email}`}
+            className="font-medium text-brand-bright not-italic underline-offset-4 hover:underline"
+          >
+            {siteConfig.email}
+          </a>
+        </p>
       </PageHero>
 
       <Partners />
